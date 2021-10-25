@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms.tms_hr_employee_01" model="hr.employee">
+        <field name="tms_advance_account_id" ref="account_drivers"/>
+        <field name="tms_expense_negative_account_id" ref="account_negative_balance"/>
+        <field name="address_home_id" ref="res_partner_01"/>
+        <field name="tms_loan_account_id" ref="account_loan"/>
+    </record>
+    <record id="tms.tms_hr_employee_02" model="hr.employee">
+        <field name="tms_advance_account_id" ref="account_drivers"/>
+        <field name="tms_expense_negative_account_id" ref="account_negative_balance"/>
+        <field name="address_home_id" ref="res_partner_02"/>
+        <field name="tms_loan_account_id" ref="account_loan"/>
+    </record>
+    <record id="tms.tms_hr_employee_03" model="hr.employee">
+        <field name="tms_advance_account_id" ref="account_drivers"/>
+        <field name="tms_expense_negative_account_id" ref="account_negative_balance"/>
+        <field name="address_home_id" ref="res_partner_03"/>
+        <field name="tms_loan_account_id" ref="account_loan"/>
+    </record>
+    <record id="tms.tms_hr_employee_04" model="hr.employee">
+        <field name="tms_advance_account_id" ref="account_drivers"/>
+        <field name="tms_expense_negative_account_id" ref="account_negative_balance"/>
+        <field name="address_home_id" ref="res_partner_04"/>
+        <field name="tms_loan_account_id" ref="account_loan"/>
+    </record>
+    <record id="tms.tms_hr_employee_05" model="hr.employee">
+        <field name="tms_advance_account_id" ref="account_drivers"/>
+        <field name="tms_expense_negative_account_id" ref="account_negative_balance"/>
+        <field name="address_home_id" ref="res_partner_05"/>
+        <field name="tms_loan_account_id" ref="account_loan"/>
+    </record>
+    <record id="tms.tms_hr_employee_06" model="hr.employee">
+        <field name="tms_advance_account_id" ref="account_drivers"/>
+        <field name="tms_expense_negative_account_id" ref="account_negative_balance"/>
+        <field name="address_home_id" ref="res_partner_06"/>
+        <field name="tms_loan_account_id" ref="account_loan"/>
+    </record>
+    <record id="tms.tms_hr_employee_07" model="hr.employee">
+        <field name="tms_advance_account_id" ref="account_drivers"/>
+        <field name="tms_expense_negative_account_id" ref="account_negative_balance"/>
+        <field name="address_home_id" ref="res_partner_07"/>
+        <field name="tms_loan_account_id" ref="account_loan"/>
+    </record>
+</odoo>

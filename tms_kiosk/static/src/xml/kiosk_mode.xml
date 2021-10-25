@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template xml:space="preserve">
+    <t t-name="TmsKioskMode">
+        <div class="o_tms_kiosk_mode_container">
+            <div class="o_tms_kiosk_mode">
+                <h1>Welcome to <t t-esc="widget.company_name"/></h1>
+                <img t-attf-src="{{widget.company_image_url}}" alt="Company Logo"/>
+                <h2>Scan the truck</h2>
+                <div class="o_stock_mobile_barcode_container">
+                    <a class="btn btn-primary o_tms_kiosk_mobile_barcode"> <i class="fa fa-camera fa-2x o_mobile_barcode_camara"></i> <div>Tap to scan</div></a>
+                </div>
+            </div>
+            <div class="o_tms_kiosk_clock"></div>
+        </div>
+    </t>
+    <t t-name="TmsKioskVehicle">
+        <div class="o_tms_kiosk_mode_container">
+            <div class="o_tms_kiosk_mode">
+                <h1><span>Truck - </span><t t-esc="widget.name"/></h1>
+                <table class="table">
+                    <tr>
+                        <th>Name</th>
+                        <th style="text-align: center;">Status</th>
+                    </tr>
+                    <t t-foreach="widget.extradata" t-as="data">
+                        <tr>
+                            <td style="text-align: left;">
+                                <span>
+                                    <t t-esc="data.name"/>
+                                </span>
+                            </td>
+                            <td>
+                                <i class="fa fa-check-circle" t-att-data-id="data.id" aria-hidden="true" hidden=""></i>
+                            </td>
+                        </tr>
+                    </t>
+                </table>
+                <br/>
+                <div class="o_stock_mobile_barcode_container">
+                    <a class="btn btn-primary o_tms_kiosk_mobile_barcode"> <i class="fa fa-camera fa-2x o_mobile_barcode_camara"></i> <div>Tap to scan</div></a>
+                </div>
+                <button class="o_tms_kiosk_button_vehicle_finish btn btn-primary btn-lg hidden">Finish</button>
+            </div>
+            <div class="o_tms_kiosk_clock"></div>
+        </div>
+    </t>
+</template>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_transportable_01" model="tms.transportable">
+        <field name="name">Sand</field>
+        <field name="uom_id" ref="uom.product_uom_ton"/>
+    </record>
+    <record id="tms_transportable_02" model="tms.transportable">
+        <field name="name">Water</field>
+        <field name="uom_id" ref="uom.product_uom_litre"/>
+    </record>
+</odoo>

@@ -1,0 +1,239 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tms_attach_files
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-15 00:50+0000\n"
+"PO-Revision-Date: 2017-02-15 00:50+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tms_attach_files
+#: code:addons/tms_attach_files/models/account_invoice.py:49
+#, python-format
+msgid "Can not attach this XML because other invoice already have the same UUID that this XML. \n"
+" Invoice: %s\n"
+" Line: %s"
+msgstr "No se puede adjuntar este XML porque otra factura ya tiene este XML asignado. \n"
+" Factura: %s\n"
+" Linea de Gasto: %s"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_attachment_wizard_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_attachment_wizard_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_attachment_wizard_display_name
+msgid "Display Name"
+msgstr "Nombre desplegado"
+
+#. module: tms_attach_files
+#: code:addons/tms_attach_files/models/account_invoice.py:38
+#, python-format
+msgid "Error in XML structure\n"
+"%s \n"
+" %s"
+msgstr "Error en la estructura del XML\n"
+"%s \n"
+" %s"
+
+#. module: tms_attach_files
+#: model:ir.model,name:tms_attach_files.model_tms_expense_line
+msgid "Expense Line"
+msgstr "Linea de liquidación"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_attachment_wizard_file_xml_sign
+msgid "File XML sign"
+msgstr "Archivo XML firmado"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_attachment_wizard_file_pdf
+msgid "File pdf"
+msgstr "Archivo pdf"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_attachment_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: tms_attach_files
+#: model:ir.model,name:tms_attach_files.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_attachment_wizard___last_update
+msgid "Last Modified on"
+msgstr "Ultima modificacion realizada"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_attachment_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualizacion por"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_attachment_wizard_write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización realizada"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_attachment_wizard_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_expense_line_pdf_file
+msgid "Pdf file"
+msgstr "Archivo Pdf"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_expense_line_pdf_filename
+msgid "Pdf filename"
+msgstr "Nombre del PDF"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_attachment_wizard_pdf_name
+msgid "Pdf name"
+msgstr "Nombre del PDF"
+
+#. module: tms_attach_files
+#: code:addons/tms_attach_files/models/account_invoice.py:67
+#, python-format
+msgid "Please check that your company have a VAT configured."
+msgstr "Verifique que su compañía tenga un RFC configurado."
+
+#. module: tms_attach_files
+#: model:ir.model.fields,help:tms_attach_files.field_tms_attachment_wizard_pdf_name
+msgid "Save the file name, to verify that is .pdf"
+msgstr "Guarde el archivo para verificar que es .pdf"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,help:tms_attach_files.field_tms_attachment_wizard_xml_name
+msgid "Save the file name, to verify that is .xml"
+msgstr "Guarde el archivo para verificar que es .xml"
+
+#. module: tms_attach_files
+#: code:addons/tms_attach_files/models/account_invoice.py:79
+#, python-format
+msgid "The VAT emitter do not match with the supplier invoice.\n"
+" Supplier VAT: %s \n"
+" XML File: %s\n"
+" Expense Line: %s "
+msgstr "El RFC del emisor no coincide con el del proveedor seleccionado.\n"
+" RFC del Proveedor en Odoo: %s \n"
+" RFC del Proveedor en XML: %s\n"
+" Linea de Liquidacion: %s "
+
+#. module: tms_attach_files
+#: code:addons/tms_attach_files/models/account_invoice.py:73
+#, python-format
+msgid "The VAT receiver do not match with the Company.\n"
+" Company VAT: %s \n"
+" XML File: %s\n"
+" Expense Line: %s"
+msgstr "El RFC receptor no coincide con el que esta configurado en la compañia.\n"
+" RFC Compañia: %s \n"
+" RFC XML: %s\n"
+" Linea de Liquidacion: %s"
+
+#. module: tms_attach_files
+#: code:addons/tms_attach_files/models/account_invoice.py:87
+#, python-format
+msgid "The invoice total not match with the XML file.\n"
+" Amount Total Invoice: %s \n"
+" XML File: %s\n"
+" Expense Line: %s"
+msgstr "El total de la factura no coincide con el del XML.\n"
+" Total Odoo: %s \n"
+" Total XML: %s\n"
+" Linea de Liquidacion: %s"
+
+#. module: tms_attach_files
+#: code:addons/tms_attach_files/models/tms_expense_line.py:47
+#, python-format
+msgid "The supplier %s dont exist in the systemplease check de supplier list."
+msgstr "El proveedor %s no existe en el sistema por favor revise el catalogo de proveedores."
+
+#. module: tms_attach_files
+#: code:addons/tms_attach_files/models/account_invoice.py:44
+#, python-format
+msgid "This XML state is CANCELED in the SAT system. %s"
+msgstr "El estado del XML es CANCELADO en el SAT. %s"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,help:tms_attach_files.field_tms_attachment_wizard_file_pdf
+msgid "This file .pdf is proportionate by the supplier"
+msgstr "Este archivo .pdf es proporcionado por el proveedor"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,help:tms_attach_files.field_tms_attachment_wizard_file_xml_sign
+msgid "This file .xml is proportionate by the supplier"
+msgstr "Este archivo .xml is proporcionado por el proveedor"
+
+#. module: tms_attach_files
+#: code:addons/tms_attach_files/models/account_invoice.py:63
+#, python-format
+msgid "This supplier does not have VAT configured.\n"
+" Supplier: %s \n"
+" Line: %s "
+msgstr "Este proveedor no tiene un RFC configurado.\n"
+" Proveedor: %s \n"
+" Linea de Liquidacion: %s "
+
+#. module: tms_attach_files
+#: model:ir.model,name:tms_attach_files.model_tms_expense
+msgid "Travel Expenses"
+msgstr "Liquidación de Viajes"
+
+#. module: tms_attach_files
+#: code:addons/tms_attach_files/models/tms_expense_line.py:28
+#, python-format
+msgid "Verify that file be .xml, please!"
+msgstr "Verifique que el archivo tenga una extension xml"
+
+#. module: tms_attach_files
+#: code:addons/tms_attach_files/wizards/tms_attach_files.py:29
+#, python-format
+msgid "Verify that files are .xml and .pdf, please!"
+msgstr "Verifique que el archivo tenga una extension pdf"
+
+#. module: tms_attach_files
+#: code:addons/tms_attach_files/models/account_invoice.py:106
+#, python-format
+msgid "XML signed from Invoice %s."
+msgstr "XML firmado de la Factura %s."
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_expense_line_xml_file
+msgid "Xml file"
+msgstr "Archivo XML"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_expense_line_xml_filename
+msgid "Xml filename"
+msgstr "Nombre archivo XML"
+
+#. module: tms_attach_files
+#: model:ir.model.fields,field_description:tms_attach_files.field_tms_attachment_wizard_xml_name
+msgid "Xml name"
+msgstr "Nombre XML"
+
+#. module: tms_attach_files
+#: model:ir.model,name:tms_attach_files.model_tms_attachment_wizard
+msgid "tms.attachment.wizard"
+msgstr "tms.attachment.wizard"
+

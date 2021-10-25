@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record id="product_freight" model="product.product">
+        <field name="name">Freight</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">freight</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_move" model="product.product">
+        <field name="name">Move</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">move</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_insurance" model="product.product">
+        <field name="name">Insurance</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">insurance</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_highway_tolls" model="product.product">
+        <field name="name">Highway Tolls</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">tolls</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_other" model="product.product">
+        <field name="name">Other</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">other</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_real_expense" model="product.product">
+        <field name="name">Real Expense</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">real_expense</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_fuel" model="product.product">
+        <field name="name">Fuel</field>
+        <field name="type">consu</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">fuel</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_fuel_cash" model="product.product">
+        <field name="name">Fuel in Cash</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">fuel_cash</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_salary" model="product.product">
+        <field name="name">Salary</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">salary</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_retention" model="product.product">
+        <field name="name">Salary Retention</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">salary_retention</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_discount" model="product.product">
+        <field name="name">Salary Discount</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">salary_discount</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_madeup" model="product.product">
+        <field name="name">Made Up Expense</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">made_up_expense</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_other_income" model="product.product">
+        <field name="name">Other Income</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">other_income</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_ieps" model="product.product">
+        <field name="name">IEPS</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="product_loan" model="product.product">
+        <field name="name">Loan</field>
+        <field name="type">service</field>
+        <field eval="False" name="purchase_ok"/>
+        <field eval="False" name="sale_ok"/>
+        <field name="tms_product_category">loan</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    </record>
+</odoo>

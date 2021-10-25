@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record model="operating.unit" id="operating_unit.main_operating_unit">
+        <field name="name">Mexico</field>
+        <field name="code">MX</field>
+        <field name="partner_id" ref="base.main_partner"/>
+        <field name="travel_sequence_id" ref="travel_sequence"/>
+        <field name="expense_sequence_id" ref="expense_sequence"/>
+        <field name="waybill_sequence_id" ref="waybill_sequence"/>
+        <field name="advance_sequence_id" ref="advance_sequence"/>
+        <field name="fuel_log_sequence_id" ref="fuel_log_sequence"/>
+        <field name="loan_sequence_id" ref="loan_sequence"/>
+        <field name="ieps_product_id" ref="product_ieps"/>
+        <field name="advance_journal_id" ref="tms_account_journal_advance"/>
+        <field name="expense_journal_id" ref="tms_account_journal_expense"/>
+        <field name="sale_journal_id" ref="tms_account_journal_sale"/>
+        <field name="purchase_journal_id" ref="tms_account_journal_purchase"/>
+        <field name="loan_journal_id" ref="tms_account_journal_loan"/>
+    </record>
+</odoo>

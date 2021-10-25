@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.sequence" id="travel_sequence_2">
+        <field name="name">Travel Sequence GDL</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">T</field>
+        <field name="prefix">T-GDL</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="expense_sequence_2">
+        <field name="name">Expense Sequence GDL</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">E</field>
+        <field name="prefix">E-GDL</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="waybill_sequence_2">
+        <field name="name">Waybill Sequence GDL</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">W</field>
+        <field name="prefix">W-GDL</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="advance_sequence_2">
+        <field name="name">Advance Sequence GDL</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">A</field>
+        <field name="prefix">A-GDL</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="fuel_log_sequence_2">
+        <field name="name">Fuel Log Sequence GDL</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">F</field>
+        <field name="prefix">F-GDL</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="loan_sequence_2">
+        <field name="name">Loan Sequence GDL</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">L</field>
+        <field name="prefix">L-GDL</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="travel_sequence_3">
+        <field name="name">Travel Sequence MTY</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">T</field>
+        <field name="prefix">T-MTY</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="expense_sequence_3">
+        <field name="name">Expense Sequence MTY</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">E</field>
+        <field name="prefix">E-MTY</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="waybill_sequence_3">
+        <field name="name">Waybill Sequence MTY</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">W</field>
+        <field name="prefix">W-MTY</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="advance_sequence_3">
+        <field name="name">Advance Sequence MTY</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">A</field>
+        <field name="prefix">A-MTY</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="fuel_log_sequence_3">
+        <field name="name">Fuel Log Sequence MTY</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">F</field>
+        <field name="prefix">F-MTY</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="loan_sequence_3">
+        <field name="name">Loan Sequence MTY</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">L</field>
+        <field name="prefix">L-MTY</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+</odoo>

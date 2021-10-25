@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_expense_loan_01" model="tms.expense.loan">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="employee_id" ref="tms.tms_hr_employee_01"/>
+        <field name="date" eval="datetime.now()"/>
+        <field name="product_id" ref="tms.product_loan"/>
+        <field name="amount">1000</field>
+        <field name="discount_type">fixed</field>
+        <field name="fixed_discount">200</field>
+        <field name="discount_method">each</field>
+        <field name="active_loan" eval="1"/>
+    </record>
+    <record id="tms_expense_loan_02" model="tms.expense.loan">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="employee_id" ref="tms.tms_hr_employee_02"/>
+        <field name="date" eval="datetime.now()"/>
+        <field name="product_id" ref="tms.product_loan"/>
+        <field name="amount">2000</field>
+        <field name="discount_type">percent</field>
+        <field name="percent_discount">10</field>
+        <field name="discount_method">each</field>
+        <field name="active_loan" eval="1"/>
+    </record>
+    <function name="action_approve" model="tms.expense.loan" eval="[ref('tms_expense_loan_01')]"/>
+    <function name="action_confirm" model="tms.expense.loan" eval="[ref('tms_expense_loan_01')]"/>
+    <function name="action_pay" model="tms.expense.loan" eval="[ref('tms_expense_loan_01')]"/>
+    <function name="action_approve" model="tms.expense.loan" eval="[ref('tms_expense_loan_02')]"/>
+    <function name="action_confirm" model="tms.expense.loan" eval="[ref('tms_expense_loan_02')]"/>
+    <function name="action_pay" model="tms.expense.loan" eval="[ref('tms_expense_loan_02')]"/>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_kiosk_action" model="ir.actions.client">
+        <field name="name">TMS Kiosk Mode</field>
+        <field name="tag">tms_kiosk_mode</field>
+        <field name="target">fullscreen</field>
+    </record>
+    <menuitem 
+        id="menu_tms_kiosk_mode"
+        name="Kiosk Mode"
+        parent="tms.menu_tms"
+        sequence="60"
+        groups="group_kiosk"
+        action="tms_kiosk_action"/>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_expense_01" model="tms.expense">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="unit_id" ref="tms.tms_fleet_vehicle_01"/>
+        <field name="employee_id" ref="tms.tms_hr_employee_01"/>
+        <field name="date" eval="datetime.now()"/>
+        <field name="travel_ids" eval="[(6, 0, [ref('tms.tms_travel_01')])]"/>
+    </record>
+    <function name="get_travel_info" model="tms.expense" eval="[ref('tms_expense_01')]"/>
+</odoo>

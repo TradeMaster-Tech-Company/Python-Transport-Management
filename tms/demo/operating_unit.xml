@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="operating_unit.b2b_operating_unit" model="operating.unit">
+        <field name="name">Guadalajara</field>
+        <field name="code">GDL</field>
+        <field name="partner_id" ref="base.main_partner"/>
+        <field name="travel_sequence_id" ref="tms.travel_sequence_2"/>
+        <field name="expense_sequence_id" ref="tms.expense_sequence_2"/>
+        <field name="waybill_sequence_id" ref="tms.waybill_sequence_2"/>
+        <field name="advance_sequence_id" ref="tms.advance_sequence_2"/>
+        <field name="fuel_log_sequence_id" ref="tms.fuel_log_sequence_2"/>
+        <field name="loan_sequence_id" ref="tms.loan_sequence_2"/>
+        <field name="ieps_product_id" ref="tms.product_ieps"/>
+        <field name="advance_journal_id" ref="tms.tms_account_journal_advance"/>
+        <field name="expense_journal_id" ref="tms.tms_account_journal_expense"/>
+        <field name="sale_journal_id" ref="tms.tms_account_journal_sale"/>
+        <field name="purchase_journal_id" ref="tms.tms_account_journal_purchase"/>
+        <field name="loan_journal_id" ref="tms.tms_account_journal_loan"/>
+    </record>
+    <record id="operating_unit.b2c_operating_unit" model="operating.unit">
+        <field name="name">Monterrey</field>
+        <field name="code">MTY</field>
+        <field name="partner_id" ref="base.main_partner"/>
+        <field name="travel_sequence_id" ref="tms.travel_sequence_3"/>
+        <field name="expense_sequence_id" ref="tms.expense_sequence_3"/>
+        <field name="waybill_sequence_id" ref="tms.waybill_sequence_3"/>
+        <field name="advance_sequence_id" ref="tms.advance_sequence_3"/>
+        <field name="fuel_log_sequence_id" ref="tms.fuel_log_sequence_3"/>
+        <field name="loan_sequence_id" ref="tms.loan_sequence_3"/>
+        <field name="ieps_product_id" ref="tms.product_ieps"/>
+        <field name="advance_journal_id" ref="tms.tms_account_journal_advance"/>
+        <field name="expense_journal_id" ref="tms.tms_account_journal_expense"/>
+        <field name="sale_journal_id" ref="tms.tms_account_journal_sale"/>
+        <field name="purchase_journal_id" ref="tms.tms_account_journal_purchase"/>
+        <field name="loan_journal_id" ref="tms.tms_account_journal_loan"/>
+    </record>
+</odoo>

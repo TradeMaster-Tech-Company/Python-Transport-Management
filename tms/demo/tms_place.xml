@@ -1,0 +1,2066 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_place_01" model="tms.place">
+        <field name="name">San Antonio</field>
+        <field name="state_id" ref="base.state_us_44"/>
+        <field name="latitude">29.8832749000</field>
+        <field name="longitude">-97.9413941000</field>
+    </record>
+    <record id="tms_place_02" model="tms.place">
+        <field name="name">El Paso</field>
+        <field name="state_id" ref="base.state_us_44"/>
+        <field name="latitude">31.7618778000</field>
+        <field name="longitude">-106.4850217000</field>
+    </record>
+    <record id="tms_place_03" model="tms.place">
+        <field name="name">Houston</field>
+        <field name="state_id" ref="base.state_us_44"/>
+        <field name="latitude">29.7604267000</field>
+        <field name="longitude">-95.3698028000</field>
+    </record>
+    <record id="tms_place_04" model="tms.place">
+        <field name="name">Esperanza - Acatzingo - Cd. Mendoza</field>
+        <field name="latitude" eval="18.870777"/>
+        <field name="longitude" eval="-97.385869"/>
+    </record>
+    <record id="tms_place_05" model="tms.place">
+        <field name="name">Esperanza - Acatzingo - Cd. Mendoza</field>
+        <field name="latitude" eval="18.870777"/>
+        <field name="longitude" eval="-97.385869"/>
+    </record>
+    <record id="tms_place_06" model="tms.place">
+        <field name="name">Esperanza - Acatzingo - Cd. Mendoza</field>
+        <field name="latitude" eval="18.870777"/>
+        <field name="longitude" eval="-97.385869"/>
+    </record>
+    <record id="tms_place_07" model="tms.place">
+        <field name="name">Amozoc II - Amozoc - Perote y Libramiento de Perote</field>
+        <field name="latitude" eval="19.063585"/>
+        <field name="longitude" eval="-98.069075"/>
+    </record>
+    <record id="tms_place_08" model="tms.place">
+        <field name="name">Cantona - Amozoc - Perote y Libramiento de Perote</field>
+        <field name="latitude" eval="19.507568"/>
+        <field name="longitude" eval="-97.497774"/>
+    </record>
+    <record id="tms_place_09" model="tms.place">
+        <field name="name">Cantona A1 - Amozoc - Perote y Libramiento de Perote</field>
+        <field name="latitude" eval="19.506554"/>
+        <field name="longitude" eval="-97.495453"/>
+    </record>
+    <record id="tms_place_10" model="tms.place">
+        <field name="name">Cantona A2 - Amozoc - Perote y Libramiento de Perote</field>
+        <field name="latitude" eval="19.508966"/>
+        <field name="longitude" eval="-97.497172"/>
+    </record>
+    <record id="tms_place_11" model="tms.place">
+        <field name="name">Cuapiaxtla - Amozoc - Perote y Libramiento de Perote</field>
+        <field name="latitude" eval="19.310368"/>
+        <field name="longitude" eval="-97.797562"/>
+    </record>
+    <record id="tms_place_12" model="tms.place">
+        <field name="name">Cuapiaxtla A1 - Amozoc - Perote y Libramiento de Perote</field>
+        <field name="latitude" eval="19.304147"/>
+        <field name="longitude" eval="-97.805436"/>
+    </record>
+    <record id="tms_place_13" model="tms.place">
+        <field name="name">Cuapiaxtla A2 - Amozoc - Perote y Libramiento de Perote</field>
+        <field name="latitude" eval="19.304378"/>
+        <field name="longitude" eval="-97.805668"/>
+    </record>
+    <record id="tms_place_14" model="tms.place">
+        <field name="name">Perote - Amozoc - Perote y Libramiento de Perote</field>
+        <field name="latitude" eval="19.55172"/>
+        <field name="longitude" eval="-97.289536"/>
+    </record>
+    <record id="tms_place_15" model="tms.place">
+        <field name="name">Cuyutlán - Armería - Manzanillo</field>
+        <field name="latitude" eval="18.927786"/>
+        <field name="longitude" eval="-104.081504"/>
+    </record>
+    <record id="tms_place_16" model="tms.place">
+        <field name="name">Arriaga - Arriaga - Ocozocoautla</field>
+        <field name="latitude" eval="16.245558"/>
+        <field name="longitude" eval="-93.880876"/>
+    </record>
+    <record id="tms_place_17" model="tms.place">
+        <field name="name">Jiquipilas - Arriaga - Ocozocoautla</field>
+        <field name="latitude" eval="16.620564"/>
+        <field name="longitude" eval="-93.60209"/>
+    </record>
+    <record id="tms_place_18" model="tms.place">
+        <field name="name">Ocozocuautla - Arriaga - Ocozocoautla</field>
+        <field name="latitude" eval="16.738493"/>
+        <field name="longitude" eval="-93.400414"/>
+    </record>
+    <record id="tms_place_19" model="tms.place">
+        <field name="name">Tierra y Libertad - Arriaga - Ocozocoautla</field>
+        <field name="latitude" eval="16.368058"/>
+        <field name="longitude" eval="-93.867043"/>
+    </record>
+    <record id="tms_place_20" model="tms.place">
+        <field name="name">Contepec - Atlacomulco - Maravatío</field>
+        <field name="latitude" eval="19.876127"/>
+        <field name="longitude" eval="-100.177072"/>
+    </record>
+    <record id="tms_place_21" model="tms.place">
+        <field name="name">Contepec A1 - Atlacomulco - Maravatío</field>
+        <field name="latitude" eval="19.877644"/>
+        <field name="longitude" eval="-100.176358"/>
+    </record>
+    <record id="tms_place_22" model="tms.place">
+        <field name="name">Contepec A2 - Atlacomulco - Maravatío</field>
+        <field name="latitude" eval="19.875531"/>
+        <field name="longitude" eval="-100.176711"/>
+    </record>
+    <record id="tms_place_23" model="tms.place">
+        <field name="name">San Juanico - Atlacomulco - Maravatío</field>
+        <field name="latitude" eval="19.830719"/>
+        <field name="longitude" eval="-99.905209"/>
+    </record>
+    <record id="tms_place_24" model="tms.place">
+        <field name="name">Dr. Coss - Cadereyta - Reynosa</field>
+        <field name="latitude" eval="25.813509"/>
+        <field name="longitude" eval="-99.169588"/>
+    </record>
+    <record id="tms_place_25" model="tms.place">
+        <field name="name">General Bravo - Cadereyta - Reynosa</field>
+        <field name="latitude" eval="25.813509"/>
+        <field name="longitude" eval="-99.169588"/>
+    </record>
+    <record id="tms_place_26" model="tms.place">
+        <field name="name">General Bravo - Cadereyta - Reynosa</field>
+        <field name="latitude" eval="25.813509"/>
+        <field name="longitude" eval="-99.169588"/>
+    </record>
+    <record id="tms_place_27" model="tms.place">
+        <field name="name">Los Herreras - Cadereyta - Reynosa</field>
+        <field name="latitude" eval="25.757295"/>
+        <field name="longitude" eval="-99.373856"/>
+    </record>
+    <record id="tms_place_28" model="tms.place">
+        <field name="name">Los Herreras - Cadereyta - Reynosa</field>
+        <field name="latitude" eval="25.759393"/>
+        <field name="longitude" eval="-99.37416"/>
+    </record>
+    <record id="tms_place_29" model="tms.place">
+        <field name="name">Los Ramones - Cadereyta - Reynosa</field>
+        <field name="latitude" eval="25.656016"/>
+        <field name="longitude" eval="-99.631035"/>
+    </record>
+    <record id="tms_place_30" model="tms.place">
+        <field name="name">Los Ramones - Cadereyta - Reynosa</field>
+        <field name="latitude" eval="25.662886"/>
+        <field name="longitude" eval="-99.628599"/>
+    </record>
+    <record id="tms_place_31" model="tms.place">
+        <field name="name">Altavista - Camargo - Delicias</field>
+        <field name="latitude" eval="27.730842"/>
+        <field name="longitude" eval="-105.197882"/>
+    </record>
+    <record id="tms_place_32" model="tms.place">
+        <field name="name">Saucillo - Camargo - Delicias</field>
+        <field name="latitude" eval="28.04638"/>
+        <field name="longitude" eval="-105.329342"/>
+    </record>
+    <record id="tms_place_33" model="tms.place">
+        <field name="name">La Antigua - Cardel - Veracruz</field>
+        <field name="latitude" eval="19.320385"/>
+        <field name="longitude" eval="-96.310715"/>
+    </record>
+    <record id="tms_place_34" model="tms.place">
+        <field name="name">San Julián - Cardel - Veracruz</field>
+        <field name="latitude" eval="19.239276"/>
+        <field name="longitude" eval="-96.257899"/>
+    </record>
+    <record id="tms_place_35" model="tms.place">
+        <field name="name">Zacatecas - Cd. Cuauhtémoc - Osiris</field>
+        <field name="latitude" eval="22.710779"/>
+        <field name="longitude" eval="-102.448879"/>
+    </record>
+    <record id="tms_place_36" model="tms.place">
+        <field name="name">Fortín - Cd. Mendoza - Córdoba</field>
+        <field name="latitude" eval="18.907151"/>
+        <field name="longitude" eval="-96.999524"/>
+    </record>
+    <record id="tms_place_37" model="tms.place">
+        <field name="name">Fortín Aux. - Cd. Mendoza - Córdoba</field>
+        <field name="latitude" eval="18.906565"/>
+        <field name="longitude" eval="-97.001589"/>
+    </record>
+    <record id="tms_place_38" model="tms.place">
+        <field name="name">San Mateo A1 - Chamapa - Lechería</field>
+        <field name="latitude" eval="19.487334"/>
+        <field name="longitude" eval="-99.309881"/>
+    </record>
+    <record id="tms_place_39" model="tms.place">
+        <field name="name">San Mateo A2 - Chamapa - Lechería</field>
+        <field name="latitude" eval="19.486228"/>
+        <field name="longitude" eval="-99.311503"/>
+    </record>
+    <record id="tms_place_40" model="tms.place">
+        <field name="name">San Mateo A3 - Chamapa - Lechería</field>
+        <field name="latitude" eval="19.487093"/>
+        <field name="longitude" eval="-99.310115"/>
+    </record>
+    <record id="tms_place_41" model="tms.place">
+        <field name="name">San Mateo A4 - Chamapa - Lechería</field>
+        <field name="latitude" eval="19.48819"/>
+        <field name="longitude" eval="-99.311068"/>
+    </record>
+    <record id="tms_place_42" model="tms.place">
+        <field name="name">Lomas Verdes - Chamapa - Lechería</field>
+        <field name="latitude" eval="19.519198"/>
+        <field name="longitude" eval="-99.286355"/>
+    </record>
+    <record id="tms_place_43" model="tms.place">
+        <field name="name">Madín A1 - Chamapa - Lechería</field>
+        <field name="latitude" eval="19.544632"/>
+        <field name="longitude" eval="-99.277049"/>
+    </record>
+    <record id="tms_place_44" model="tms.place">
+        <field name="name">Madín A2 - Chamapa - Lechería</field>
+        <field name="latitude" eval="19.545601"/>
+        <field name="longitude" eval="-99.277405"/>
+    </record>
+    <record id="tms_place_45" model="tms.place">
+        <field name="name">Madín A3 - Chamapa - Lechería</field>
+        <field name="latitude" eval="19.548062"/>
+        <field name="longitude" eval="-99.276966"/>
+    </record>
+    <record id="tms_place_46" model="tms.place">
+        <field name="name">Madín A4 - Chamapa - Lechería</field>
+        <field name="latitude" eval="19.548788"/>
+        <field name="longitude" eval="-99.277298"/>
+    </record>
+    <record id="tms_place_47" model="tms.place">
+        <field name="name">Atizapán - Chamapa - Lechería</field>
+        <field name="latitude" eval="19.582535"/>
+        <field name="longitude" eval="-99.271137"/>
+    </record>
+    <record id="tms_place_48" model="tms.place">
+        <field name="name">Lago de Guadalupe A1 - Chamapa - Lechería</field>
+        <field name="latitude" eval="19.608832"/>
+        <field name="longitude" eval="-99.237113"/>
+    </record>
+    <record id="tms_place_49" model="tms.place">
+        <field name="name">Lago de Guadalupe A2 - Chamapa - Lechería</field>
+        <field name="latitude" eval="19.60996"/>
+        <field name="longitude" eval="-99.236474"/>
+    </record>
+    <record id="tms_place_50" model="tms.place">
+        <field name="name">Seybaplaya - Champotón - Campeche</field>
+        <field name="latitude" eval="19.636259"/>
+        <field name="longitude" eval="-90.671564"/>
+    </record>
+    <record id="tms_place_51" model="tms.place">
+        <field name="name">Seybaplaya - Champotón - Campeche</field>
+        <field name="latitude" eval="19.636259"/>
+        <field name="longitude" eval="-90.671564"/>
+    </record>
+    <record id="tms_place_52" model="tms.place">
+        <field name="name">Seybaplaya - Champotón - Campeche</field>
+        <field name="latitude" eval="19.636259"/>
+        <field name="longitude" eval="-90.671564"/>
+    </record>
+    <record id="tms_place_53" model="tms.place">
+        <field name="name">Compostela - Chapalilla - Compostela</field>
+        <field name="latitude" eval="21.229472"/>
+        <field name="longitude" eval="-104.887417"/>
+    </record>
+    <record id="tms_place_54" model="tms.place">
+        <field name="name">Cuitláhuac - Córdoba - Veracruz</field>
+        <field name="latitude" eval="18.839454"/>
+        <field name="longitude" eval="-96.746941"/>
+    </record>
+    <record id="tms_place_55" model="tms.place">
+        <field name="name">Cuitláhuac A1 - Córdoba - Veracruz</field>
+        <field name="latitude" eval="18.839314"/>
+        <field name="longitude" eval="-96.746978"/>
+    </record>
+    <record id="tms_place_56" model="tms.place">
+        <field name="name">Cuitláhuac A1-2 - Córdoba - Veracruz</field>
+        <field name="latitude" eval="18.839604"/>
+        <field name="longitude" eval="-96.746905"/>
+    </record>
+    <record id="tms_place_57" model="tms.place">
+        <field name="name">Cuitláhuac A2-1 - Córdoba - Veracruz</field>
+        <field name="latitude" eval="18.837511"/>
+        <field name="longitude" eval="-96.737458"/>
+    </record>
+    <record id="tms_place_58" model="tms.place">
+        <field name="name">Cuitláhuac A2-2 - Córdoba - Veracruz</field>
+        <field name="latitude" eval="18.83865"/>
+        <field name="longitude" eval="-96.739512"/>
+    </record>
+    <record id="tms_place_59" model="tms.place">
+        <field name="name">Paso del Toro - Córdoba - Veracruz</field>
+        <field name="latitude" eval="19.081747"/>
+        <field name="longitude" eval="-96.198438"/>
+    </record>
+    <record id="tms_place_60" model="tms.place">
+        <field name="name">Paso del Toro - Córdoba - Veracruz</field>
+        <field name="latitude" eval="19.081747"/>
+        <field name="longitude" eval="-96.198438"/>
+    </record>
+    <record id="tms_place_61" model="tms.place">
+        <field name="name">Paso del Toro - Córdoba - Veracruz</field>
+        <field name="latitude" eval="19.081747"/>
+        <field name="longitude" eval="-96.198438"/>
+    </record>
+    <record id="tms_place_62" model="tms.place">
+        <field name="name">Huitzo - Cuacnopalan - Oaxaca</field>
+        <field name="latitude" eval="17.275026"/>
+        <field name="longitude" eval="-96.915277"/>
+    </record>
+    <record id="tms_place_63" model="tms.place">
+        <field name="name">Huitzo - Cuacnopalan - Oaxaca</field>
+        <field name="latitude" eval="17.275026"/>
+        <field name="longitude" eval="-96.915277"/>
+    </record>
+    <record id="tms_place_64" model="tms.place">
+        <field name="name">Huitzo A1 - Cuacnopalan - Oaxaca</field>
+        <field name="latitude" eval="17.278761"/>
+        <field name="longitude" eval="-96.914652"/>
+    </record>
+    <record id="tms_place_65" model="tms.place">
+        <field name="name">Miahuatlán - Cuacnopalan - Oaxaca</field>
+        <field name="latitude" eval="18.264673"/>
+        <field name="longitude" eval="-97.315627"/>
+    </record>
+    <record id="tms_place_66" model="tms.place">
+        <field name="name">Coixtlahuaca A1 - Cuacnopalan - Oaxaca</field>
+        <field name="latitude" eval="17.726023"/>
+        <field name="longitude" eval="-97.353773"/>
+    </record>
+    <record id="tms_place_67" model="tms.place">
+        <field name="name">Coixtlahuaca - Cuacnopalan - Oaxaca</field>
+        <field name="latitude" eval="17.725859"/>
+        <field name="longitude" eval="-97.352916"/>
+    </record>
+    <record id="tms_place_68" model="tms.place">
+        <field name="name">Tehuacán - Cuacnopalan - Oaxaca</field>
+        <field name="latitude" eval="18.487127"/>
+        <field name="longitude" eval="-97.456212"/>
+    </record>
+    <record id="tms_place_69" model="tms.place">
+        <field name="name">Aeropuerto A1 - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="18.802293"/>
+        <field name="longitude" eval="-99.221241"/>
+    </record>
+    <record id="tms_place_70" model="tms.place">
+        <field name="name">Aeropuerto A2 - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="18.802741"/>
+        <field name="longitude" eval="-99.219852"/>
+    </record>
+    <record id="tms_place_71" model="tms.place">
+        <field name="name">Alpuyeca - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="18.69853"/>
+        <field name="longitude" eval="-99.278053"/>
+    </record>
+    <record id="tms_place_72" model="tms.place">
+        <field name="name">Alpuyeca A1 - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="18.723779"/>
+        <field name="longitude" eval="-99.260215"/>
+    </record>
+    <record id="tms_place_73" model="tms.place">
+        <field name="name">Alpuyeca A2 - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="18.722419"/>
+        <field name="longitude" eval="-99.259948"/>
+    </record>
+    <record id="tms_place_74" model="tms.place">
+        <field name="name">D.I.E.Z. - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="18.8375"/>
+        <field name="longitude" eval="-99.21537"/>
+    </record>
+    <record id="tms_place_75" model="tms.place">
+        <field name="name">La Venta - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="16.928256"/>
+        <field name="longitude" eval="-99.801892"/>
+    </record>
+    <record id="tms_place_76" model="tms.place">
+        <field name="name">Palo Blanco - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="17.423967"/>
+        <field name="longitude" eval="-99.466861"/>
+    </record>
+    <record id="tms_place_77" model="tms.place">
+        <field name="name">Paso Morelos - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="18.231465"/>
+        <field name="longitude" eval="-99.215466"/>
+    </record>
+    <record id="tms_place_78" model="tms.place">
+        <field name="name">Paso Morelos - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="18.231465"/>
+        <field name="longitude" eval="-99.215466"/>
+    </record>
+    <record id="tms_place_79" model="tms.place">
+        <field name="name">Paso Morelos - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="18.231465"/>
+        <field name="longitude" eval="-99.215466"/>
+    </record>
+    <record id="tms_place_80" model="tms.place">
+        <field name="name">Xochitepec - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="18.774978"/>
+        <field name="longitude" eval="-99.225314"/>
+    </record>
+    <record id="tms_place_81" model="tms.place">
+        <field name="name">Xochitepec - Cuernavaca - Acapulco</field>
+        <field name="latitude" eval="18.774978"/>
+        <field name="longitude" eval="-99.225314"/>
+    </record>
+    <record id="tms_place_82" model="tms.place">
+        <field name="name">Garavitos - Durango - Mazatlán</field>
+        <field name="latitude" eval="24.004477"/>
+        <field name="longitude" eval="-104.736419"/>
+    </record>
+    <record id="tms_place_83" model="tms.place">
+        <field name="name">Llano Grande - Durango - Mazatlán</field>
+        <field name="latitude" eval="23.868815"/>
+        <field name="longitude" eval="-105.203958"/>
+    </record>
+    <record id="tms_place_84" model="tms.place">
+        <field name="name">Mesillas - Durango - Mazatlán</field>
+        <field name="latitude" eval="23.259302"/>
+        <field name="longitude" eval="-106.049587"/>
+    </record>
+    <record id="tms_place_85" model="tms.place">
+        <field name="name">Durango - Durango - Yerbanís</field>
+        <field name="latitude" eval="24.131735"/>
+        <field name="longitude" eval="-104.534058"/>
+    </record>
+    <record id="tms_place_86" model="tms.place">
+        <field name="name">Yerbanís - Durango - Yerbanís</field>
+        <field name="latitude" eval="24.730769"/>
+        <field name="longitude" eval="-103.861923"/>
+    </record>
+    <record id="tms_place_87" model="tms.place">
+        <field name="name">Ecatepec - Ecatepec - Pirámides</field>
+        <field name="latitude" eval="19.611707"/>
+        <field name="longitude" eval="-99.025732"/>
+    </record>
+    <record id="tms_place_88" model="tms.place">
+        <field name="name">La Rumorosa - El Centinela - La Rumorosa</field>
+        <field name="latitude" eval="32.562633"/>
+        <field name="longitude" eval="-116.047931"/>
+    </record>
+    <record id="tms_place_89" model="tms.place">
+        <field name="name">La Rumorosa 2 - El Centinela - La Rumorosa</field>
+        <field name="latitude" eval="32.555877"/>
+        <field name="longitude" eval="-116.036431"/>
+    </record>
+    <record id="tms_place_90" model="tms.place">
+        <field name="name">Villa Ahumada - El Sueco - Villa Ahumada</field>
+        <field name="latitude" eval="30.437079"/>
+        <field name="longitude" eval="-106.52185"/>
+    </record>
+    <record id="tms_place_91" model="tms.place">
+        <field name="name">Ensenada - Ensenada - Tijuana</field>
+        <field name="latitude" eval="31.903121"/>
+        <field name="longitude" eval="-116.732727"/>
+    </record>
+    <record id="tms_place_92" model="tms.place">
+        <field name="name">Playas de Tijuana - Ensenada - Tijuana</field>
+        <field name="latitude" eval="32.514036"/>
+        <field name="longitude" eval="-117.109538"/>
+    </record>
+    <record id="tms_place_93" model="tms.place">
+        <field name="name">Rosarito - Ensenada - Tijuana</field>
+        <field name="latitude" eval="32.32425"/>
+        <field name="longitude" eval="-117.049016"/>
+    </record>
+    <record id="tms_place_94" model="tms.place">
+        <field name="name">Sánchez Magallanes - Ent. Agua Dulce - Cárdenas</field>
+        <field name="latitude" eval="18.030565"/>
+        <field name="longitude" eval="-93.812954"/>
+    </record>
+    <record id="tms_place_95" model="tms.place">
+        <field name="name">Sánchez Magallanes - Ent. Agua Dulce - Cárdenas</field>
+        <field name="latitude" eval="18.029932"/>
+        <field name="longitude" eval="-93.813072"/>
+    </record>
+    <record id="tms_place_96" model="tms.place">
+        <field name="name">Sánchez Magallanes - Ent. Agua Dulce - Cárdenas</field>
+        <field name="latitude" eval="18.031623"/>
+        <field name="longitude" eval="-93.813693"/>
+    </record>
+    <record id="tms_place_97" model="tms.place">
+        <field name="name">Asunción - Ent. Tulancingo - Venta Grande</field>
+        <field name="latitude" eval="20.147427"/>
+        <field name="longitude" eval="-98.285747"/>
+    </record>
+    <record id="tms_place_98" model="tms.place">
+        <field name="name">Asunción A1 - Ent. Tulancingo - Venta Grande</field>
+        <field name="latitude" eval="20.146458"/>
+        <field name="longitude" eval="-98.286939"/>
+    </record>
+    <record id="tms_place_99" model="tms.place">
+        <field name="name">Asunción A2 - Ent. Tulancingo - Venta Grande</field>
+        <field name="latitude" eval="20.150099"/>
+        <field name="longitude" eval="-98.286642"/>
+    </record>
+    <record id="tms_place_100" model="tms.place">
+        <field name="name">Esperanza - Estación Don - Nogales</field>
+        <field name="latitude" eval="27.603722"/>
+        <field name="longitude" eval="-109.93909"/>
+    </record>
+    <record id="tms_place_101" model="tms.place">
+        <field name="name">Fundición - Estación Don - Nogales</field>
+        <field name="latitude" eval="27.320373"/>
+        <field name="longitude" eval="-109.719802"/>
+    </record>
+    <record id="tms_place_102" model="tms.place">
+        <field name="name">Guaymas - Estación Don - Nogales</field>
+        <field name="latitude" eval="28.036494"/>
+        <field name="longitude" eval="-110.924164"/>
+    </record>
+    <record id="tms_place_103" model="tms.place">
+        <field name="name">Hermosillo - Estación Don - Nogales</field>
+        <field name="latitude" eval="29.220733"/>
+        <field name="longitude" eval="-110.930184"/>
+    </record>
+    <record id="tms_place_104" model="tms.place">
+        <field name="name">La Jaula - Estación Don - Nogales</field>
+        <field name="latitude" eval="26.849818"/>
+        <field name="longitude" eval="-109.373311"/>
+    </record>
+    <record id="tms_place_105" model="tms.place">
+        <field name="name">Magdalena - Estación Don - Nogales</field>
+        <field name="latitude" eval="30.629274"/>
+        <field name="longitude" eval="-110.948775"/>
+    </record>
+    <record id="tms_place_106" model="tms.place">
+        <field name="name">Bermejillo - Gómez Palacio - Corralitos</field>
+        <field name="latitude" eval="25.923655"/>
+        <field name="longitude" eval="-103.622077"/>
+    </record>
+    <record id="tms_place_107" model="tms.place">
+        <field name="name">Ceballos - Gómez Palacio - Corralitos</field>
+        <field name="latitude" eval="26.586694"/>
+        <field name="longitude" eval="-104.057726"/>
+    </record>
+    <record id="tms_place_108" model="tms.place">
+        <field name="name">Acatlán - Guadalajara - Colima</field>
+        <field name="latitude" eval="20.415926"/>
+        <field name="longitude" eval="-103.55704"/>
+    </record>
+    <record id="tms_place_109" model="tms.place">
+        <field name="name">San Marcos - Guadalajara - Colima</field>
+        <field name="latitude" eval="19.433636"/>
+        <field name="longitude" eval="-103.49487"/>
+    </record>
+    <record id="tms_place_110" model="tms.place">
+        <field name="name">Arenal - Guadalajara - Tepic</field>
+        <field name="latitude" eval="20.778748"/>
+        <field name="longitude" eval="-103.662386"/>
+    </record>
+    <record id="tms_place_111" model="tms.place">
+        <field name="name">Plan de Barrancas - Guadalajara - Tepic</field>
+        <field name="latitude" eval="21.005379"/>
+        <field name="longitude" eval="-104.144084"/>
+    </record>
+    <record id="tms_place_112" model="tms.place">
+        <field name="name">Santa María del Oro - Guadalajara - Tepic</field>
+        <field name="latitude" eval="21.328268"/>
+        <field name="longitude" eval="-104.664406"/>
+    </record>
+    <record id="tms_place_113" model="tms.place">
+        <field name="name">Santa María A1 - Guadalajara - Tepic</field>
+        <field name="latitude" eval="21.327973"/>
+        <field name="longitude" eval="-104.663151"/>
+    </record>
+    <record id="tms_place_114" model="tms.place">
+        <field name="name">Santa María A2 - Guadalajara - Tepic</field>
+        <field name="latitude" eval="21.327052"/>
+        <field name="longitude" eval="-104.664677"/>
+    </record>
+    <record id="tms_place_115" model="tms.place">
+        <field name="name">Tequepexpan A1 - Guadalajara - Tepic</field>
+        <field name="latitude" eval="21.213906"/>
+        <field name="longitude" eval="-104.592673"/>
+    </record>
+    <record id="tms_place_116" model="tms.place">
+        <field name="name">Tequepexpan A2 - Guadalajara - Tepic</field>
+        <field name="latitude" eval="21.213664"/>
+        <field name="longitude" eval="-104.594174"/>
+    </record>
+    <record id="tms_place_117" model="tms.place">
+        <field name="name">Tequila - Guadalajara - Tepic</field>
+        <field name="latitude" eval="20.854129"/>
+        <field name="longitude" eval="-103.861211"/>
+    </record>
+    <record id="tms_place_118" model="tms.place">
+        <field name="name">La Joya - Guadalajara - Zapotlanejo</field>
+        <field name="latitude" eval="20.604788"/>
+        <field name="longitude" eval="-103.138943"/>
+    </record>
+    <record id="tms_place_119" model="tms.place">
+        <field name="name">Cazones1 - Gutiérrez Zamora - Tihuatlán</field>
+        <field name="latitude" eval="20.469874"/>
+        <field name="longitude" eval="-97.254669"/>
+    </record>
+    <record id="tms_place_120" model="tms.place">
+        <field name="name">Totomoxtle 1 - Gutiérrez Zamora - Tihuatlán</field>
+        <field name="latitude" eval="20.461964"/>
+        <field name="longitude" eval="-97.245995"/>
+    </record>
+    <record id="tms_place_121" model="tms.place">
+        <field name="name">Totomoxtle 2 - Gutiérrez Zamora - Tihuatlán</field>
+        <field name="latitude" eval="20.460995"/>
+        <field name="longitude" eval="-97.247746"/>
+    </record>
+    <record id="tms_place_122" model="tms.place">
+        <field name="name">Jiménez - Jiménez - Camargo</field>
+        <field name="latitude" eval="27.244991"/>
+        <field name="longitude" eval="-104.933224"/>
+    </record>
+    <record id="tms_place_123" model="tms.place">
+        <field name="name">Oacalco - La Pera - Cuautla</field>
+        <field name="latitude" eval="18.931121"/>
+        <field name="longitude" eval="-99.02562"/>
+    </record>
+    <record id="tms_place_124" model="tms.place">
+        <field name="name">Tepoztlán - La Pera - Cuautla</field>
+        <field name="latitude" eval="18.98681"/>
+        <field name="longitude" eval="-99.112444"/>
+    </record>
+    <record id="tms_place_125" model="tms.place">
+        <field name="name">Acayucan - La Tinaja - Cosoleacaque</field>
+        <field name="latitude" eval="17.910035"/>
+        <field name="longitude" eval="-94.937359"/>
+    </record>
+    <record id="tms_place_126" model="tms.place">
+        <field name="name">Acayucan - La Tinaja - Cosoleacaque</field>
+        <field name="latitude" eval="17.910035"/>
+        <field name="longitude" eval="-94.937359"/>
+    </record>
+    <record id="tms_place_127" model="tms.place">
+        <field name="name">Acayucan - La Tinaja - Cosoleacaque</field>
+        <field name="latitude" eval="17.910035"/>
+        <field name="longitude" eval="-94.937359"/>
+    </record>
+    <record id="tms_place_128" model="tms.place">
+        <field name="name">Cosamaloapan - La Tinaja - Cosoleacaque</field>
+        <field name="latitude" eval="18.334975"/>
+        <field name="longitude" eval="-95.822252"/>
+    </record>
+    <record id="tms_place_129" model="tms.place">
+        <field name="name">Cosamaloapan - La Tinaja - Cosoleacaque</field>
+        <field name="latitude" eval="18.334975"/>
+        <field name="longitude" eval="-95.822252"/>
+    </record>
+    <record id="tms_place_130" model="tms.place">
+        <field name="name">Cosamaloapan - La Tinaja - Cosoleacaque</field>
+        <field name="latitude" eval="18.334975"/>
+        <field name="longitude" eval="-95.822252"/>
+    </record>
+    <record id="tms_place_131" model="tms.place">
+        <field name="name">Las Choapas - Las Choapas - Ocozocuautla</field>
+        <field name="latitude" eval="17.944819"/>
+        <field name="longitude" eval="-94.172372"/>
+    </record>
+    <record id="tms_place_132" model="tms.place">
+        <field name="name">Las Choapas A1 - Las Choapas - Ocozocuautla</field>
+        <field name="latitude" eval="17.942707"/>
+        <field name="longitude" eval="-94.17224"/>
+    </record>
+    <record id="tms_place_133" model="tms.place">
+        <field name="name">Las Choapas A1 - Las Choapas - Ocozocuautla</field>
+        <field name="latitude" eval="17.942707"/>
+        <field name="longitude" eval="-94.17224"/>
+    </record>
+    <record id="tms_place_134" model="tms.place">
+        <field name="name">Malpasito - Las Choapas - Ocozocuautla</field>
+        <field name="latitude" eval="17.349101"/>
+        <field name="longitude" eval="-93.586441"/>
+    </record>
+    <record id="tms_place_135" model="tms.place">
+        <field name="name">Malpasito A1 - Las Choapas - Ocozocuautla</field>
+        <field name="latitude" eval="17.348467"/>
+        <field name="longitude" eval="-93.586933"/>
+    </record>
+    <record id="tms_place_136" model="tms.place">
+        <field name="name">Malpasito A2 - Las Choapas - Ocozocuautla</field>
+        <field name="latitude" eval="17.349152"/>
+        <field name="longitude" eval="-93.585518"/>
+    </record>
+    <record id="tms_place_137" model="tms.place">
+        <field name="name">Ocuilapa - Las Choapas - Ocozocuautla</field>
+        <field name="latitude" eval="16.863172"/>
+        <field name="longitude" eval="-93.40687"/>
+    </record>
+    <record id="tms_place_138" model="tms.place">
+        <field name="name">Cuerámaro A1 - León - Aguascalientes</field>
+        <field name="latitude" eval="21.06969"/>
+        <field name="longitude" eval="-101.679198"/>
+    </record>
+    <record id="tms_place_139" model="tms.place">
+        <field name="name">Cuerámaro A2 - León - Aguascalientes</field>
+        <field name="latitude" eval="21.069085"/>
+        <field name="longitude" eval="-101.67977"/>
+    </record>
+    <record id="tms_place_140" model="tms.place">
+        <field name="name">Encarnación - León - Aguascalientes</field>
+        <field name="latitude" eval="21.489618"/>
+        <field name="longitude" eval="-102.243204"/>
+    </record>
+    <record id="tms_place_141" model="tms.place">
+        <field name="name">Encarnación - León - Aguascalientes</field>
+        <field name="latitude" eval="21.489618"/>
+        <field name="longitude" eval="-102.243204"/>
+    </record>
+    <record id="tms_place_142" model="tms.place">
+        <field name="name">León - León - Aguascalientes</field>
+        <field name="latitude" eval="21.102736"/>
+        <field name="longitude" eval="-101.784601"/>
+    </record>
+    <record id="tms_place_143" model="tms.place">
+        <field name="name">San Francisco A1 - León - Aguascalientes</field>
+        <field name="latitude" eval="21.082341"/>
+        <field name="longitude" eval="-101.745577"/>
+    </record>
+    <record id="tms_place_144" model="tms.place">
+        <field name="name">San Francisco A2 - León - Aguascalientes</field>
+        <field name="latitude" eval="21.081411"/>
+        <field name="longitude" eval="-101.745975"/>
+    </record>
+    <record id="tms_place_145" model="tms.place">
+        <field name="name">San Pedro - Libramiento de Culiacán</field>
+        <field name="latitude" eval="24.748965"/>
+        <field name="longitude" eval="-107.568618"/>
+    </record>
+    <record id="tms_place_146" model="tms.place">
+        <field name="name">Morfín Chávez - Libramiento de Fresnillo</field>
+        <field name="latitude" eval="23.177959"/>
+        <field name="longitude" eval="-102.828733"/>
+    </record>
+    <record id="tms_place_147" model="tms.place">
+        <field name="name">Morfín Chávez - Libramiento de Fresnillo</field>
+        <field name="latitude" eval="23.177959"/>
+        <field name="longitude" eval="-102.828733"/>
+    </record>
+    <record id="tms_place_148" model="tms.place">
+        <field name="name">Morfín Chávez - Libramiento de Fresnillo</field>
+        <field name="latitude" eval="23.177959"/>
+        <field name="longitude" eval="-102.828733"/>
+    </record>
+    <record id="tms_place_149" model="tms.place">
+        <field name="name">Arandas - Libramiento de Irapuato</field>
+        <field name="latitude" eval="20.737502"/>
+        <field name="longitude" eval="-101.379985"/>
+    </record>
+    <record id="tms_place_150" model="tms.place">
+        <field name="name">Arandas A1 - Libramiento de Irapuato</field>
+        <field name="latitude" eval="20.735284"/>
+        <field name="longitude" eval="-101.383209"/>
+    </record>
+    <record id="tms_place_151" model="tms.place">
+        <field name="name">San Marcos - México - Puebla</field>
+        <field name="latitude" eval="19.296387"/>
+        <field name="longitude" eval="-98.870735"/>
+    </record>
+    <record id="tms_place_152" model="tms.place">
+        <field name="name">Arandas A2 - Libramiento de Irapuato</field>
+        <field name="latitude" eval="20.733461"/>
+        <field name="longitude" eval="-101.381244"/>
+    </record>
+    <record id="tms_place_153" model="tms.place">
+        <field name="name">San Cristobal - Libramiento de Irapuato</field>
+        <field name="latitude" eval="20.601075"/>
+        <field name="longitude" eval="-101.438521"/>
+    </record>
+    <record id="tms_place_154" model="tms.place">
+        <field name="name">La Calera - Libramiento de la Piedad</field>
+        <field name="latitude" eval="20.397139"/>
+        <field name="longitude" eval="-101.998746"/>
+    </record>
+    <record id="tms_place_155" model="tms.place">
+        <field name="name">La Calera Aux. - Libramiento de la Piedad</field>
+        <field name="latitude" eval="20.395404"/>
+        <field name="longitude" eval="-101.998207"/>
+    </record>
+    <record id="tms_place_156" model="tms.place">
+        <field name="name">La Calera Aux. - Libramiento de la Piedad</field>
+        <field name="latitude" eval="20.395404"/>
+        <field name="longitude" eval="-101.998207"/>
+    </record>
+    <record id="tms_place_157" model="tms.place">
+        <field name="name">Matehuala - Libramiento de Matehuala</field>
+        <field name="latitude" eval="23.664163"/>
+        <field name="longitude" eval="-100.607299"/>
+    </record>
+    <record id="tms_place_158" model="tms.place">
+        <field name="name">Matehuala A1 - Libramiento de Matehuala</field>
+        <field name="latitude" eval="23.664161"/>
+        <field name="longitude" eval="-100.606222"/>
+    </record>
+    <record id="tms_place_159" model="tms.place">
+        <field name="name">Matehuala A2 - Libramiento de Matehuala</field>
+        <field name="latitude" eval="23.663767"/>
+        <field name="longitude" eval="-100.608339"/>
+    </record>
+    <record id="tms_place_160" model="tms.place">
+        <field name="name">Mexcali A1 - Libramiento de Mexicali</field>
+        <field name="latitude" eval="32.533552"/>
+        <field name="longitude" eval="-115.40878"/>
+    </record>
+    <record id="tms_place_161" model="tms.place">
+        <field name="name">Mexicali - Libramiento de Mexicali</field>
+        <field name="latitude" eval="32.533499"/>
+        <field name="longitude" eval="-115.420765"/>
+    </record>
+    <record id="tms_place_162" model="tms.place">
+        <field name="name">Nogales - Libramiento de Nogales</field>
+        <field name="latitude" eval="31.258312"/>
+        <field name="longitude" eval="-110.974723"/>
+    </record>
+    <record id="tms_place_163" model="tms.place">
+        <field name="name">Tecpan - Libramiento de Tecpan</field>
+        <field name="latitude" eval="17.197011"/>
+        <field name="longitude" eval="-100.626768"/>
+    </record>
+    <record id="tms_place_164" model="tms.place">
+        <field name="name">Calera - Libramiento de Víctor Rosales</field>
+        <field name="latitude" eval="22.941811"/>
+        <field name="longitude" eval="-102.689928"/>
+    </record>
+    <record id="tms_place_165" model="tms.place">
+        <field name="name">Chichimequillas - Libramiento Noreste de Querétaro</field>
+        <field name="latitude" eval="20.705555"/>
+        <field name="longitude" eval="-100.343716"/>
+    </record>
+    <record id="tms_place_166" model="tms.place">
+        <field name="name">Atlacomulco II - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.911815"/>
+        <field name="longitude" eval="-99.85251"/>
+    </record>
+    <record id="tms_place_167" model="tms.place">
+        <field name="name">Acambay - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.923377"/>
+        <field name="longitude" eval="-99.844213"/>
+    </record>
+    <record id="tms_place_168" model="tms.place">
+        <field name="name">Jilotepec - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.976547"/>
+        <field name="longitude" eval="-99.53149"/>
+    </record>
+    <record id="tms_place_169" model="tms.place">
+        <field name="name">Querétaro 1 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.998688"/>
+        <field name="longitude" eval="-99.487671"/>
+    </record>
+    <record id="tms_place_170" model="tms.place">
+        <field name="name">Querétaro 2 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.996155"/>
+        <field name="longitude" eval="-99.489945"/>
+    </record>
+    <record id="tms_place_171" model="tms.place">
+        <field name="name">Querétaro 3 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.997821"/>
+        <field name="longitude" eval="-99.492"/>
+    </record>
+    <record id="tms_place_172" model="tms.place">
+        <field name="name">Querétaro 4 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="20.000504"/>
+        <field name="longitude" eval="-99.489956"/>
+    </record>
+    <record id="tms_place_173" model="tms.place">
+        <field name="name">Tula II-1 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="20.071871"/>
+        <field name="longitude" eval="-99.367698"/>
+    </record>
+    <record id="tms_place_174" model="tms.place">
+        <field name="name">Tula II-2 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="20.070355"/>
+        <field name="longitude" eval="-99.368243"/>
+    </record>
+    <record id="tms_place_175" model="tms.place">
+        <field name="name">Tula II-3 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="20.072661"/>
+        <field name="longitude" eval="-99.369804"/>
+    </record>
+    <record id="tms_place_176" model="tms.place">
+        <field name="name">Tula II-4 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="20.071311"/>
+        <field name="longitude" eval="-99.367319"/>
+    </record>
+    <record id="tms_place_177" model="tms.place">
+        <field name="name">Tula I-1 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="20.099725"/>
+        <field name="longitude" eval="-99.280562"/>
+    </record>
+    <record id="tms_place_178" model="tms.place">
+        <field name="name">Tula I-2 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="20.098169"/>
+        <field name="longitude" eval="-99.283149"/>
+    </record>
+    <record id="tms_place_179" model="tms.place">
+        <field name="name">Tula I-3 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="20.09821"/>
+        <field name="longitude" eval="-99.286059"/>
+    </record>
+    <record id="tms_place_180" model="tms.place">
+        <field name="name">Tula I-4 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="20.100076"/>
+        <field name="longitude" eval="-99.28351"/>
+    </record>
+    <record id="tms_place_181" model="tms.place">
+        <field name="name">Atitalaquia 1 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="20.067268"/>
+        <field name="longitude" eval="-99.218551"/>
+    </record>
+    <record id="tms_place_182" model="tms.place">
+        <field name="name">Atitalaquia 2 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="20.064868"/>
+        <field name="longitude" eval="-99.219068"/>
+    </record>
+    <record id="tms_place_183" model="tms.place">
+        <field name="name">Ajoloapan 1 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.956086"/>
+        <field name="longitude" eval="-99.053339"/>
+    </record>
+    <record id="tms_place_184" model="tms.place">
+        <field name="name">Ajoloapan 2 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.955443"/>
+        <field name="longitude" eval="-99.052776"/>
+    </record>
+    <record id="tms_place_185" model="tms.place">
+        <field name="name">Ajoloapan 3 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.955845"/>
+        <field name="longitude" eval="-99.055422"/>
+    </record>
+    <record id="tms_place_186" model="tms.place">
+        <field name="name">Ajoloapan 4 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.95638"/>
+        <field name="longitude" eval="-99.05548"/>
+    </record>
+    <record id="tms_place_187" model="tms.place">
+        <field name="name">Pachuca - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.927508"/>
+        <field name="longitude" eval="-98.891452"/>
+    </record>
+    <record id="tms_place_188" model="tms.place">
+        <field name="name">Tulancingo 1 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.834861"/>
+        <field name="longitude" eval="-98.700138"/>
+    </record>
+    <record id="tms_place_189" model="tms.place">
+        <field name="name">Tulancingo 2 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.83368"/>
+        <field name="longitude" eval="-98.698801"/>
+    </record>
+    <record id="tms_place_190" model="tms.place">
+        <field name="name">Tulancingo 3 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.832456"/>
+        <field name="longitude" eval="-98.700121"/>
+    </record>
+    <record id="tms_place_191" model="tms.place">
+        <field name="name">Tulancingo 4 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.83364"/>
+        <field name="longitude" eval="-98.701536"/>
+    </record>
+    <record id="tms_place_192" model="tms.place">
+        <field name="name">Cd. Sahagún 1 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.756661"/>
+        <field name="longitude" eval="-98.628326"/>
+    </record>
+    <record id="tms_place_193" model="tms.place">
+        <field name="name">Cd. Sahagún 2 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.75596"/>
+        <field name="longitude" eval="-98.628121"/>
+    </record>
+    <record id="tms_place_194" model="tms.place">
+        <field name="name">Cd. Sahagún 3 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.755427"/>
+        <field name="longitude" eval="-98.629498"/>
+    </record>
+    <record id="tms_place_195" model="tms.place">
+        <field name="name">Cd. Sahagún 4 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.756069"/>
+        <field name="longitude" eval="-98.630532"/>
+    </record>
+    <record id="tms_place_196" model="tms.place">
+        <field name="name">Calpulalpan 1 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.62148"/>
+        <field name="longitude" eval="-98.548095"/>
+    </record>
+    <record id="tms_place_197" model="tms.place">
+        <field name="name">Calpulalpan 2 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.62015"/>
+        <field name="longitude" eval="-98.547003"/>
+    </record>
+    <record id="tms_place_198" model="tms.place">
+        <field name="name">Calpulalpan 3 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.619189"/>
+        <field name="longitude" eval="-98.54942"/>
+    </record>
+    <record id="tms_place_199" model="tms.place">
+        <field name="name">Calpulalpan 4 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.619447"/>
+        <field name="longitude" eval="-98.54967"/>
+    </record>
+    <record id="tms_place_200" model="tms.place">
+        <field name="name">Sanctórum 1 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.515572"/>
+        <field name="longitude" eval="-98.469019"/>
+    </record>
+    <record id="tms_place_201" model="tms.place">
+        <field name="name">Sanctórum 2 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.512699"/>
+        <field name="longitude" eval="-98.466906"/>
+    </record>
+    <record id="tms_place_202" model="tms.place">
+        <field name="name">San Martín - México - Puebla</field>
+        <field name="latitude" eval="19.241121"/>
+        <field name="longitude" eval="-98.385855"/>
+    </record>
+    <record id="tms_place_203" model="tms.place">
+        <field name="name">Sanctórum 3 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.512702"/>
+        <field name="longitude" eval="-98.468831"/>
+    </record>
+    <record id="tms_place_204" model="tms.place">
+        <field name="name">Sanctórum 4 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.513876"/>
+        <field name="longitude" eval="-98.46991"/>
+    </record>
+    <record id="tms_place_205" model="tms.place">
+        <field name="name">Sanctórum 5 - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.518652"/>
+        <field name="longitude" eval="-98.471763"/>
+    </record>
+    <record id="tms_place_206" model="tms.place">
+        <field name="name">Texmelucan - Libramiento Norte de la Ciudad de México</field>
+        <field name="latitude" eval="19.301795"/>
+        <field name="longitude" eval="-98.409616"/>
+    </record>
+    <record id="tms_place_207" model="tms.place">
+        <field name="name">La Carbonera - Libramiento Oriente de Saltillo</field>
+        <field name="latitude" eval="25.510976"/>
+        <field name="longitude" eval="-100.868373"/>
+    </record>
+    <record id="tms_place_208" model="tms.place">
+        <field name="name">San Nicolás de los Jassos - Libramiento Oriente de San Luis Potosí</field>
+        <field name="latitude" eval="22.129759"/>
+        <field name="longitude" eval="-100.825106"/>
+    </record>
+    <record id="tms_place_209" model="tms.place">
+        <field name="name">San Nicolás de los Jassos - Libramiento Oriente de San Luis Potosí</field>
+        <field name="latitude" eval="22.129759"/>
+        <field name="longitude" eval="-100.825106"/>
+    </record>
+    <record id="tms_place_210" model="tms.place">
+        <field name="name">San Nicolás de los Jassos - Libramiento Oriente de San Luis Potosí</field>
+        <field name="latitude" eval="22.129759"/>
+        <field name="longitude" eval="-100.825106"/>
+    </record>
+    <record id="tms_place_211" model="tms.place">
+        <field name="name">Loma Real - Libramiento Poniente de Tampico</field>
+        <field name="latitude" eval="22.276443"/>
+        <field name="longitude" eval="-97.893343"/>
+    </record>
+    <record id="tms_place_212" model="tms.place">
+        <field name="name">Loma Real - Libramiento Poniente de Tampico</field>
+        <field name="latitude" eval="22.276443"/>
+        <field name="longitude" eval="-97.893343"/>
+    </record>
+    <record id="tms_place_213" model="tms.place">
+        <field name="name">Tampico - Libramiento Poniente de Tampico</field>
+        <field name="latitude" eval="22.275332"/>
+        <field name="longitude" eval="-97.893427"/>
+    </record>
+    <record id="tms_place_214" model="tms.place">
+        <field name="name">Ecuandureo - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="20.17505"/>
+        <field name="longitude" eval="-102.191319"/>
+    </record>
+    <record id="tms_place_215" model="tms.place">
+        <field name="name">Ecuandureo - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="20.17505"/>
+        <field name="longitude" eval="-102.191319"/>
+    </record>
+    <record id="tms_place_216" model="tms.place">
+        <field name="name">Ecuandureo - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="20.17505"/>
+        <field name="longitude" eval="-102.191319"/>
+    </record>
+    <record id="tms_place_217" model="tms.place">
+        <field name="name">Huaniqueo A1 - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.884267"/>
+        <field name="longitude" eval="-101.510489"/>
+    </record>
+    <record id="tms_place_218" model="tms.place">
+        <field name="name">Huaniqueo A2 - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.882534"/>
+        <field name="longitude" eval="-101.511604"/>
+    </record>
+    <record id="tms_place_219" model="tms.place">
+        <field name="name">Jeráhuaro A1 - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.894416"/>
+        <field name="longitude" eval="-100.646701"/>
+    </record>
+    <record id="tms_place_220" model="tms.place">
+        <field name="name">Jeráhuaro A2 - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.893593"/>
+        <field name="longitude" eval="-100.651203"/>
+    </record>
+    <record id="tms_place_221" model="tms.place">
+        <field name="name">Ocotlán - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="20.40586"/>
+        <field name="longitude" eval="-102.73889"/>
+    </record>
+    <record id="tms_place_222" model="tms.place">
+        <field name="name">Ocotlán A1 - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="20.406969"/>
+        <field name="longitude" eval="-102.738906"/>
+    </record>
+    <record id="tms_place_223" model="tms.place">
+        <field name="name">Ocotlán A2 - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="20.404903"/>
+        <field name="longitude" eval="-102.739378"/>
+    </record>
+    <record id="tms_place_224" model="tms.place">
+        <field name="name">Panindícuaro - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.972189"/>
+        <field name="longitude" eval="-101.756945"/>
+    </record>
+    <record id="tms_place_225" model="tms.place">
+        <field name="name">Panindícuaro - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.972189"/>
+        <field name="longitude" eval="-101.756945"/>
+    </record>
+    <record id="tms_place_226" model="tms.place">
+        <field name="name">Panindícuaro - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.972189"/>
+        <field name="longitude" eval="-101.756945"/>
+    </record>
+    <record id="tms_place_227" model="tms.place">
+        <field name="name">Panindícuaro - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.972189"/>
+        <field name="longitude" eval="-101.756945"/>
+    </record>
+    <record id="tms_place_228" model="tms.place">
+        <field name="name">Vista Hermosa A1 - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="20.269788"/>
+        <field name="longitude" eval="-102.43991"/>
+    </record>
+    <record id="tms_place_229" model="tms.place">
+        <field name="name">Vista Hermosa A2 - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="20.269344"/>
+        <field name="longitude" eval="-102.441826"/>
+    </record>
+    <record id="tms_place_230" model="tms.place">
+        <field name="name">Zinapécuaro - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.901776"/>
+        <field name="longitude" eval="-100.788521"/>
+    </record>
+    <record id="tms_place_231" model="tms.place">
+        <field name="name">Zinapécuaro - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.901776"/>
+        <field name="longitude" eval="-100.788521"/>
+    </record>
+    <record id="tms_place_232" model="tms.place">
+        <field name="name">Zinapécuaro A1 - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.902373"/>
+        <field name="longitude" eval="-100.787561"/>
+    </record>
+    <record id="tms_place_233" model="tms.place">
+        <field name="name">Zinapécuaro A1 - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.902373"/>
+        <field name="longitude" eval="-100.787561"/>
+    </record>
+    <record id="tms_place_234" model="tms.place">
+        <field name="name">Zinapécuaro A2 - Maravatío - Zapotlanejo</field>
+        <field name="latitude" eval="19.900892"/>
+        <field name="longitude" eval="-100.789019"/>
+    </record>
+    <record id="tms_place_235" model="tms.place">
+        <field name="name">Costa Rica - Mazatlán - Culiacán</field>
+        <field name="latitude" eval="24.570288"/>
+        <field name="longitude" eval="-107.430223"/>
+    </record>
+    <record id="tms_place_236" model="tms.place">
+        <field name="name">Mármol - Mazatlán - Culiacán</field>
+        <field name="latitude" eval="23.471208"/>
+        <field name="longitude" eval="-106.569542"/>
+    </record>
+    <record id="tms_place_237" model="tms.place">
+        <field name="name">Quilá A1 - Mazatlán - Culiacán</field>
+        <field name="latitude" eval="24.397637"/>
+        <field name="longitude" eval="-107.269976"/>
+    </record>
+    <record id="tms_place_238" model="tms.place">
+        <field name="name">Quilá A2 - Mazatlán - Culiacán</field>
+        <field name="latitude" eval="24.396624"/>
+        <field name="longitude" eval="-107.271899"/>
+    </record>
+    <record id="tms_place_239" model="tms.place">
+        <field name="name">Pisté - Mérida - Cancún</field>
+        <field name="latitude" eval="20.728862"/>
+        <field name="longitude" eval="-88.583181"/>
+    </record>
+    <record id="tms_place_240" model="tms.place">
+        <field name="name">Pisté - Mérida - Cancún</field>
+        <field name="latitude" eval="20.728862"/>
+        <field name="longitude" eval="-88.583181"/>
+    </record>
+    <record id="tms_place_241" model="tms.place">
+        <field name="name">Pisté - Mérida - Cancún</field>
+        <field name="latitude" eval="20.728862"/>
+        <field name="longitude" eval="-88.583181"/>
+    </record>
+    <record id="tms_place_242" model="tms.place">
+        <field name="name">Xcan - Mérida - Cancún</field>
+        <field name="latitude" eval="20.876892"/>
+        <field name="longitude" eval="-87.63614"/>
+    </record>
+    <record id="tms_place_243" model="tms.place">
+        <field name="name">Tlalpan - México - Cuernavaca</field>
+        <field name="latitude" eval="19.241915"/>
+        <field name="longitude" eval="-99.148321"/>
+    </record>
+    <record id="tms_place_244" model="tms.place">
+        <field name="name">Tres Marías A1 - México - Cuernavaca</field>
+        <field name="latitude" eval="19.050851"/>
+        <field name="longitude" eval="-99.241365"/>
+    </record>
+    <record id="tms_place_245" model="tms.place">
+        <field name="name">Tres Marías A2 - México - Cuernavaca</field>
+        <field name="latitude" eval="19.056209"/>
+        <field name="longitude" eval="-99.241097"/>
+    </record>
+    <record id="tms_place_246" model="tms.place">
+        <field name="name">Contadero 1 - México - La Marquesa</field>
+        <field name="latitude" eval="19.333688"/>
+        <field name="longitude" eval="-99.313794"/>
+    </record>
+    <record id="tms_place_247" model="tms.place">
+        <field name="name">Contadero 2 - México - La Marquesa</field>
+        <field name="latitude" eval="19.331793"/>
+        <field name="longitude" eval="-99.31516"/>
+    </record>
+    <record id="tms_place_248" model="tms.place">
+        <field name="name">La Venta - México - La Marquesa</field>
+        <field name="latitude" eval="19.332852"/>
+        <field name="longitude" eval="-99.314303"/>
+    </record>
+    <record id="tms_place_249" model="tms.place">
+        <field name="name">La Venta - México - La Marquesa</field>
+        <field name="latitude" eval="19.332852"/>
+        <field name="longitude" eval="-99.314303"/>
+    </record>
+    <record id="tms_place_250" model="tms.place">
+        <field name="name">La Venta - México - La Marquesa</field>
+        <field name="latitude" eval="19.332852"/>
+        <field name="longitude" eval="-99.314303"/>
+    </record>
+    <record id="tms_place_251" model="tms.place">
+        <field name="name">Santa Fe - México - La Marquesa</field>
+        <field name="latitude" eval="19.363385"/>
+        <field name="longitude" eval="-99.26732"/>
+    </record>
+    <record id="tms_place_252" model="tms.place">
+        <field name="name">Ojo de Agua - México - Pachuca</field>
+        <field name="latitude" eval="19.618814"/>
+        <field name="longitude" eval="-99.029522"/>
+    </record>
+    <record id="tms_place_253" model="tms.place">
+        <field name="name">San Cristóbal - México - Pachuca</field>
+        <field name="latitude" eval="19.602763"/>
+        <field name="longitude" eval="-99.038148"/>
+    </record>
+    <record id="tms_place_254" model="tms.place">
+        <field name="name">Chalco - México - Puebla</field>
+        <field name="latitude" eval="19.292034"/>
+        <field name="longitude" eval="-98.88175"/>
+    </record>
+    <record id="tms_place_255" model="tms.place">
+        <field name="name">Jorobas A1 - México - Querétaro</field>
+        <field name="latitude" eval="19.826191"/>
+        <field name="longitude" eval="-99.250048"/>
+    </record>
+    <record id="tms_place_256" model="tms.place">
+        <field name="name">Jorobas A2 - México - Querétaro</field>
+        <field name="latitude" eval="19.825708"/>
+        <field name="longitude" eval="-99.250155"/>
+    </record>
+    <record id="tms_place_257" model="tms.place">
+        <field name="name">Palmillas - México - Querétaro</field>
+        <field name="latitude" eval="20.296108"/>
+        <field name="longitude" eval="-99.929058"/>
+    </record>
+    <record id="tms_place_258" model="tms.place">
+        <field name="name">Polotitlán A1 - México - Querétaro</field>
+        <field name="latitude" eval="20.22643"/>
+        <field name="longitude" eval="-99.810686"/>
+    </record>
+    <record id="tms_place_259" model="tms.place">
+        <field name="name">Polotitlán A2 - México - Querétaro</field>
+        <field name="latitude" eval="20.225308"/>
+        <field name="longitude" eval="-99.810547"/>
+    </record>
+    <record id="tms_place_260" model="tms.place">
+        <field name="name">Tepotzotlán - México - Querétaro</field>
+        <field name="latitude" eval="19.715364"/>
+        <field name="longitude" eval="-99.207569"/>
+    </record>
+    <record id="tms_place_261" model="tms.place">
+        <field name="name">Agualeguas A1 - Monterrey - Nuevo Laredo</field>
+        <field name="latitude" eval="26.340266"/>
+        <field name="longitude" eval="-100.070469"/>
+    </record>
+    <record id="tms_place_262" model="tms.place">
+        <field name="name">Agualeguas A2 - Monterrey - Nuevo Laredo</field>
+        <field name="latitude" eval="26.341505"/>
+        <field name="longitude" eval="-100.071739"/>
+    </record>
+    <record id="tms_place_263" model="tms.place">
+        <field name="name">Parás - Monterrey - Nuevo Laredo</field>
+        <field name="latitude" eval="26.508381"/>
+        <field name="longitude" eval="-100.008192"/>
+    </record>
+    <record id="tms_place_264" model="tms.place">
+        <field name="name">Sabinas - Monterrey - Nuevo Laredo</field>
+        <field name="latitude" eval="26.512104"/>
+        <field name="longitude" eval="-100.007159"/>
+    </record>
+    <record id="tms_place_265" model="tms.place">
+        <field name="name">Sabinas Aux. - Monterrey - Nuevo Laredo</field>
+        <field name="latitude" eval="26.508381"/>
+        <field name="longitude" eval="-100.008192"/>
+    </record>
+    <record id="tms_place_266" model="tms.place">
+        <field name="name">Vallecillos - Monterrey - Nuevo Laredo</field>
+        <field name="latitude" eval="26.642361"/>
+        <field name="longitude" eval="-99.942202"/>
+    </record>
+    <record id="tms_place_267" model="tms.place">
+        <field name="name">Playa 1 A1 - Monterrey - Saltillo y Libramiento Norponiente de Saltillo</field>
+        <field name="latitude" eval="25.456853"/>
+        <field name="longitude" eval="-101.063694"/>
+    </record>
+    <record id="tms_place_268" model="tms.place">
+        <field name="name">Playa 1 A2 - Monterrey - Saltillo y Libramiento Norponiente de Saltillo</field>
+        <field name="latitude" eval="25.457025"/>
+        <field name="longitude" eval="-101.063828"/>
+    </record>
+    <record id="tms_place_269" model="tms.place">
+        <field name="name">Playa 1 P - Monterrey - Saltillo y Libramiento Norponiente de Saltillo</field>
+        <field name="latitude" eval="25.44846"/>
+        <field name="longitude" eval="-101.067009"/>
+    </record>
+    <record id="tms_place_270" model="tms.place">
+        <field name="name">Playa 2 A1 - Monterrey - Saltillo y Libramiento Norponiente de Saltillo</field>
+        <field name="latitude" eval="25.615722"/>
+        <field name="longitude" eval="-100.908414"/>
+    </record>
+    <record id="tms_place_271" model="tms.place">
+        <field name="name">Playa 2 A2 - Monterrey - Saltillo y Libramiento Norponiente de Saltillo</field>
+        <field name="latitude" eval="25.616308"/>
+        <field name="longitude" eval="-100.908432"/>
+    </record>
+    <record id="tms_place_272" model="tms.place">
+        <field name="name">Playa 2 P - Monterrey - Saltillo y Libramiento Norponiente de Saltillo</field>
+        <field name="latitude" eval="25.612236"/>
+        <field name="longitude" eval="-100.913526"/>
+    </record>
+    <record id="tms_place_273" model="tms.place">
+        <field name="name">Playa 3 A1 - Monterrey - Saltillo y Libramiento Norponiente de Saltillo</field>
+        <field name="latitude" eval="25.696264"/>
+        <field name="longitude" eval="-100.57736"/>
+    </record>
+    <record id="tms_place_274" model="tms.place">
+        <field name="name">Playa 3 A2 - Monterrey - Saltillo y Libramiento Norponiente de Saltillo</field>
+        <field name="latitude" eval="25.696264"/>
+        <field name="longitude" eval="-100.57736"/>
+    </record>
+    <record id="tms_place_275" model="tms.place">
+        <field name="name">Playa 3 P - Monterrey - Saltillo y Libramiento Norponiente de Saltillo</field>
+        <field name="latitude" eval="25.696264"/>
+        <field name="longitude" eval="-100.57736"/>
+    </record>
+    <record id="tms_place_276" model="tms.place">
+        <field name="name">La Cinta - Morelia - Salamanca</field>
+        <field name="latitude" eval="20.073484"/>
+        <field name="longitude" eval="-101.136663"/>
+    </record>
+    <record id="tms_place_277" model="tms.place">
+        <field name="name">Cuitzeo A1 - Morelia - Salamanca</field>
+        <field name="latitude" eval="19.968867"/>
+        <field name="longitude" eval="-101.159727"/>
+    </record>
+    <record id="tms_place_278" model="tms.place">
+        <field name="name">Cuitzeo A2 - Morelia - Salamanca</field>
+        <field name="latitude" eval="19.968282"/>
+        <field name="longitude" eval="-101.162062"/>
+    </record>
+    <record id="tms_place_279" model="tms.place">
+        <field name="name">Uriangato - Morelia - Salamanca</field>
+        <field name="latitude" eval="20.182921"/>
+        <field name="longitude" eval="-101.157187"/>
+    </record>
+    <record id="tms_place_280" model="tms.place">
+        <field name="name">Uriangato - Morelia - Salamanca</field>
+        <field name="latitude" eval="20.182921"/>
+        <field name="longitude" eval="-101.157187"/>
+    </record>
+    <record id="tms_place_281" model="tms.place">
+        <field name="name">Valle de Santiago - Morelia - Salamanca</field>
+        <field name="latitude" eval="20.372552"/>
+        <field name="longitude" eval="-101.147354"/>
+    </record>
+    <record id="tms_place_282" model="tms.place">
+        <field name="name">Valtierrilla - Morelia - Salamanca</field>
+        <field name="latitude" eval="20.542645"/>
+        <field name="longitude" eval="-101.137717"/>
+    </record>
+    <record id="tms_place_283" model="tms.place">
+        <field name="name">Valtierrilla A1 - Morelia - Salamanca</field>
+        <field name="latitude" eval="20.553053"/>
+        <field name="longitude" eval="-101.136236"/>
+    </record>
+    <record id="tms_place_284" model="tms.place">
+        <field name="name">Valtierrilla A2 - Morelia - Salamanca</field>
+        <field name="latitude" eval="20.553134"/>
+        <field name="longitude" eval="-101.136428"/>
+    </record>
+    <record id="tms_place_285" model="tms.place">
+        <field name="name">Feliciano - Nueva Italia - Lázaro Cárdenas</field>
+        <field name="latitude" eval="18.006497"/>
+        <field name="longitude" eval="-101.961761"/>
+    </record>
+    <record id="tms_place_286" model="tms.place">
+        <field name="name">Feliciano - Nueva Italia - Lázaro Cárdenas</field>
+        <field name="latitude" eval="18.006497"/>
+        <field name="longitude" eval="-101.961761"/>
+    </record>
+    <record id="tms_place_287" model="tms.place">
+        <field name="name">Feliciano A1 - Nueva Italia - Lázaro Cárdenas</field>
+        <field name="latitude" eval="18.004663"/>
+        <field name="longitude" eval="-101.9639"/>
+    </record>
+    <record id="tms_place_288" model="tms.place">
+        <field name="name">Feliciano A2 - Nueva Italia - Lázaro Cárdenas</field>
+        <field name="latitude" eval="18.004082"/>
+        <field name="longitude" eval="-101.961901"/>
+    </record>
+    <record id="tms_place_289" model="tms.place">
+        <field name="name">Las Cañas - Nueva Italia - Lázaro Cárdenas</field>
+        <field name="latitude" eval="18.554181"/>
+        <field name="longitude" eval="-101.970317"/>
+    </record>
+    <record id="tms_place_290" model="tms.place">
+        <field name="name">Las Cañas A1 - Nueva Italia - Lázaro Cárdenas</field>
+        <field name="latitude" eval="18.553657"/>
+        <field name="longitude" eval="-101.972961"/>
+    </record>
+    <record id="tms_place_291" model="tms.place">
+        <field name="name">Zirahuén - Pátzcuaro - Uruapan</field>
+        <field name="latitude" eval="19.505606"/>
+        <field name="longitude" eval="-101.659297"/>
+    </record>
+    <record id="tms_place_292" model="tms.place">
+        <field name="name">Zirahuén A1 - Pátzcuaro - Uruapan</field>
+        <field name="latitude" eval="19.482235"/>
+        <field name="longitude" eval="-101.730717"/>
+    </record>
+    <record id="tms_place_293" model="tms.place">
+        <field name="name">Zurumucapío - Pátzcuaro - Uruapan</field>
+        <field name="latitude" eval="19.441166"/>
+        <field name="longitude" eval="-101.882235"/>
+    </record>
+    <record id="tms_place_294" model="tms.place">
+        <field name="name">Peñón - Peñón - Texcoco</field>
+        <field name="latitude" eval="19.468849"/>
+        <field name="longitude" eval="-99.004418"/>
+    </record>
+    <record id="tms_place_295" model="tms.place">
+        <field name="name">Texcoco - Peñón - Texcoco</field>
+        <field name="latitude" eval="19.502896"/>
+        <field name="longitude" eval="-98.912747"/>
+    </record>
+    <record id="tms_place_296" model="tms.place">
+        <field name="name">Las Vigas - Perote - Banderilla y Libramiento de Xalapa</field>
+        <field name="latitude" eval="19.627722"/>
+        <field name="longitude" eval="-97.153089"/>
+    </record>
+    <record id="tms_place_297" model="tms.place">
+        <field name="name">Miradores - Perote - Banderilla y Libramiento de Xalapa</field>
+        <field name="latitude" eval="19.472105"/>
+        <field name="longitude" eval="-96.772824"/>
+    </record>
+    <record id="tms_place_298" model="tms.place">
+        <field name="name">Amozoc - Puebla - Acatzingo</field>
+        <field name="latitude" eval="19.049787"/>
+        <field name="longitude" eval="-98.032313"/>
+    </record>
+    <record id="tms_place_299" model="tms.place">
+        <field name="name">Amozoc - Puebla - Acatzingo</field>
+        <field name="latitude" eval="19.049787"/>
+        <field name="longitude" eval="-98.032313"/>
+    </record>
+    <record id="tms_place_300" model="tms.place">
+        <field name="name">Alvarado - Puente Alvarado</field>
+        <field name="latitude" eval="18.769878"/>
+        <field name="longitude" eval="-95.744556"/>
+    </record>
+    <record id="tms_place_301" model="tms.place">
+        <field name="name">Cadereyta - Puente Cadereyta</field>
+        <field name="latitude" eval="25.601059"/>
+        <field name="longitude" eval="-100.005737"/>
+    </record>
+    <record id="tms_place_302" model="tms.place">
+        <field name="name">Camargo - Puente Camargo</field>
+        <field name="latitude" eval="26.362441"/>
+        <field name="longitude" eval="-98.806402"/>
+    </record>
+    <record id="tms_place_303" model="tms.place">
+        <field name="name">Caracol - Puente Caracol</field>
+        <field name="latitude" eval="18.133114"/>
+        <field name="longitude" eval="-96.136671"/>
+    </record>
+    <record id="tms_place_304" model="tms.place">
+        <field name="name">Cd. Acuña - Puente Cd. Acuña</field>
+        <field name="latitude" eval="29.325454"/>
+        <field name="longitude" eval="-100.928793"/>
+    </record>
+    <record id="tms_place_305" model="tms.place">
+        <field name="name">Coatzacoalcos - Puente Coatzacoalcos</field>
+        <field name="latitude" eval="18.115156"/>
+        <field name="longitude" eval="-94.410884"/>
+    </record>
+    <record id="tms_place_306" model="tms.place">
+        <field name="name">San Luis Río Colorado - Puente Colorado</field>
+        <field name="latitude" eval="32.491685"/>
+        <field name="longitude" eval="-114.808756"/>
+    </record>
+    <record id="tms_place_307" model="tms.place">
+        <field name="name">San Luis Río Colorado - Puente Colorado II</field>
+        <field name="latitude" eval="32.491685"/>
+        <field name="longitude" eval="-114.808756"/>
+    </record>
+    <record id="tms_place_308" model="tms.place">
+        <field name="name">Culiacán - Puente Culiacán</field>
+        <field name="latitude" eval="24.948879"/>
+        <field name="longitude" eval="-107.545718"/>
+    </record>
+    <record id="tms_place_309" model="tms.place">
+        <field name="name">Iguala - Puente de Ixtla - Iguala</field>
+        <field name="latitude" eval="18.33621"/>
+        <field name="longitude" eval="-99.508327"/>
+    </record>
+    <record id="tms_place_310" model="tms.place">
+        <field name="name">Dovalí - Puente Dovalí Jaime (Cosoleacaque - Nuevo Teapa)</field>
+        <field name="latitude" eval="18.013379"/>
+        <field name="longitude" eval="-94.396777"/>
+    </record>
+    <record id="tms_place_311" model="tms.place">
+        <field name="name">Dovalí Bis - Puente Dovalí Jaime (Cosoleacaque - Nuevo Teapa)</field>
+        <field name="latitude" eval="18.014055"/>
+        <field name="longitude" eval="-94.443264"/>
+    </record>
+    <record id="tms_place_312" model="tms.place">
+        <field name="name">El Zacatal - Puente El Zacatal</field>
+        <field name="latitude" eval="18.61286"/>
+        <field name="longitude" eval="-91.860817"/>
+    </record>
+    <record id="tms_place_313" model="tms.place">
+        <field name="name">Juárez Lincoln - Puente Juárez - Lincoln</field>
+        <field name="latitude" eval="27.498254"/>
+        <field name="longitude" eval="-99.502409"/>
+    </record>
+    <record id="tms_place_314" model="tms.place">
+        <field name="name">La Piedad - Puente La Piedad</field>
+        <field name="latitude" eval="20.352787"/>
+        <field name="longitude" eval="-102.025175"/>
+    </record>
+    <record id="tms_place_315" model="tms.place">
+        <field name="name">Isla Aguada - Puente La Unidad - Eugenio Echeverria Castellot</field>
+        <field name="latitude" eval="18.785548"/>
+        <field name="longitude" eval="-91.494874"/>
+    </record>
+    <record id="tms_place_316" model="tms.place">
+        <field name="name">Laredo I - Puente Laredo I (Las Américas)</field>
+        <field name="latitude" eval="27.49856"/>
+        <field name="longitude" eval="-99.507378"/>
+    </record>
+    <record id="tms_place_317" model="tms.place">
+        <field name="name">Las Flores - Puente Las Flores</field>
+        <field name="latitude" eval="26.060544"/>
+        <field name="longitude" eval="-97.950416"/>
+    </record>
+    <record id="tms_place_318" model="tms.place">
+        <field name="name">Libre Comercio - Puente Libre Comercio</field>
+        <field name="latitude" eval="26.021585"/>
+        <field name="longitude" eval="-97.738817"/>
+    </record>
+    <record id="tms_place_319" model="tms.place">
+        <field name="name">Los Tomates - Puente Los Tomates</field>
+        <field name="latitude" eval="25.874233"/>
+        <field name="longitude" eval="-97.474692"/>
+    </record>
+    <record id="tms_place_320" model="tms.place">
+        <field name="name">Matamoros - Puente Matamoros</field>
+        <field name="latitude" eval="25.891382"/>
+        <field name="longitude" eval="-97.503914"/>
+    </record>
+    <record id="tms_place_321" model="tms.place">
+        <field name="name">Miguel Alemán - Puente Miguel Alemán</field>
+        <field name="latitude" eval="26.402916"/>
+        <field name="longitude" eval="-99.020661"/>
+    </record>
+    <record id="tms_place_322" model="tms.place">
+        <field name="name">Nautla - Puente Nautla</field>
+        <field name="latitude" eval="20.210215"/>
+        <field name="longitude" eval="-96.778734"/>
+    </record>
+    <record id="tms_place_323" model="tms.place">
+        <field name="name">Nuevo Laredo III - Puente Nuevo Laredo III</field>
+        <field name="latitude" eval="27.595071"/>
+        <field name="longitude" eval="-99.541437"/>
+    </record>
+    <record id="tms_place_324" model="tms.place">
+        <field name="name">Ojinaga - Puente Ojinaga</field>
+        <field name="latitude" eval="29.561043"/>
+        <field name="longitude" eval="-104.397206"/>
+    </record>
+    <record id="tms_place_325" model="tms.place">
+        <field name="name">Papaloapan - Puente Papaloapan</field>
+        <field name="latitude" eval="18.159588"/>
+        <field name="longitude" eval="-96.096688"/>
+    </record>
+    <record id="tms_place_326" model="tms.place">
+        <field name="name">Paso del Norte - Puente Paso del Norte</field>
+        <field name="latitude" eval="31.745887"/>
+        <field name="longitude" eval="-106.486418"/>
+    </record>
+    <record id="tms_place_327" model="tms.place">
+        <field name="name">Pánuco - Puente Pánuco</field>
+        <field name="latitude" eval="22.148794"/>
+        <field name="longitude" eval="-98.144897"/>
+    </record>
+    <record id="tms_place_328" model="tms.place">
+        <field name="name">Piedras Negras - Puente Piedras Negras</field>
+        <field name="latitude" eval="28.705234"/>
+        <field name="longitude" eval="-100.512987"/>
+    </record>
+    <record id="tms_place_329" model="tms.place">
+        <field name="name">Piedras Negras II - Puente Piedras Negras II</field>
+        <field name="latitude" eval="28.697047"/>
+        <field name="longitude" eval="-100.512395"/>
+    </record>
+    <record id="tms_place_330" model="tms.place">
+        <field name="name">Reynosa - Puente Reynosa</field>
+        <field name="latitude" eval="26.093215"/>
+        <field name="longitude" eval="-98.270947"/>
+    </record>
+    <record id="tms_place_331" model="tms.place">
+        <field name="name">Reynosa - Pharr - Puente Reynosa-Pharr (Nuevo Amanecer)</field>
+        <field name="latitude" eval="26.041812"/>
+        <field name="longitude" eval="-98.20886"/>
+    </record>
+    <record id="tms_place_332" model="tms.place">
+        <field name="name">Rodolfo Robles - Puente Rodolfo Robles</field>
+        <field name="latitude" eval="14.677057"/>
+        <field name="longitude" eval="-92.149701"/>
+    </record>
+    <record id="tms_place_333" model="tms.place">
+        <field name="name">San Juan - Puente San Juan</field>
+        <field name="latitude" eval="26.311873"/>
+        <field name="longitude" eval="-98.841957"/>
+    </record>
+    <record id="tms_place_334" model="tms.place">
+        <field name="name">San Miguel - Puente San Miguel</field>
+        <field name="latitude" eval="25.976312"/>
+        <field name="longitude" eval="-109.033558"/>
+    </record>
+    <record id="tms_place_335" model="tms.place">
+        <field name="name">Sinaloa - Puente Sinaloa</field>
+        <field name="latitude" eval="25.512842"/>
+        <field name="longitude" eval="-108.347578"/>
+    </record>
+    <record id="tms_place_336" model="tms.place">
+        <field name="name">Solidaridad - Puente Solidaridad (Colombia)</field>
+        <field name="latitude" eval="27.697345"/>
+        <field name="longitude" eval="-99.747804"/>
+    </record>
+    <record id="tms_place_337" model="tms.place">
+        <field name="name">Suchiate II - Puente Suchiate II</field>
+        <field name="latitude" eval="14.702181"/>
+        <field name="longitude" eval="-92.151404"/>
+    </record>
+    <record id="tms_place_338" model="tms.place">
+        <field name="name">Tampico - Puente Tampico</field>
+        <field name="latitude" eval="22.218325"/>
+        <field name="longitude" eval="-97.824741"/>
+    </record>
+    <record id="tms_place_339" model="tms.place">
+        <field name="name">Tecolutla - Puente Tecolutla</field>
+        <field name="latitude" eval="20.437802"/>
+        <field name="longitude" eval="-97.086444"/>
+    </record>
+    <record id="tms_place_340" model="tms.place">
+        <field name="name">Tlacotalpan - Puente Tlacotalpan</field>
+        <field name="latitude" eval="18.704609"/>
+        <field name="longitude" eval="-95.641325"/>
+    </record>
+    <record id="tms_place_341" model="tms.place">
+        <field name="name">Usumacinta - Puente Usumacinta</field>
+        <field name="latitude" eval="17.859877"/>
+        <field name="longitude" eval="-91.783643"/>
+    </record>
+    <record id="tms_place_342" model="tms.place">
+        <field name="name">Zaragoza - Puente Zaragoza - Ysleta</field>
+        <field name="latitude" eval="31.670895"/>
+        <field name="longitude" eval="-106.34067"/>
+    </record>
+    <record id="tms_place_343" model="tms.place">
+        <field name="name">Los Chorros - Puerto México - Ent. La Carbonera</field>
+        <field name="latitude" eval="25.186754"/>
+        <field name="longitude" eval="-100.731938"/>
+    </record>
+    <record id="tms_place_344" model="tms.place">
+        <field name="name">Huachichil - Puerto México - Ent. La Carbonera</field>
+        <field name="latitude" eval="25.24548"/>
+        <field name="longitude" eval="-100.801484"/>
+    </record>
+    <record id="tms_place_345" model="tms.place">
+        <field name="name">Cerro Gordo - Querétaro - Irapuato</field>
+        <field name="latitude" eval="20.591875"/>
+        <field name="longitude" eval="-101.137274"/>
+    </record>
+    <record id="tms_place_346" model="tms.place">
+        <field name="name">Cerro Gordo - Querétaro - Irapuato</field>
+        <field name="latitude" eval="20.591875"/>
+        <field name="longitude" eval="-101.137274"/>
+    </record>
+    <record id="tms_place_347" model="tms.place">
+        <field name="name">Querétaro - Querétaro - Irapuato</field>
+        <field name="latitude" eval="20.57217"/>
+        <field name="longitude" eval="-100.472837"/>
+    </record>
+    <record id="tms_place_348" model="tms.place">
+        <field name="name">Salamanca - Querétaro - Irapuato</field>
+        <field name="latitude" eval="20.598452"/>
+        <field name="longitude" eval="-101.180914"/>
+    </record>
+    <record id="tms_place_349" model="tms.place">
+        <field name="name">Salamanca A1 - Querétaro - Irapuato</field>
+        <field name="latitude" eval="20.599141"/>
+        <field name="longitude" eval="-101.180695"/>
+    </record>
+    <record id="tms_place_350" model="tms.place">
+        <field name="name">Salamanca A2 - Querétaro - Irapuato</field>
+        <field name="latitude" eval="20.597586"/>
+        <field name="longitude" eval="-101.181031"/>
+    </record>
+    <record id="tms_place_351" model="tms.place">
+        <field name="name">Salamanca A3 - Querétaro - Irapuato</field>
+        <field name="latitude" eval="20.590023"/>
+        <field name="longitude" eval="-101.136035"/>
+    </record>
+    <record id="tms_place_352" model="tms.place">
+        <field name="name">Villagrán A1 - Querétaro - Irapuato</field>
+        <field name="latitude" eval="20.582207"/>
+        <field name="longitude" eval="-100.992157"/>
+    </record>
+    <record id="tms_place_353" model="tms.place">
+        <field name="name">Villagrán A2 - Querétaro - Irapuato</field>
+        <field name="latitude" eval="20.579417"/>
+        <field name="longitude" eval="-100.99235"/>
+    </record>
+    <record id="tms_place_354" model="tms.place">
+        <field name="name">Taxco - Rancho Viejo - Taxco</field>
+        <field name="latitude" eval="18.588623"/>
+        <field name="longitude" eval="-99.559957"/>
+    </record>
+    <record id="tms_place_355" model="tms.place">
+        <field name="name">Nuevo Progreso A2 - Reynosa - Matamoros</field>
+        <field name="latitude" eval="26.037152"/>
+        <field name="longitude" eval="-97.954566"/>
+    </record>
+    <record id="tms_place_356" model="tms.place">
+        <field name="name">Nuevo Progreso P - Reynosa - Matamoros</field>
+        <field name="latitude" eval="26.036267"/>
+        <field name="longitude" eval="-97.954452"/>
+    </record>
+    <record id="tms_place_357" model="tms.place">
+        <field name="name">Nuevo Progreso A1 - Reynosa - Matamoros</field>
+        <field name="latitude" eval="26.035227"/>
+        <field name="longitude" eval="-97.954438"/>
+    </record>
+    <record id="tms_place_358" model="tms.place">
+        <field name="name">Rayón - Río Verde - Cd. Valles</field>
+        <field name="latitude" eval="21.864264"/>
+        <field name="longitude" eval="-99.618995"/>
+    </record>
+    <record id="tms_place_359" model="tms.place">
+        <field name="name">El Hongo - Rumorosa - Tecate</field>
+        <field name="latitude" eval="32.521819"/>
+        <field name="longitude" eval="-116.319985"/>
+    </record>
+    <record id="tms_place_360" model="tms.place">
+        <field name="name">El Hongo A1 - Rumorosa - Tecate</field>
+        <field name="latitude" eval="32.521141"/>
+        <field name="longitude" eval="-116.320114"/>
+    </record>
+    <record id="tms_place_361" model="tms.place">
+        <field name="name">El Hongo A2 - Rumorosa - Tecate</field>
+        <field name="latitude" eval="32.522437"/>
+        <field name="longitude" eval="-116.31983"/>
+    </record>
+    <record id="tms_place_362" model="tms.place">
+        <field name="name">Ixtepec A1 - Salina Cruz - La Ventosa</field>
+        <field name="latitude" eval="16.561071"/>
+        <field name="longitude" eval="-95.134966"/>
+    </record>
+    <record id="tms_place_363" model="tms.place">
+        <field name="name">Ixtepec A2 - Salina Cruz - La Ventosa</field>
+        <field name="latitude" eval="16.561481"/>
+        <field name="longitude" eval="-95.134292"/>
+    </record>
+    <record id="tms_place_364" model="tms.place">
+        <field name="name">Ixtepec A3 - Salina Cruz - La Ventosa</field>
+        <field name="latitude" eval="16.561823"/>
+        <field name="longitude" eval="-95.136055"/>
+    </record>
+    <record id="tms_place_365" model="tms.place">
+        <field name="name">Ixtepec - Salina Cruz - La Ventosa</field>
+        <field name="latitude" eval="16.561154"/>
+        <field name="longitude" eval="-95.135615"/>
+    </record>
+    <record id="tms_place_366" model="tms.place">
+        <field name="name">Tehuantepec - Salina Cruz - La Ventosa</field>
+        <field name="latitude" eval="16.162139"/>
+        <field name="longitude" eval="-95.289239"/>
+    </record>
+    <record id="tms_place_367" model="tms.place">
+        <field name="name">San José del Cabo - San José del Cabo - Aeropuerto Los Cabos</field>
+        <field name="latitude" eval="23.04992"/>
+        <field name="longitude" eval="-109.719559"/>
+    </record>
+    <record id="tms_place_368" model="tms.place">
+        <field name="name">Aucal - San Martín Texmelucan - Tlaxcala</field>
+        <field name="latitude" eval="19.301587"/>
+        <field name="longitude" eval="-98.404051"/>
+    </record>
+    <record id="tms_place_369" model="tms.place">
+        <field name="name">Santa Ana - Santa Ana - Altar</field>
+        <field name="latitude" eval="30.568679"/>
+        <field name="longitude" eval="-111.284143"/>
+    </record>
+    <record id="tms_place_370" model="tms.place">
+        <field name="name">Esperanza - Tecate - Tijuana</field>
+        <field name="latitude" eval="32.550743"/>
+        <field name="longitude" eval="-116.621899"/>
+    </record>
+    <record id="tms_place_371" model="tms.place">
+        <field name="name">Tecate - Tecate - Tijuana</field>
+        <field name="latitude" eval="32.52585"/>
+        <field name="longitude" eval="-116.690261"/>
+    </record>
+    <record id="tms_place_372" model="tms.place">
+        <field name="name">Tijuana - Tecate - Tijuana</field>
+        <field name="latitude" eval="32.54579"/>
+        <field name="longitude" eval="-116.852039"/>
+    </record>
+    <record id="tms_place_373" model="tms.place">
+        <field name="name">Nuevo Necaxa - Tejocotal - Nuevo Necaxa</field>
+        <field name="latitude" eval="20.183843"/>
+        <field name="longitude" eval="-98.027601"/>
+    </record>
+    <record id="tms_place_374" model="tms.place">
+        <field name="name">Acaponeta - Tepic - Villa Unión</field>
+        <field name="latitude" eval="22.453835"/>
+        <field name="longitude" eval="-105.424726"/>
+    </record>
+    <record id="tms_place_375" model="tms.place">
+        <field name="name">Acaponeta A1 - Tepic - Villa Unión</field>
+        <field name="latitude" eval="22.454088"/>
+        <field name="longitude" eval="-105.418817"/>
+    </record>
+    <record id="tms_place_376" model="tms.place">
+        <field name="name">Acaponeta A2 - Tepic - Villa Unión</field>
+        <field name="latitude" eval="22.454088"/>
+        <field name="longitude" eval="-105.418817"/>
+    </record>
+    <record id="tms_place_377" model="tms.place">
+        <field name="name">Rosario - Tepic - Villa Unión</field>
+        <field name="latitude" eval="22.984707"/>
+        <field name="longitude" eval="-105.878039"/>
+    </record>
+    <record id="tms_place_378" model="tms.place">
+        <field name="name">Rosario A1 - Tepic - Villa Unión</field>
+        <field name="latitude" eval="22.985107"/>
+        <field name="longitude" eval="-105.875275"/>
+    </record>
+    <record id="tms_place_379" model="tms.place">
+        <field name="name">Rosario A2 - Tepic - Villa Unión</field>
+        <field name="latitude" eval="22.985107"/>
+        <field name="longitude" eval="-105.875275"/>
+    </record>
+    <record id="tms_place_380" model="tms.place">
+        <field name="name">Ruiz A2 - Tepic - Villa Unión</field>
+        <field name="latitude" eval="21.953097"/>
+        <field name="longitude" eval="-105.120877"/>
+    </record>
+    <record id="tms_place_381" model="tms.place">
+        <field name="name">Ruíz - Tepic - Villa Unión</field>
+        <field name="latitude" eval="21.951811"/>
+        <field name="longitude" eval="-105.116064"/>
+    </record>
+    <record id="tms_place_382" model="tms.place">
+        <field name="name">Ruíz A1 - Tepic - Villa Unión</field>
+        <field name="latitude" eval="21.953097"/>
+        <field name="longitude" eval="-105.120877"/>
+    </record>
+    <record id="tms_place_383" model="tms.place">
+        <field name="name">Ruíz - Tepic - Villa Unión</field>
+        <field name="latitude" eval="21.951811"/>
+        <field name="longitude" eval="-105.116064"/>
+    </record>
+    <record id="tms_place_384" model="tms.place">
+        <field name="name">Trapichillo - Tepic - Villa Unión</field>
+        <field name="latitude" eval="21.571769"/>
+        <field name="longitude" eval="-104.987465"/>
+    </record>
+    <record id="tms_place_385" model="tms.place">
+        <field name="name">Yago A1 - Tepic - Villa Unión</field>
+        <field name="latitude" eval="21.844631"/>
+        <field name="longitude" eval="-105.084918"/>
+    </record>
+    <record id="tms_place_386" model="tms.place">
+        <field name="name">Yago A2 - Tepic - Villa Unión</field>
+        <field name="latitude" eval="21.845203"/>
+        <field name="longitude" eval="-105.086575"/>
+    </record>
+    <record id="tms_place_387" model="tms.place">
+        <field name="name">Tuxpam - Tihuatlán - Tuxpam y Puente Tuxpam</field>
+        <field name="latitude" eval="20.918939"/>
+        <field name="longitude" eval="-97.415892"/>
+    </record>
+    <record id="tms_place_388" model="tms.place">
+        <field name="name">La Cuchilla - Torreón - Saltillo</field>
+        <field name="latitude" eval="25.627001"/>
+        <field name="longitude" eval="-102.878215"/>
+    </record>
+    <record id="tms_place_389" model="tms.place">
+        <field name="name">Plan de Ayala - Torreón - Saltillo</field>
+        <field name="latitude" eval="25.444123"/>
+        <field name="longitude" eval="-101.303947"/>
+    </record>
+    <record id="tms_place_390" model="tms.place">
+        <field name="name">Chiapa de Corzo - Tuxtla Gutiérrez - San Cristóbal de las Casas</field>
+        <field name="latitude" eval="16.730618"/>
+        <field name="longitude" eval="-93.0095"/>
+    </record>
+    <record id="tms_place_391" model="tms.place">
+        <field name="name">Santa Casilda - Uruapan - Nueva Italia</field>
+        <field name="latitude" eval="19.152932"/>
+        <field name="longitude" eval="-101.97813"/>
+    </record>
+    <record id="tms_place_392" model="tms.place">
+        <field name="name">Santa Casilda A1 - Uruapan - Nueva Italia</field>
+        <field name="latitude" eval="19.156446"/>
+        <field name="longitude" eval="-101.976099"/>
+    </record>
+    <record id="tms_place_393" model="tms.place">
+        <field name="name">Santa Casilda A1 - Uruapan - Nueva Italia</field>
+        <field name="latitude" eval="19.156446"/>
+        <field name="longitude" eval="-101.976099"/>
+    </record>
+    <record id="tms_place_394" model="tms.place">
+        <field name="name">Taretán - Uruapan - Nueva Italia</field>
+        <field name="latitude" eval="19.355443"/>
+        <field name="longitude" eval="-101.917902"/>
+    </record>
+    <record id="tms_place_395" model="tms.place">
+        <field name="name">Taretán A1 - Uruapan - Nueva Italia</field>
+        <field name="latitude" eval="19.351874"/>
+        <field name="longitude" eval="-101.917368"/>
+    </record>
+    <record id="tms_place_396" model="tms.place">
+        <field name="name">Taretán A1 - Uruapan - Nueva Italia</field>
+        <field name="latitude" eval="19.351874"/>
+        <field name="longitude" eval="-101.917368"/>
+    </record>
+    <record id="tms_place_397" model="tms.place">
+        <field name="name">Cuencamé III - Yerbanís - Gómez Palacio</field>
+        <field name="latitude" eval="24.981671"/>
+        <field name="longitude" eval="-103.73525"/>
+    </record>
+    <record id="tms_place_398" model="tms.place">
+        <field name="name">Cuencamé III A2 - Yerbanís - Gómez Palacio</field>
+        <field name="latitude" eval="24.980948"/>
+        <field name="longitude" eval="-103.736669"/>
+    </record>
+    <record id="tms_place_399" model="tms.place">
+        <field name="name">Cuencamé III A1 - Yerbanís - Gómez Palacio</field>
+        <field name="latitude" eval="24.980356"/>
+        <field name="longitude" eval="-103.734326"/>
+    </record>
+    <record id="tms_place_400" model="tms.place">
+        <field name="name">León Guzmán A2 - Yerbanís - Gómez Palacio</field>
+        <field name="latitude" eval="25.519483"/>
+        <field name="longitude" eval="-103.63969"/>
+    </record>
+    <record id="tms_place_401" model="tms.place">
+        <field name="name">León Guzmán - Yerbanís - Gómez Palacio</field>
+        <field name="latitude" eval="25.520619"/>
+        <field name="longitude" eval="-103.639462"/>
+    </record>
+    <record id="tms_place_402" model="tms.place">
+        <field name="name">León Guzmán A1 - Yerbanís - Gómez Palacio</field>
+        <field name="latitude" eval="25.519463"/>
+        <field name="longitude" eval="-103.639408"/>
+    </record>
+    <record id="tms_place_403" model="tms.place">
+        <field name="name">Zacapalco - Zacapalco - Rancho Viejo</field>
+        <field name="latitude" eval="18.537976"/>
+        <field name="longitude" eval="-99.447394"/>
+    </record>
+    <record id="tms_place_404" model="tms.place">
+        <field name="name">Jalostotitlán - Zapotlanejo - Lagos de Moreno</field>
+        <field name="latitude" eval="21.117576"/>
+        <field name="longitude" eval="-102.458041"/>
+    </record>
+    <record id="tms_place_405" model="tms.place">
+        <field name="name">Jalostotitlán - Zapotlanejo - Lagos de Moreno</field>
+        <field name="latitude" eval="21.117576"/>
+        <field name="longitude" eval="-102.458041"/>
+    </record>
+    <record id="tms_place_406" model="tms.place">
+        <field name="name">Jalostotitlán A1 - Zapotlanejo - Lagos de Moreno</field>
+        <field name="latitude" eval="21.119064"/>
+        <field name="longitude" eval="-102.455793"/>
+    </record>
+    <record id="tms_place_407" model="tms.place">
+        <field name="name">Jalostotitlán A2 - Zapotlanejo - Lagos de Moreno</field>
+        <field name="latitude" eval="21.120273"/>
+        <field name="longitude" eval="-102.455559"/>
+    </record>
+    <record id="tms_place_408" model="tms.place">
+        <field name="name">San Juan A1 - Zapotlanejo - Lagos de Moreno</field>
+        <field name="latitude" eval="21.224694"/>
+        <field name="longitude" eval="-102.313144"/>
+    </record>
+    <record id="tms_place_409" model="tms.place">
+        <field name="name">San Juan A2 - Zapotlanejo - Lagos de Moreno</field>
+        <field name="latitude" eval="21.225663"/>
+        <field name="longitude" eval="-102.313651"/>
+    </record>
+    <record id="tms_place_410" model="tms.place">
+        <field name="name">Tepatitlán - Zapotlanejo - Lagos de Moreno</field>
+        <field name="latitude" eval="20.824618"/>
+        <field name="longitude" eval="-102.794958"/>
+    </record>
+    <record id="tms_place_411" model="tms.place">
+        <field name="name">Tepatitlán - Zapotlanejo - Lagos de Moreno</field>
+        <field name="latitude" eval="20.824618"/>
+        <field name="longitude" eval="-102.794958"/>
+    </record>
+    <record id="tms_place_412" model="tms.place">
+        <field name="name">Tepatitlán Aux. - Zapotlanejo - Lagos de Moreno</field>
+        <field name="latitude" eval="20.82091"/>
+        <field name="longitude" eval="-102.794064"/>
+    </record>
+</odoo>

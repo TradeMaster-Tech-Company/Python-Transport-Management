@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+kiosk_fleet_vehicle,kiosk_fleet_vehicle,model_fleet_vehicle,group_kiosk,1,0,0,0
+kiosk_tms_extradata,kiosk_tms_extradata,model_tms_extradata,group_kiosk,1,0,0,0
+kiosk_tms_extradata_type,kiosk_tms_extradata_type,tms.model_tms_extradata_type,group_kiosk,1,0,0,0

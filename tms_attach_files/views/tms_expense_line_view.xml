@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="expenseline_form_view">
+        <field name="name">expense.lines.files</field>
+        <field name="model">tms.expense.line</field>
+        <field name="inherit_id" ref="tms.view_tms_expense_line_form"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//field[@name='invoice_id']" position="before">
+                <field name="xml_filename" invisible="1"/>
+                <field name="xml_file" filename="xml_filename" attrs="{'invisible':[('is_invoice', '=', False)],'required':[('is_invoice', '=', True)]}"/>
+                <field name="pdf_filename" invisible="1"/>
+                <field name="pdf_file" filename="pdf_filename" attrs="{'invisible':[('is_invoice', '=', False)],'required':[('is_invoice', '=', True)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

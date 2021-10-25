@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+        <record id="driver_license_security_days" model="ir.config_parameter">
+            <field name="key">driver_license_security_days</field>
+            <field name="value">5</field>
+        </record>
+        <record id="tms_vehicle_insurance_security_days" model="ir.config_parameter">
+            <field name="key">tms_vehicle_insurance_security_days</field>
+            <field name="value">5</field>
+        </record>
+        <record id="mapquest_keys" model="ir.config_parameter">
+            <field name="key">mapquest.key</field>
+            <field name="value">key</field>
+        </record>
+</odoo>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_fleet_vehicle_01" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">0924</field>
+        <field name="name">T1</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_t800"/>
+        <field name="fleet_type">tractor</field>
+        <field name="engine_id" ref="fleet_vehicle_engine_03"/>
+    </record>
+    <record id="tms_fleet_vehicle_02" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">8943</field>
+        <field name="name">C1</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_flatbed"/>
+        <field name="fleet_type">trailer</field>
+    </record>
+    <record id="tms_fleet_vehicle_03" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">928374</field>
+        <field name="name">C2</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_flatbed"/>
+        <field name="fleet_type">trailer</field>
+    </record>
+    <record id="tms_fleet_vehicle_04" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">.</field>
+        <field name="name">D1</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_dolly"/>
+        <field name="fleet_type">dolly</field>
+    </record>
+    <record id="tms_fleet_vehicle_05" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">8723</field>
+        <field name="name">T2</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_t800"/>
+        <field name="fleet_type">tractor</field>
+        <field name="engine_id" ref="fleet_vehicle_engine_03"/>
+    </record>
+    <record id="tms_fleet_vehicle_06" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">2389</field>
+        <field name="name">C3</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_flatbed"/>
+        <field name="fleet_type">trailer</field>
+    </record>
+     <record id="tms_fleet_vehicle_07" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">9823</field>
+        <field name="name">C4</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_flatbed"/>
+        <field name="fleet_type">trailer</field>
+    </record>
+    <record id="tms_fleet_vehicle_08" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">.</field>
+        <field name="name">D2</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_dolly"/>
+        <field name="fleet_type">dolly</field>
+    </record>
+    <record id="tms_fleet_vehicle_09" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">54316</field>
+        <field name="name">T3</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_t800"/>
+        <field name="fleet_type">tractor</field>
+        <field name="engine_id" ref="fleet_vehicle_engine_03"/>
+    </record>
+    <record id="tms_fleet_vehicle_10" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">63316</field>
+        <field name="name">C5</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_flatbed"/>
+        <field name="fleet_type">trailer</field>
+    </record>
+     <record id="tms_fleet_vehicle_11" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">643123</field>
+        <field name="name">C6</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_flatbed"/>
+        <field name="fleet_type">trailer</field>
+    </record>
+    <record id="tms_fleet_vehicle_12" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">.</field>
+        <field name="name">D3</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_dolly"/>
+        <field name="fleet_type">dolly</field>
+    </record>
+    <record id="tms_fleet_vehicle_13" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">6542</field>
+        <field name="name">T4</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_t800"/>
+        <field name="fleet_type">tractor</field>
+        <field name="engine_id" ref="fleet_vehicle_engine_03"/>
+    </record>
+    <record id="tms_fleet_vehicle_14" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">96312</field>
+        <field name="name">C7</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_flatbed"/>
+        <field name="fleet_type">trailer</field>
+    </record>
+     <record id="tms_fleet_vehicle_15" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">45421</field>
+        <field name="name">C8</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_flatbed"/>
+        <field name="fleet_type">trailer</field>
+    </record>
+    <record id="tms_fleet_vehicle_16" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">.</field>
+        <field name="name">D4</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_dolly"/>
+        <field name="fleet_type">dolly</field>
+    </record>
+    <record id="tms_fleet_vehicle_17" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">62341</field>
+        <field name="name">T5</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_t800"/>
+        <field name="fleet_type">tractor</field>
+        <field name="engine_id" ref="fleet_vehicle_engine_03"/>
+    </record>
+    <record id="tms_fleet_vehicle_18" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">21289</field>
+        <field name="name">C9</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_flatbed"/>
+        <field name="fleet_type">trailer</field>
+    </record>
+     <record id="tms_fleet_vehicle_19" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">92812</field>
+        <field name="name">C10</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_flatbed"/>
+        <field name="fleet_type">trailer</field>
+    </record>
+    <record id="tms_fleet_vehicle_20" model="fleet.vehicle">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="license_plate">.</field>
+        <field name="name">D5</field>
+        <field name="odometer_unit">kilometers</field>
+        <field name="active" eval="True"/>
+        <field name="model_id" ref="fleet_vehicle_model_trailking_dolly"/>
+        <field name="fleet_type">dolly</field>
+    </record>
+</odoo>

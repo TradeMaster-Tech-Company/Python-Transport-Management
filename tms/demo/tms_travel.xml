@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_travel_01" model="tms.travel">
+        <field name="state">draft</field>
+        <field name="route_id" ref="tms_route_02"/>
+        <field name="unit_id" ref="tms_fleet_vehicle_01"/>
+        <field name="employee_id" ref="tms_hr_employee_01"/>
+        <field name="date" eval="datetime.now()"/>
+        <field name="date_start" eval="datetime.now()"/>
+        <field name="date_end" eval="datetime.now()+timedelta(days=2)"/>
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="driver_factor_ids" eval="[(0, 0, {'factor_type': 'travel', 'fixed_amount': 9000, 'category': 'driver', 'name': 'travel'})]"/>
+    </record>
+     <record id="tms_travel_02" model="tms.travel">
+        <field name="state">draft</field>
+        <field name="route_id" ref="tms_route_02"/>
+        <field name="unit_id" ref="tms_fleet_vehicle_01"/>
+        <field name="employee_id" ref="tms_hr_employee_01"/>
+        <field name="date" eval="datetime.now()"/>
+        <field name="date_start" eval="datetime.now()+timedelta(days=2)"/>
+        <field name="date_end" eval="datetime.now()+timedelta(days=5)"/>
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="driver_factor_ids" eval="[(0, 0, {'factor_type': 'travel', 'fixed_amount': 9000, 'category': 'driver', 'name': 'travel'})]"/>
+    </record>
+     <record id="tms_travel_03" model="tms.travel">
+        <field name="state">draft</field>
+        <field name="route_id" ref="tms_route_02"/>
+        <field name="unit_id" ref="tms_fleet_vehicle_01"/>
+        <field name="employee_id" ref="tms_hr_employee_01"/>
+        <field name="date" eval="datetime.now()"/>
+        <field name="date_start" eval="datetime.now()+timedelta(days=5)"/>
+        <field name="date_end" eval="datetime.now()+timedelta(days=9)"/>
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="driver_factor_ids" eval="[(0, 0, {'factor_type': 'travel', 'fixed_amount': 9000, 'category': 'driver', 'name': 'Travel'})]"/>
+    </record>
+     <record id="tms_travel_04" model="tms.travel">
+        <field name="state">draft</field>
+        <field name="unit_id" ref="tms_fleet_vehicle_05"/>
+        <field name="route_id" ref="tms_route_02"/>
+        <field name="employee_id" ref="tms_hr_employee_02"/>
+        <field name="date" eval="datetime.now()"/>
+        <field name="date_start" eval="datetime.now()"/>
+        <field name="date_end" eval="datetime.now()+timedelta(days=2)"/>
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="driver_factor_ids" eval="[(0, 0, {'factor_type': 'travel', 'fixed_amount': 9000, 'category': 'driver', 'name': 'travel'})]"/>
+    </record>
+     <record id="tms_travel_05" model="tms.travel">
+        <field name="state">draft</field>
+        <field name="employee_id" ref="tms_hr_employee_02"/>
+        <field name="unit_id" ref="tms_fleet_vehicle_05"/>
+        <field name="route_id" ref="tms_route_02"/>
+        <field name="date" eval="datetime.now()"/>
+        <field name="date_start" eval="datetime.now()+timedelta(days=2)"/>
+        <field name="date_end" eval="datetime.now()+timedelta(days=9)"/>
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="driver_factor_ids" eval="[(0, 0, {'factor_type': 'travel', 'fixed_amount': 9000, 'category': 'driver', 'name': 'travel'})]"/>
+    </record>
+    <function name="action_progress" model="tms.travel" eval="[ref('tms_travel_01')]"/>
+    <function name="action_done" model="tms.travel" eval="[ref('tms_travel_01')]"/>
+</odoo>

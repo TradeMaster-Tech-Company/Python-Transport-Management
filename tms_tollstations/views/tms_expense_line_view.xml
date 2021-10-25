@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="expenseline_form_view">
+        <field name="name">expense.lines.files</field>
+        <field name="model">tms.expense.line</field>
+        <field name="inherit_id" ref="tms.view_tms_expense_line_form"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//group[1]" position="after">
+                <group>
+                    <field name="tollstation_ids" nolabel='1' attrs="{'invisible':[('line_type','not in', ['tollstations'])]}" domain="[('num_tag', '=', tollstation_tag), ('state', '=', 'open')]">
+                        <tree>
+                            <field name="name"/>
+                            <field name="date"/>
+                            <field name="import_rate"/>
+                        </tree>
+                    </field>
+                    <field name='tollstation_tag' invisible='1'/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

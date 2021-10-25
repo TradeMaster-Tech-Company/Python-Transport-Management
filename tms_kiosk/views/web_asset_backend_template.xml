@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="tms_kiosk assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/tms_kiosk/static/src/js/kiosk_mode.js"></script>
+            <script type="text/javascript" src="/tms_kiosk/static/src/js/kiosk_vehicle.js"></script>
+            <link rel="stylesheet" href="/tms_kiosk/static/src/less/kiosk_mode.less"/>
+        </xpath>
+    </template>
+</odoo>

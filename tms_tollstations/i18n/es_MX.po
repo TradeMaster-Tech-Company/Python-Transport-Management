@@ -1,0 +1,239 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tms_tollstations
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-04 17:12+0000\n"
+"PO-Revision-Date: 2017-05-04 17:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "<span><strong>Impression of Settlement Expenses (Detailed)</strong></span><br/>"
+msgstr "<span><strong>Impresion de Casetas de liquidacion (Detalladas)</strong></span><br/>"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "<span>IVA</span>"
+msgstr "<span>IVA</span>"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "<span>Importe</span>"
+msgstr "<span>Importe</span>"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "<span>Total</span>"
+msgstr "<span>Total</span>"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "<strong>Camión</strong>"
+msgstr "<strong>Camión</strong>"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "<strong>Fecha de liquidación</strong>"
+msgstr "<strong>Fecha de liquidación</strong>"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "<strong>Liquidacion</strong>"
+msgstr "<strong>Liquidacion</strong>"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "<strong>Operador/Permisionario</strong>"
+msgstr "<strong>Operador/Permisionario</strong>"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "<strong>Total Concepto: </strong>"
+msgstr "<strong>Total Concepto: </strong>"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "<strong>Total Liquidación: </strong>"
+msgstr "<strong>Total Liquidación: </strong>"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "Between Settlements:"
+msgstr "Between Settlements:"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.tms_toll_import_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: tms_tollstations
+#: selection:tms.toll.data,state:0
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "Concepto de Gastos"
+msgstr "Concepto de Gastos"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.tms_toll_import_view
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: tms_tollstations
+#: model:ir.model,name:tms_tollstations.model_tms_expense_line
+msgid "Expense Line"
+msgstr "Linea de liquidación"
+
+#. module: tms_tollstations
+#: model:ir.model.fields,field_description:tms_tollstations.field_tms_toll_data_expense_line_id
+msgid "Expense line"
+msgstr "Linea de liquidacion"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "Fecha"
+msgstr "Fecha"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "Fecha de creacion"
+msgstr "Fecha de creacion"
+
+#. module: tms_tollstations
+#: model:ir.actions.report.xml,name:tms_tollstations.print_report_highway_expense
+msgid "Highway Report"
+msgstr "Reporte de CASETAS"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "IVA"
+msgstr "IVA"
+
+#. module: tms_tollstations
+#: model:ir.ui.menu,name:tms_tollstations.menu_tms_settings_toll_data
+msgid "Iave information"
+msgstr "Informacion sobre IAVE"
+
+#. module: tms_tollstations
+#: model:ir.actions.act_window,name:tms_tollstations.action_toll_data
+#: model:ir.ui.menu,name:tms_tollstations.tms_iave
+msgid "Iave toll data"
+msgstr "Datos de casetas IAVE"
+
+#. module: tms_tollstations
+#: model:ir.ui.menu,name:tms_tollstations.tms_open_import_data_menu
+msgid "Import Data"
+msgstr "Importar Datos"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.tms_toll_import_view
+msgid "Import information"
+msgstr "Importar Información"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "Importe"
+msgstr "Importe"
+
+#. module: tms_tollstations
+#: model:ir.model,name:tms_tollstations.model_fleet_vehicle
+msgid "Information on a vehicle"
+msgstr "Información en un vehículo"
+
+#. module: tms_tollstations
+#: model:ir.model.fields,field_description:tms_tollstations.field_tms_toll_data_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: tms_tollstations
+#: code:addons/tms_tollstations/wizards/tms_toll_import.py:75
+#, python-format
+msgid "Oops! Odoo has detected an error in the file. \n"
+"Please contact your admin system.\n"
+"\n"
+"Error message\n"
+"[]"
+msgstr "Oops! Odoo ha detectado un error en el archivo. \n"
+"Por favor contacta a tu administrador de sistemas.\n"
+"\n"
+"Mensaje de error\n"
+"[]"
+
+#. module: tms_tollstations
+#: code:addons/tms_tollstations/wizards/tms_toll_import.py:78
+#, python-format
+msgid "Oops! The files must have .txt or .dat extensions"
+msgstr "Oops! Los archivos deben de tener las extenciones .txt o .dat"
+
+#. module: tms_tollstations
+#: selection:tms.toll.data,state:0
+msgid "Open"
+msgstr "Abierto"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.tms_toll_import_view
+msgid "Please upload the file with tollstations information"
+msgstr "Por favor sube el archivo con la información de casetas"
+
+#. module: tms_tollstations
+#: model:ir.model.fields,field_description:tms_tollstations.field_tms_toll_data_state
+msgid "State"
+msgstr "Estado"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.tms_toll_data_tree
+msgid "Toll Data"
+msgstr "Datos de Casetas"
+
+#. module: tms_tollstations
+#: model:ir.actions.act_window,name:tms_tollstations.tms_toll_import_action
+msgid "Toll stations"
+msgstr "Casetas"
+
+#. module: tms_tollstations
+#: model:ir.model.fields,field_description:tms_tollstations.field_fleet_vehicle_tollstation_tag
+#: model:ir.model.fields,field_description:tms_tollstations.field_tms_expense_line_tollstation_tag
+msgid "Tollstation tag"
+msgstr "Numero de TAG"
+
+#. module: tms_tollstations
+#: model:ir.model.fields,field_description:tms_tollstations.field_tms_expense_line_tollstation_ids
+msgid "Tollstations"
+msgstr "Casetas"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "Total"
+msgstr "Total"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "Viaje"
+msgstr "Viaje"
+
+#. module: tms_tollstations
+#: model:ir.model,name:tms_tollstations.model_tms_toll_data
+msgid "tms.toll.data"
+msgstr "tms.toll.data"
+
+#. module: tms_tollstations
+#: model:ir.model,name:tms_tollstations.model_tms_toll_import
+msgid "tms.toll.import"
+msgstr "tms.toll.import"
+
+#. module: tms_tollstations
+#: model:ir.ui.view,arch_db:tms_tollstations.report_highway
+msgid "to"
+msgstr "hasta"
+

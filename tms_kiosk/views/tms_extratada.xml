@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="tms_extratada_kiosk_form">
+        <field name="name">tms_extratada_kiosk.form</field>
+        <field name="model">tms.extradata</field>
+        <field name="inherit_id" ref="tms.view_tms_extradata_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='value_datetime']" position="after">
+                <field name="can_be_sanned"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record id="tms_account_journal_advance" model="account.journal">
+        <field name='name'>Advance Journal</field>
+        <field name='type'>general</field>
+        <field name='code'>AD</field>
+        <field name='show_on_dashboard' eval="False"/>
+    </record>
+    <record id="tms_account_journal_expense" model="account.journal">
+        <field name='name'>Expense Journal</field>
+        <field name='type'>general</field>
+        <field name='code'>EXP</field>
+        <field name='show_on_dashboard' eval="False"/>
+    </record>
+    <record id="tms_account_journal_sale" model="account.journal">
+        <field name='name'>Sale Journal</field>
+        <field name='type'>sale</field>
+        <field name='code'>S</field>
+        <field name='show_on_dashboard' eval="True"/>
+    </record>
+    <record id="tms_account_journal_purchase" model="account.journal">
+        <field name='name'>Purchase Journal</field>
+        <field name='type'>purchase</field>
+        <field name='code'>P</field>
+        <field name='show_on_dashboard' eval="True"/>
+    </record>
+    <record id="tms_account_journal_loan" model="account.journal">
+        <field name='name'>Loan Journal</field>
+        <field name='type'>general</field>
+        <field name='code'>LOA</field>
+        <field name='show_on_dashboard' eval="False"/>
+    </record>
+</odoo>

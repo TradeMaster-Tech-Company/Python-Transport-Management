@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_waybill_01" model="tms.waybill">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="date_order" eval="datetime.now()"/>
+        <field name="partner_id" ref="base.res_partner_2"/>
+        <field name="partner_order_id" ref="base.res_partner_address_31"/>
+        <field name="partner_invoice_id" ref="base.res_partner_2"/>
+        <field name="departure_address_id" ref="base.res_partner_18"/>
+        <field name="arrival_address_id" ref="base.res_partner_10"/>
+        <field name="travel_ids" eval="[(6, 0, [ref('tms.tms_travel_01')])]"/>
+        <field name="customer_factor_ids" eval="[(0, 0, {'category': 'customer', 'factor_type': 'weight', 'name': 'Weight', 'factor': 250.00})]"/>
+        <field name="transportable_line_ids" eval="[(0, 0, {'transportable_id': ref('tms.tms_transportable_01'), 'name': 'Sand', 'transportable_uom_id': ref('uom.product_uom_ton'), 'notes': '1021', 'quantity': 48})]"/>
+    </record>
+    <record id="tms_waybill_02" model="tms.waybill">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="date_order" eval="datetime.now()"/>
+        <field name="partner_id" ref="base.res_partner_2"/>
+        <field name="partner_order_id" ref="base.res_partner_address_31"/>
+        <field name="partner_invoice_id" ref="base.res_partner_2"/>
+        <field name="departure_address_id" ref="base.res_partner_18"/>
+        <field name="arrival_address_id" ref="base.res_partner_10"/>
+        <field name="travel_ids" eval="[(6, 0, [ref('tms.tms_travel_02')])]"/>
+        <field name="customer_factor_ids" eval="[(0, 0, {'category': 'customer', 'factor_type': 'weight', 'name': 'Weight', 'factor': 250.00})]"/>
+        <field name="transportable_line_ids" eval="[(0, 0, {'transportable_id': ref('tms.tms_transportable_01'), 'name': 'Sand', 'transportable_uom_id': ref('uom.product_uom_ton'), 'notes': '1025', 'quantity': 43})]"/>
+    </record>
+    <function name="action_approve" model="tms.waybill" eval="[ref('tms_waybill_01')]"/>
+    <function name="action_confirm" model="tms.waybill" eval="[ref('tms_waybill_01')]"/>
+</odoo>

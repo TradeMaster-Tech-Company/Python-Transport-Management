@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="fleet_vehicle_model_brand_kenworth" model="fleet.vehicle.model.brand">
+        <field name="name">Kenworth</field>
+        <field name="image_128" type="base64" file="tms/static/src/img/brand_kenworth-image.png"/>
+    </record>
+    <record id="fleet_vehicle_model_brand_international" model="fleet.vehicle.model.brand">
+        <field name="name">International</field>
+        <field name="image_128" type="base64" file="tms/static/src/img/brand_international-image.png"/>
+    </record>
+    <record id="fleet_vehicle_model_brand_freightliner" model="fleet.vehicle.model.brand">
+        <field name="name">Freightliner</field>
+        <field name="image_128" type="base64" file="tms/static/src/img/brand_freightliner-image.png"/>
+    </record>
+    <record id="fleet_vehicle_model_brand_mack" model="fleet.vehicle.model.brand">
+        <field name="name">Mack</field>
+        <field name="image_128" type="base64" file="tms/static/src/img/brand_mack-image.png"/>
+    </record>
+    <record id="fleet_vehicle_model_brand_peterbilt" model="fleet.vehicle.model.brand">
+        <field name="name">Peterbilt</field>
+        <field name="image_128" type="base64" file="tms/static/src/img/brand_peterbilt-image.png"/>
+    </record>
+    <record id="fleet_vehicle_model_brand_scania" model="fleet.vehicle.model.brand">
+        <field name="name">Scania</field>
+        <field name="image_128" type="base64" file="tms/static/src/img/brand_scania-image.png"/>
+    </record>
+    <record id="fleet_vehicle_model_brand_fluehauf" model="fleet.vehicle.model.brand">
+        <field name="name">Fluehauf</field>
+        <field name="image_128" type="base64" file="tms/static/src/img/brand_fluehauf-image.png"/>
+    </record>
+    <record id="fleet_vehicle_model_brand_trailmobile" model="fleet.vehicle.model.brand">
+        <field name="name">Trailmobile</field>
+        <field name="image_128" type="base64" file="tms/static/src/img/brand_trailmobile-image.png"/>
+    </record>
+    <record id="fleet_vehicle_model_brand_trailking" model="fleet.vehicle.model.brand">
+        <field name="name">Trail King</field>
+        <field name="image_128" type="base64" file="tms/static/src/img/brand_trailking-image.png"/>
+    </record>
+    <record id="fleet_vehicle_model_t370" model="fleet.vehicle.model">
+        <field name="name">T370</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_kenworth"/>
+    </record>
+    <record id="fleet_vehicle_model_t460" model="fleet.vehicle.model">
+        <field name="name">T460</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_kenworth"/>
+    </record>
+    <record id="fleet_vehicle_model_kw45" model="fleet.vehicle.model">
+        <field name="name">KW45</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_kenworth"/>
+    </record>
+    <record id="fleet_vehicle_model_kw55" model="fleet.vehicle.model">
+        <field name="name">KW55</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_kenworth"/>
+    </record>
+    <record id="fleet_vehicle_model_t660" model="fleet.vehicle.model">
+        <field name="name">T660</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_kenworth"/>
+    </record>
+    <record id="fleet_vehicle_model_t800" model="fleet.vehicle.model">
+        <field name="name">T800</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_kenworth"/>
+    </record>
+    <record id="fleet_vehicle_model_q900" model="fleet.vehicle.model">
+        <field name="name">W900</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_kenworth"/>
+    </record>
+    <record id="fleet_vehicle_model_prostar" model="fleet.vehicle.model">
+        <field name="name">Prostar+</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_international"/>
+    </record>
+    <record id="fleet_vehicle_model_transtar" model="fleet.vehicle.model">
+        <field name="name">Transtar</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_international"/>
+    </record>
+    <record id="fleet_vehicle_model_workstar" model="fleet.vehicle.model">
+        <field name="name">Workstar</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_international"/>
+    </record>
+    <record id="fleet_vehicle_model_durastar" model="fleet.vehicle.model">
+        <field name="name">Durastar</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_international"/>
+    </record>
+    <record id="fleet_vehicle_model_citystar" model="fleet.vehicle.model">
+        <field name="name">Citystar</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_international"/>
+    </record>
+    <record id="fleet_vehicle_model_cascadia" model="fleet.vehicle.model">
+        <field name="name">Cascadia</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_freightliner"/>
+    </record>
+    <record id="fleet_vehicle_model_columbia" model="fleet.vehicle.model">
+        <field name="name">Columbia</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_freightliner"/>
+    </record>
+    <record id="fleet_vehicle_model_m2" model="fleet.vehicle.model">
+        <field name="name">M2</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_freightliner"/>
+    </record>
+    <record id="fleet_vehicle_model_fl360" model="fleet.vehicle.model">
+        <field name="name">FL360</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_freightliner"/>
+    </record>
+    <record id="fleet_vehicle_model_vnr" model="fleet.vehicle.model">
+        <field name="name">VNR</field>
+        <field name="brand_id" ref="fleet.brand_volvo"/>
+    </record>
+    <record id="fleet_vehicle_model_vnl" model="fleet.vehicle.model">
+        <field name="name">VNL</field>
+        <field name="brand_id" ref="fleet.brand_volvo"/>
+    </record>
+    <record id="fleet_vehicle_model_day_cab" model="fleet.vehicle.model">
+        <field name="name">Day Cab</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_mack"/>
+    </record>
+    <record id="fleet_vehicle_model_sleeper" model="fleet.vehicle.model">
+        <field name="name">Sleeper</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_mack"/>
+    </record>
+    <record id="fleet_vehicle_model_granite" model="fleet.vehicle.model">
+        <field name="name">Granite</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_mack"/>
+    </record>
+    <record id="fleet_vehicle_model_granite_mhd" model="fleet.vehicle.model">
+        <field name="name">Granite MHD</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_mack"/>
+    </record>
+    <record id="fleet_vehicle_model_lr" model="fleet.vehicle.model">
+        <field name="name">LR</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_mack"/>
+    </record>
+    <record id="fleet_vehicle_model_cabover" model="fleet.vehicle.model">
+        <field name="name">Cabover</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_mack"/>
+    </record>
+    <record id="fleet_vehicle_model_579" model="fleet.vehicle.model">
+        <field name="name">579</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_peterbilt"/>
+    </record>
+    <record id="fleet_vehicle_model_587" model="fleet.vehicle.model">
+        <field name="name">587</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_peterbilt"/>
+    </record>
+    <record id="fleet_vehicle_model_567" model="fleet.vehicle.model">
+        <field name="name">567</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_peterbilt"/>
+    </record>
+    <record id="fleet_vehicle_model_389" model="fleet.vehicle.model">
+        <field name="name">389</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_peterbilt"/>
+    </record>
+    <record id="fleet_vehicle_model_348" model="fleet.vehicle.model">
+        <field name="name">348</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_peterbilt"/>
+    </record>
+    <record id="fleet_vehicle_model_337" model="fleet.vehicle.model">
+        <field name="name">337</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_peterbilt"/>
+    </record>
+    <record id="fleet_vehicle_model_330" model="fleet.vehicle.model">
+        <field name="name">330</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_peterbilt"/>
+    </record>
+    <record id="fleet_vehicle_model_325" model="fleet.vehicle.model">
+        <field name="name">325</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_peterbilt"/>
+    </record>
+    <record id="fleet_vehicle_model_220" model="fleet.vehicle.model">
+        <field name="name">220</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_peterbilt"/>
+    </record>
+    <record id="fleet_vehicle_model_367" model="fleet.vehicle.model">
+        <field name="name">367</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_peterbilt"/>
+    </record>
+    <record id="fleet_vehicle_model_serie_p" model="fleet.vehicle.model">
+        <field name="name">Serie P</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_scania"/>
+    </record>
+    <record id="fleet_vehicle_model_serie_g" model="fleet.vehicle.model">
+        <field name="name">Serie G</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_scania"/>
+    </record>
+    <record id="fleet_vehicle_model_serie_r" model="fleet.vehicle.model">
+        <field name="name">Serie R</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_scania"/>
+    </record>
+    <record id="fleet_vehicle_model_fluehauf_dolly" model="fleet.vehicle.model">
+        <field name="name">Dolly</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_fluehauf"/>
+    </record>
+    <record id="fleet_vehicle_model_fluehauf_flatbed" model="fleet.vehicle.model">
+        <field name="name">53' Combo Flatbed</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_fluehauf"/>
+    </record>
+    <record id="fleet_vehicle_model_fluehauf_dry_van" model="fleet.vehicle.model">
+        <field name="name">53' Dry Van</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_fluehauf"/>
+    </record>
+    <record id="fleet_vehicle_model_fluehauf_bulk_tank" model="fleet.vehicle.model">
+        <field name="name">Aluminium Pneumatic Dry Bulk Tank</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_fluehauf"/>
+    </record>
+    <record id="fleet_vehicle_model_trailmobile_dolly" model="fleet.vehicle.model">
+        <field name="name">Dolly</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_trailmobile"/>
+    </record>
+    <record id="fleet_vehicle_model_trailmobile_flatbed" model="fleet.vehicle.model">
+        <field name="name">53' Combo Flatbed</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_trailmobile"/>
+    </record>
+    <record id="fleet_vehicle_model_trailmobile_dry_van" model="fleet.vehicle.model">
+        <field name="name">53' Dry Van</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_trailmobile"/>
+    </record>
+    <record id="fleet_vehicle_model_trailmobile_bulk_tank" model="fleet.vehicle.model">
+        <field name="name">Aluminium Pneumatic Dry Bulk Tank</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_trailmobile"/>
+    </record>
+    <record id="fleet_vehicle_model_trailking_dolly" model="fleet.vehicle.model">
+        <field name="name">Dolly</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_trailking"/>
+    </record>
+    <record id="fleet_vehicle_model_trailking_flatbed" model="fleet.vehicle.model">
+        <field name="name">53' Combo Flatbed</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_trailking"/>
+    </record>
+    <record id="fleet_vehicle_model_trailking_dry_van" model="fleet.vehicle.model">
+        <field name="name">53' Dry Van</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_trailking"/>
+    </record>
+    <record id="fleet_vehicle_model_trailking_bulk_tank" model="fleet.vehicle.model">
+        <field name="name">Aluminium Pneumatic Dry Bulk Tank</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_trailking"/>
+    </record>
+    <record id="fleet.vehicle_1" model="fleet.vehicle">
+        <field name="active" eval="False"/>
+        <field name="model_id" ref="fleet_vehicle_model_t800"/>
+    </record>
+    <record id="fleet.vehicle_2" model="fleet.vehicle">
+        <field name="active" eval="False"/>
+        <field name="model_id" ref="fleet_vehicle_model_t800"/>
+    </record>
+    <record id="fleet.vehicle_3" model="fleet.vehicle">
+        <field name="active" eval="False"/>
+        <field name="model_id" ref="fleet_vehicle_model_t800"/>
+    </record>
+    <record id="fleet.vehicle_4" model="fleet.vehicle">
+        <field name="active" eval="False"/>
+        <field name="model_id" ref="fleet_vehicle_model_t800"/>
+    </record>
+    <record id="fleet.vehicle_5" model="fleet.vehicle">
+        <field name="active" eval="False"/>
+        <field name="model_id" ref="fleet_vehicle_model_t800"/>
+    </record>
+    <function name="unlink" eval="[ref('fleet.model_a1')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_a3')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_a4')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_a5')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_a6')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_a7')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_a8')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_agila')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_ampera')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_antara')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_astra')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_astragtc')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classa')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classb')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classc')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classcl')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classcls')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classe')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classgl')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classglk')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classm')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classr')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classs')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classslk')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_combotour')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_corsa')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_insignia')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_meriva')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_mokka')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_q3')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_q5')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_q7')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_classsls')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_serie1')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_serie3')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_serie5')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_serie6')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_serie7')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_seriehybrid')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_seriem')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_seriex')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_seriez4')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_tt')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_zafira')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.model_zafiratourer')]" model="fleet.vehicle.model"/>
+    <function name="unlink" eval="[ref('fleet.brand_abarth')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_acura')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_alfa')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_audi')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_austin')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_bentley')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_bmw')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_bugatti')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_buick')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_byd')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_cadillac')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_chevrolet')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_chrysler')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_citroen')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_corre_la_licorne')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_daewoo')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_dodge')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_ferrari')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_fiat')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_ford')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_holden')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_honda')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_hyundai')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_infiniti')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_isuzu')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_jaguar')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_jeep')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_kia')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_koenigsegg')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_lagonda')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_lamborghini')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_lancia')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_land_rover')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_lexus')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_lincoln')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_lotus')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_maserati')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_maybach')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_mazda')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_mercedes')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_mg')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_mini')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_mitsubishi')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_morgan')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_nissan')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_oldsmobile')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_opel')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_peugeot')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_pontiac')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_porsche')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_rambler')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_renault')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_rolls-royce')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_saab')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_scion')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_skoda')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_smart')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_steyr')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_subaru')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_suzuki')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_tesla_motors')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_toyota')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_trabant')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_volkswagen')]" model="fleet.vehicle.model.brand"/>
+    <function name="unlink" eval="[ref('fleet.brand_willys')]" model="fleet.vehicle.model.brand"/>
+</odoo>

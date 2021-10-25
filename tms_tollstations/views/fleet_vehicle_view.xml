@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <record model="ir.ui.view" id="fleet_vehicle_inherith_form_view_toll_station">
+            <field name="name">fleet.vehicle.form.view</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="tms.fleet_vehicle_form_inherit_tms"/>
+            <field name='arch' type='xml'>
+                <xpath expr="//group[1]/field[@name='operating_unit_id']" position="before">
+                    <group>
+                        <field name='tollstation_tag'/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+</odoo>

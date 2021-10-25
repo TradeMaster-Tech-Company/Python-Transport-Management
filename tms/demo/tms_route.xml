@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_route_01" model="tms.route">
+        <field name="name">[Company] El Paso - San Antonio</field>
+        <field name="departure_id" ref="tms_place_02"/>
+        <field name="arrival_id" ref="tms_place_01"/>
+        <field name="distance">887.00</field>
+        <field name="distance_loaded">587.00</field>
+        <field name="distance_empty">300.00</field>
+        <field name="travel_time"> 07.43</field>
+    </record>
+    <record id="tms_route_02" model="tms.route">
+        <field name="name">[Company] El Paso - Houston</field>
+        <field name="departure_id" ref="tms_place_02"/>
+        <field name="arrival_id" ref="tms_place_03"/>
+        <field name="distance"> 1199.00</field>
+        <field name="distance_loaded">799.00</field>
+        <field name="distance_empty">400.00</field>
+        <field name="travel_time"> 10.43</field>
+    </record>
+</odoo>

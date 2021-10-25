@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record model="ir.sequence" id="travel_sequence">
+        <field name="name">Travel Sequence</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">T</field>
+        <field name="prefix">T</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="expense_sequence">
+        <field name="name">Expense Sequence</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">E</field>
+        <field name="prefix">E</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="waybill_sequence">
+        <field name="name">Waybill Sequence</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">W</field>
+        <field name="prefix">W</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="advance_sequence">
+        <field name="name">Advance Sequence</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">A</field>
+        <field name="prefix">A</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="fuel_log_sequence">
+        <field name="name">Fuel Log Sequence</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">F</field>
+        <field name="prefix">F</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="loan_sequence">
+        <field name="name">Loan Sequence</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">L</field>
+        <field name="prefix">L</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="sale_journal_sequence">
+        <field name="name">Sale Jorunal Sequence</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">S</field>
+        <field name="prefix">S</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record model="ir.sequence" id="purchase_journal_sequence">
+        <field name="name">Purchase Journal Sequence</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">P</field>
+        <field name="prefix">P</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+</odoo>

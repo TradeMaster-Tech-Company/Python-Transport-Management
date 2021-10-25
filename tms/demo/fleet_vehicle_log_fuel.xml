@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_fuel_log_01" model="fleet.vehicle.log.fuel">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="vendor_id" ref="base.res_partner_1"/>
+        <field name="travel_id" ref="tms_travel_01"/>
+        <field name="vehicle_id" ref="tms_fleet_vehicle_01"/>
+        <field name="product_id" ref="product_fuel"/>
+        <field name="product_qty">1773.001</field>
+        <field name="tax_amount">4053.34</field>
+        <field name="price_total">29945.98</field>
+        <field name="ticket_number">1234</field>
+    </record>
+    <record id="tms_fuel_log_02" model="fleet.vehicle.log.fuel">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="vendor_id" ref="base.res_partner_1"/>
+        <field name="travel_id" ref="tms_travel_01"/>
+        <field name="vehicle_id" ref="tms_fleet_vehicle_01"/>
+        <field name="product_id" ref="product_fuel"/>
+        <field name="product_qty">384.843</field>
+        <field name="tax_amount">879.81</field>
+        <field name="price_total">6500</field>
+        <field name="ticket_number">4321</field>
+    </record>
+    <record id="tms_fuel_log_03" model="fleet.vehicle.log.fuel">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="vendor_id" ref="base.res_partner_1"/>
+        <field name="travel_id" ref="tms_travel_02"/>
+        <field name="vehicle_id" ref="tms_fleet_vehicle_01"/>
+        <field name="product_id" ref="product_fuel"/>
+        <field name="product_qty">59.207</field>
+        <field name="tax_amount">135.35</field>
+        <field name="price_total">1000</field>
+        <field name="ticket_number">5467</field>
+    </record>
+    <record id="tms_fuel_log_04" model="fleet.vehicle.log.fuel">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="vendor_id" ref="base.res_partner_1"/>
+        <field name="travel_id" ref="tms_travel_03"/>
+        <field name="vehicle_id" ref="tms_fleet_vehicle_01"/>
+        <field name="product_id" ref="product_fuel"/>
+        <field name="product_qty">284.429</field>
+        <field name="tax_amount">650.24</field>
+        <field name="price_total">4804</field>
+        <field name="ticket_number">9867</field>
+    </record>
+    <record id="tms_fuel_log_05" model="fleet.vehicle.log.fuel">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="vendor_id" ref="base.res_partner_1"/>
+        <field name="travel_id" ref="tms_travel_04"/>
+        <field name="vehicle_id" ref="tms_fleet_vehicle_05"/>
+        <field name="product_id" ref="product_fuel"/>
+        <field name="product_qty">59.207</field>
+        <field name="tax_amount">135.35</field>
+        <field name="price_total">1000</field>
+        <field name="ticket_number">8765</field>
+    </record>
+    <record id="tms_fuel_log_06" model="fleet.vehicle.log.fuel">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="vendor_id" ref="base.res_partner_1"/>
+        <field name="travel_id" ref="tms_travel_05"/>
+        <field name="vehicle_id" ref="tms_fleet_vehicle_05"/>
+        <field name="product_id" ref="product_fuel"/>
+        <field name="product_qty">279.811</field>
+        <field name="tax_amount">639.68</field>
+        <field name="price_total">4726</field>
+        <field name="ticket_number">54388</field>
+    </record>
+    <function name="action_approved" model="fleet.vehicle.log.fuel" eval="[ref('tms_fuel_log_01')]"/>
+    <function name="action_approved" model="fleet.vehicle.log.fuel" eval="[ref('tms_fuel_log_02')]"/>
+    <function name="action_confirm" model="fleet.vehicle.log.fuel" eval="[ref('tms_fuel_log_01')]"/>
+    <function name="action_confirm" model="fleet.vehicle.log.fuel" eval="[ref('tms_fuel_log_02')]"/>
+</odoo>

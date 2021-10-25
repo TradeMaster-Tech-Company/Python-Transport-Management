@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_retention_01" model="tms.retention">
+        <field name="name">Social Security</field>
+        <field name="type">salary</field>
+        <field name="factor">0.2</field>
+        <field name="product_id" ref="tms.product_retention"/>
+    </record>
+</odoo>

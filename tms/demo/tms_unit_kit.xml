@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_unit_kit_01" model="tms.unit.kit">
+        <field name="name">Kit1</field>
+        <field name="unit_id" ref="tms_fleet_vehicle_01"/>
+        <field name="dolly_id" ref="tms_fleet_vehicle_04"/>
+        <field name="trailer1_id" ref="tms_fleet_vehicle_02"/>
+        <field name="trailer2_id" ref="tms_fleet_vehicle_03"/>
+        <field name="employee_id" ref="tms_hr_employee_01"/>
+        <field name="date_start" eval="datetime.now()"/>
+        <field name="date_end" eval="datetime.now()+timedelta(days=365)"/>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="tms_unit_kit_02" model="tms.unit.kit">
+        <field name="name">Kit2</field>
+        <field name="unit_id" ref="tms_fleet_vehicle_05"/>
+        <field name="dolly_id" ref="tms_fleet_vehicle_08"/>
+        <field name="trailer1_id" ref="tms_fleet_vehicle_06"/>
+        <field name="trailer2_id" ref="tms_fleet_vehicle_07"/>
+        <field name="employee_id" ref="tms_hr_employee_02"/>
+        <field name="date_start" eval="datetime.now()"/>
+        <field name="date_end" eval="datetime.now()+timedelta(days=365)"/>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="tms_unit_kit_03" model="tms.unit.kit">
+        <field name="name">Kit3</field>
+        <field name="unit_id" ref="tms_fleet_vehicle_09"/>
+        <field name="dolly_id" ref="tms_fleet_vehicle_12"/>
+        <field name="trailer1_id" ref="tms_fleet_vehicle_10"/>
+        <field name="trailer2_id" ref="tms_fleet_vehicle_11"/>
+        <field name="employee_id" ref="tms_hr_employee_03"/>
+        <field name="date_start" eval="datetime.now()"/>
+        <field name="date_end" eval="datetime.now()+timedelta(days=365)"/>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="tms_unit_kit_04" model="tms.unit.kit">
+        <field name="name">Kit4</field>
+        <field name="unit_id" ref="tms_fleet_vehicle_13"/>
+        <field name="dolly_id" ref="tms_fleet_vehicle_16"/>
+        <field name="trailer1_id" ref="tms_fleet_vehicle_14"/>
+        <field name="trailer2_id" ref="tms_fleet_vehicle_15"/>
+        <field name="employee_id" ref="tms_hr_employee_04"/>
+        <field name="date_start" eval="datetime.now()"/>
+        <field name="date_end" eval="datetime.now()+timedelta(days=365)"/>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="tms_unit_kit_06" model="tms.unit.kit">
+        <field name="name">Kit5</field>
+        <field name="unit_id" ref="tms_fleet_vehicle_17"/>
+        <field name="dolly_id" ref="tms_fleet_vehicle_20"/>
+        <field name="trailer1_id" ref="tms_fleet_vehicle_18"/>
+        <field name="trailer2_id" ref="tms_fleet_vehicle_19"/>
+        <field name="employee_id" ref="tms_hr_employee_05"/>
+        <field name="date_start" eval="datetime.now()"/>
+        <field name="date_end" eval="datetime.now()+timedelta(days=365)"/>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

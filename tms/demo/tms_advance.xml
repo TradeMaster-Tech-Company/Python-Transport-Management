@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <record id="tms_advance_01" model="tms.advance">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="travel_id" ref="tms_travel_01"/>
+        <field name="date" eval="datetime.now()" />
+        <field name="currency_id" ref="base.MXN"/>
+        <field name="product_id" ref="product_real_expense"/>
+        <field name="amount">2500</field>
+    </record>
+    <record id="tms_advance_02" model="tms.advance">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="travel_id" ref="tms_travel_01"/>
+        <field name="date" eval="datetime.now()+timedelta(days=9)"/>
+        <field name="currency_id" ref="base.MXN"/>
+        <field name="product_id" ref="product_real_expense"/>
+        <field name="amount">500</field>
+        <field name="auto_expense" eval="True"/>
+    </record>
+    <record id="tms_advance_03" model="tms.advance">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="travel_id" ref="tms_travel_02"/>
+        <field name="date" eval="datetime.now()+timedelta(days=-9)"/>
+        <field name="currency_id" ref="base.MXN"/>
+        <field name="product_id" ref="product_real_expense"/>
+        <field name="amount">100</field>
+    </record>
+     <record id="tms_advance_04" model="tms.advance">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="travel_id" ref="tms_travel_03"/>
+        <field name="date" eval="datetime.now()+timedelta(days=20)"/>
+        <field name="currency_id" ref="base.MXN"/>
+        <field name="product_id" ref="product_real_expense"/>
+        <field name="amount">350</field>
+    </record>
+     <record id="tms_advance_05" model="tms.advance">
+        <field name="operating_unit_id" ref="operating_unit.main_operating_unit"/>
+        <field name="travel_id" ref="tms_travel_04"/>
+        <field name="date" eval="datetime.now()+timedelta(days=-30)"/>
+        <field name="currency_id" ref="base.MXN"/>
+        <field name="product_id" ref="product_real_expense"/>
+        <field name="amount">500</field>
+    </record>
+</odoo>

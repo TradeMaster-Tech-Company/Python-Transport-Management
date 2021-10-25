@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_tms_toll_data_search" model="ir.ui.view">
+        <field name="name">tms.toll.data.search</field>
+        <field name="model">tms.toll.data</field>
+        <field name="arch" type="xml">
+            <search string="Toll data">
+                <filter domain="[('state','=','open')]" string="Open"/>
+                <filter domain="[('state','=','closed')]" string="Closed"/>
+                <field name="name"/>
+                <field name="num_tag" string="Unit"/>
+                <field name="economic_number"/>
+                <field name="date"/>
+                <field name="import_rate"/>
+            </search>
+        </field>
+    </record>
+    <record model='ir.ui.view' id='tms_toll_data_tree'>
+        <field name='name'>tms.toll.data.tree</field>
+        <field name='model'>tms.toll.data</field>
+        <field name='arch' type='xml'>
+            <tree string='Toll Data' decoration-sucess="state=='open'" decoration-danger="state=='closed'" create="0" edit="0">
+                <field name="name" readonly="1"/>
+                <field name="num_tag" readonly="1"/>
+                <field name="economic_number" readonly="1"/>
+                <field name="date" readonly="1"/>
+                <field name="import_rate" readonly="1"/>
+                <field name="create_date" readonly="1"/>
+                <field name="state" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+    <record id='action_toll_data' model='ir.actions.act_window'>
+        <field name='name'>Iave toll data</field>
+        <field name='res_model'>tms.toll.data</field>
+        <field name='view_mode'>tree</field>
+    </record>
+    <menuitem id="menu_tms_settings_toll_data" name="Iave information" parent="tms.menu_tms_settings" sequence="50"/>
+    <menuitem action="action_toll_data" id="tms_iave" parent="menu_tms_settings_toll_data" sequence="15"/>
+</odoo>

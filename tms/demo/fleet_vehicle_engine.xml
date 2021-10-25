@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="fleet_vehicle_engine_01" model="fleet.vehicle.engine">
+        <field name="name">Caterpillar C13</field>
+    </record>
+    <record id="fleet_vehicle_engine_02" model="fleet.vehicle.engine">
+        <field name="name">Caterpillar C15</field>
+    </record>
+    <record id="fleet_vehicle_engine_03" model="fleet.vehicle.engine">
+        <field name="name">Cumins ISX</field>
+    </record>
+    <record id="fleet_vehicle_engine_04" model="fleet.vehicle.engine">
+        <field name="name">Cumins ISM</field>
+    </record>
+    <record id="fleet_vehicle_engine_05" model="fleet.vehicle.engine">
+        <field name="name">Volvo D11</field>
+    </record>
+    <record id="fleet_vehicle_engine_06" model="fleet.vehicle.engine">
+        <field name="name">Volvo D13</field>
+    </record>
+</odoo>

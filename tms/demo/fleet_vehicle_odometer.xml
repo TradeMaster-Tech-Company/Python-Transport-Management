@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <function name="unlink" eval="[ref('fleet.log_odometer_1')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_2')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_3')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_4')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_5')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_6')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_7')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_8')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_9')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_10')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_11')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_12')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_13')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_14')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_15')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_16')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_17')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_18')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_19')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_20')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_21')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_22')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_23')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_24')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_25')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_26')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_27')]" model="fleet.vehicle.odometer"/>
+    <function name="unlink" eval="[ref('fleet.log_odometer_28')]" model="fleet.vehicle.odometer"/>
+</odoo>

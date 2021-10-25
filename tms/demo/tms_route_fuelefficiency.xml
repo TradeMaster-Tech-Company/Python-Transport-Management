@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_route_fuelefficiency_01" model="tms.route.fuelefficiency">
+        <field name="route_id" ref="tms_route_01"/>
+        <field name="type">unit</field>
+        <field name="performance">3</field>
+        <field name="engine_id" ref="fleet_vehicle_engine_03"/>
+    </record>
+    <record id="tms_route_fuelefficiency_02" model="tms.route.fuelefficiency">
+        <field name="route_id" ref="tms_route_01"/>
+        <field name="type">single</field>
+        <field name="performance">2</field>
+        <field name="engine_id" ref="fleet_vehicle_engine_03"/>
+    </record>
+    <record id="tms_route_fuelefficiency_03" model="tms.route.fuelefficiency">
+        <field name="route_id" ref="tms_route_01"/>
+        <field name="type">double</field>
+        <field name="performance">1</field>
+        <field name="engine_id" ref="fleet_vehicle_engine_03"/>
+    </record>
+    <record id="tms_route_fuelefficiency_04" model="tms.route.fuelefficiency">
+        <field name="route_id" ref="tms_route_02"/>
+        <field name="type">unit</field>
+        <field name="performance">3</field>
+        <field name="engine_id" ref="fleet_vehicle_engine_03"/>
+    </record>
+    <record id="tms_route_fuelefficiency_05" model="tms.route.fuelefficiency">
+        <field name="route_id" ref="tms_route_02"/>
+        <field name="type">single</field>
+        <field name="performance">2</field>
+        <field name="engine_id" ref="fleet_vehicle_engine_03"/>
+    </record>
+    <record id="tms_route_fuelefficiency_06" model="tms.route.fuelefficiency">
+        <field name="route_id" ref="tms_route_02"/>
+        <field name="type">double</field>
+        <field name="performance">1</field>
+        <field name="engine_id" ref="fleet_vehicle_engine_03"/>
+    </record>
+</odoo>

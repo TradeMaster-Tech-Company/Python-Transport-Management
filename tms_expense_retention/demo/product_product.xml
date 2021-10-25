@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms.product_retention" model="product.product">
+        <field name="apply_for_retention" eval="1"/>
+    </record>
+</odoo>

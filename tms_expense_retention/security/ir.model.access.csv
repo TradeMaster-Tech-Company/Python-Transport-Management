@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+expenses_tms_retention,expenses_tms_retention,model_tms_retention,tms.group_expenses,1,1,1,1

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="account_advances_expenses" model="account.account">
+        <field name="name">Advances and Expenses to Pay</field>
+        <field name="code">205.02.01</field>
+        <field name="user_type_id" ref="account.data_account_type_payable"/>
+        <field name="reconcile" eval="1"/>
+    </record>
+    <record id="account_drivers" model="account.account">
+        <field name="name">Drivers</field>
+        <field name="code">107.05.02</field>
+        <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+    </record>
+    <record id="account_negative_balance" model="account.account">
+        <field name="name">Divers Negative Balance</field>
+        <field name="code">107.05.03</field>
+        <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+    </record>
+    <record id="account_loan" model="account.account">
+        <field name="name">Driver Loans</field>
+        <field name="code">107.05.04</field>
+        <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+    </record>
+      <record id="account_fuel_expense" model="account.account">
+        <field name="name">Fuel</field>
+        <field name="code">601.48.01</field>
+        <field name="user_type_id" ref="account.data_account_type_expenses"/>
+    </record>
+      <record id="account_ieps_expense" model="account.account">
+        <field name="name">IEPS Expense</field>
+        <field name="code">601.58.01</field>
+        <field name="user_type_id" ref="account.data_account_type_expenses"/>
+    </record>
+</odoo>

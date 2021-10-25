@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms.product_fuel" model="product.product">
+        <field name="property_account_expense_id" ref="account_fuel_expense"/>
+    </record>
+    <record id="tms.product_ieps" model="product.product">
+        <field name="property_account_expense_id" ref="account_ieps_expense"/>
+    </record>
+</odoo>
