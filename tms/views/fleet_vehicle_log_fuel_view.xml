@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="fleet_vehicke_log_fuel_view_form">
+        <field name="name">fleet_vehicke_log_fuel_view.form</field>
+        <field name="model">fleet.vehicle.log.fuel</field>
+        <field name="arch" type="xml">
+            <form string="Fuel Logs">
+                <header>
+                    <button icon="fa-times" name="action_cancel" states="draft,approved,confirmed,closed" string="Cancel" type="object"/>
+                    <button icon="fa-reply" name="set_2_draft" states="cancel" string="Set to Draft" type="object"/>
+                    <button class="oe_highlight" icon="fa-thumbs-up" name="action_approved" states="draft" string="Approve" type="object"/>
+                    <button class="oe_highlight" icon="fa-check-square-o" name="action_confirm" states="approved" string="Confirm" type="object"/>
+                    <field name="state" statusbar_visible="draft,approved,confirmed,cancel,closed" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <label for="name" class="oe_inline" style="font-size:30px;" string="Fuel Log - " attrs="{'invisible':[('name','=', False)]}"/>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="operating_unit_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" required="1"/>
+                            <field name="vendor_id" domain="[('is_company', '=', True)]" widget="res_partner_many2one" context="{'res_partner_search_mode': 'supplier', 'show_vat': True, 'default_is_company': True}" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                            <field name="travel_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" domain="[('state','!=','cancel'),('state','!=','closed'),('operating_unit_id', '=', operating_unit_id)]"/>
+                            <field name="vehicle_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                        </group>
+                        <group>
+                            <field name="date" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                            <field name="ticket_number" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                            <field name="currency_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))], 'required': True}" groups="base.group_multi_currency"/>
+                            <field name="prepaid_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <notebook colspan="4">
+                            <page string="Fuel Details">
+                                <group col="4">
+                                    <field name="product_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))], 'required': True}"/>
+                                    <field name="product_qty" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))], 'required': True}"/>
+                                    <field name="price_unit"/>
+                                    <field name="price_subtotal"/>
+                                    <field name="tax_amount" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))], 'required': True}"/>
+                                    <field name="special_tax_amount"/>
+                                    <field name="price_total" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))], 'required': True}"/>
+                                </group>
+                            </page>
+                            <page string="Other Info">
+                                <group>
+                                    <field name="employee_id" context="{'default_driver': True}" readonly='1'/>
+                                    <label for="odometer"/>
+                                    <div class="o_row">
+                                        <field name="odometer" readonly='1'/>
+                                    </div>
+                                </group>
+                                <group>
+                                    <field name="invoice_id" readonly='1'/>
+                                    <field name="invoice_paid" readonly='1'/>
+                                </group>
+                                <group>
+                                    <field name="expense_id" readonly="1" attrs="{'invisible': [('expense_id', '=', False)]}"/>
+                                </group>
+                            </page>
+                        </notebook>
+                        <group colspan="4" string='Notes'>
+                            <field name="notes" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" nolabel="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" placeholder="Share a message..." widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="fleet_vehicle_log_fuel_filter_search" model="ir.ui.view">
+        <field name="name">Search view for Fuel Logs</field>
+        <field name="model">fleet.vehicle.log.fuel</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="travel_id"/>
+                <field name="vehicle_id"/>
+                <filter name="operating_unit_group_by" context="{'group_by':'operating_unit_id'}" string="Operating Unit"/>
+                <filter name="vendor_id_group_by" context="{'group_by':'vendor_id'}" string="Supplier"/>
+                <filter name="vehicle_id_group_by" context="{'group_by':'vehicle_id'}" string="Vehicle"/>
+                <filter name="driver_id_group_by" context="{'group_by':'employee_id'}" string="Driver"/>
+                <filter name="travel_id_group_by" context="{'group_by':'travel_id'}" string="Travel"/>
+                <filter name="state_group_by" context="{'group_by': 'state'}" string="State"/>
+                <filter name="expense_id" context="{'group_by': 'expense_id'}" string="Expense Record"/>
+            </search>
+        </field>
+    </record>
+    <record id="fleet_vehicle_log_fuel_tree" model="ir.ui.view">
+        <field name="name">tms.fleet.vehicle.log.fuel.tree</field>
+        <field name="model">fleet.vehicle.log.fuel</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="travel_id"/>
+                <field name="employee_id"/>
+                <field name="vendor_id"/>
+                <field name="product_qty"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id='fleet_vehicle_log_fuel_action' model='ir.actions.act_window'>
+        <field name="name">Fuel Log</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fleet.vehicle.log.fuel</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="fleet_vehicle_log_fuel_filter_search"/>
+    </record>
+    <menuitem action="fleet_vehicle_log_fuel_action" id="fuel_vehicle_log_menu" name="Fuel Voucher" parent="tms.menu_tms_travels" sequence="10"/>
+</odoo>

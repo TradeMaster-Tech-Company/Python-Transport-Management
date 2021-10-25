@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_tms_event_search" model="ir.ui.view">
+        <field name="name">tms.event.search</field>
+        <field name="model">tms.event</field>
+        <field name="arch" type="xml">
+            <search string="TMS Events">
+                <field name="name"/>
+                <field name="date"/>
+            </search>
+        </field>
+    </record>
+    <record id="view_tms_event_tree" model="ir.ui.view">
+        <field name="name">tms.event.tree</field>
+        <field name="model">tms.event</field>
+        <field name="arch" type="xml">
+            <tree string="TMS Events">
+                <field name="date"/>
+                <field name="name"/>
+                <field name="position_real"/>
+                <field name="position_pi"/>
+                <field name="notes"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_tms_event_form" model="ir.ui.view">
+        <field name="name">tms.event.form</field>
+        <field name="model">tms.event</field>
+        <field name="arch" type="xml">
+            <form string="TMS Events">
+                <header>
+                    <field name="state" statusbar_visible="draft,confirm,cancel" widget="statusbar"/>
+                    <button icon="fa-times" name="action_cancel" states="draft,confirm" string="Cancel" type="object"/>
+                    <button icon="fa-reply" name="set_2_draft" states="cancel" string="Set to Draft" type="object"/>
+                    <button class="oe_highlight" icon="fa-check-square-o" name="action_confirm" states="draft" string="Confirm" type="object"/>
+                </header>
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="travel_id"/>
+                    </group>
+                    <group col="4" string="GPS">
+                        <field name="latitude"/>
+                        <field name="longitude"/>
+                        <field name="position_real"/>
+                        <field name="position_pi"/>
+                    </group>
+                    <group colspan="4" string="Notes">
+                        <field name="notes" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

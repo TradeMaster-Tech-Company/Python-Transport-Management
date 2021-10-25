@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="expense_report">
+        <t t-as="doc" t-foreach="docs">
+            <div class="page">
+                <div class="row text-center" t-att-style="Panel_Header">
+                    <strong>Liquidation</strong>
+                    <span t-field="doc.name"/>
+                </div>
+                <div class="border_div">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <strong>Operator: </strong>
+                            <span t-field="doc.employee_id"/>
+                        </div>
+                        <div class="col-xs-3">
+                            <strong>Vat: </strong>
+                        </div>
+                        <div class="col-xs-3">
+                            <strong>NSS</strong>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <strong>Date: </strong>
+                            <span t-field="doc.date"/>
+                        </div>
+                        <div class="col-xs-3">
+                            <strong>Departure: </strong>
+                        </div>
+                        <div class="col-xs-3">
+                            <strong>Arrival: </strong>
+                        </div>
+                        <div class="col-xs-3">
+                            <strong>Days</strong>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <strong>Unit: </strong>
+                            <span t-field="doc.unit_id"/>
+                        </div>
+                        <div class="col-xs-6"/>
+                        <div class="col-xs-3">
+                            <strong>Loaded Kms: </strong>
+                            <span t-esc="sum(x.distance_route for x in doc.travel_ids)"/>
+                            <br/>
+                            <strong>Empty Kms: </strong>
+                            <span t-esc="sum(x.distance_empty for x in doc.travel_ids)"/>
+                            <br/>
+                            <strong>Traveled Kms: </strong>
+                            <span t-esc="sum(x.distance_driver for x in doc.travel_ids)"/>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <strong>ITINERARY</strong>
+                    </div>
+                    <div class="col-xs-8">
+                        <strong>TRAVEL EXPENSES</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <t t-set="count" t-value="0"/>
+                        <t t-as="travel" t-foreach="doc.travel_ids">
+                            <span t-esc="count + 1"/>
+                            <span>.-</span>
+                            <span t-field="travel.route_id"/>
+                            <br/>
+                        </t>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <t t-as="expense" t-foreach="doc.expense_line_ids">
+                                <t t-set="line" t-value="expense.line_type"/>
+                                    <t t-if="line in ['real_expense','fuel','fuel_cash', 'made_up_expense']">
+                                        <span t-field="expense.name"/><br/>
+                                    </t>
+                                </t>
+                            </div>
+                            <div class="col-xs-6" style="text-align: right;">
+                                <t t-as="expense" t-foreach="doc.expense_line_ids">
+                                <t t-set="line" t-value="expense.line_type"/>
+                                    <t t-if="line in ['real_expense','fuel','fuel_cash', 'made_up_expense']">
+                                        <span t-field="expense.price_subtotal" /><br/>
+                                    </t>
+                                </t>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"><span>EXPENSES</span></div>
+                            <div class="col-xs-6">
+                                <strong>Operator salary: </strong><br/>
+                                <strong>Other income: </strong><br/>
+                                <strong>Total expenses: </strong><br/>
+                                <strong>Taxes expenses: </strong><br/>
+                                <strong>Total expenses with Taxes: </strong><br/>
+                            </div>
+                            <div class="col-xs-6" style="text-align: right;">
+                                <span t-field="doc.amount_salary"/><br/>
+                                <span t-field="doc.amount_other_income"/><br/>
+                                <span t-esc="doc.get_amount_total()"/><br/>
+                                <span t-esc="doc.get_amount_tax()"/><br/>
+                                <span t-esc="doc.get_amount_tax() + doc.get_amount_total()"/><br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <table class="table">
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>No. Guide</th>
+                        <th>Trailer</th>
+                        <th>Weight</th>
+                        <th>Price</th>
+                        <th>I.V.A.</th>
+                        <th>Total</th>
+                        <th>Base</th>
+                    </tr>
+                    <tr t-as="line" t-foreach="doc.travel_ids">
+                        <t t-as="waybill" t-foreach="line.waybill_ids">
+                            <td><span t-field="waybill.name"/></td>
+                            <td><span t-field="waybill.partner_id.name"/></td>
+                            <td></td>
+                            <td><span t-field="line.unit_id"/></td>
+                            <td>
+                                <t t-as="product" t-foreach="waybill.waybill_line_ids">
+                                    <span t-field="product.product_qty"/>
+                                </t>
+                            </td>
+                            <td>
+                                <t t-as="product" t-foreach="waybill.waybill_line_ids">
+                                    <span t-field="product.unit_price"/>
+                                </t>
+                            </td>
+                            <td>
+                                <t t-as="product" t-foreach="waybill.waybill_line_ids">
+                                    <span t-field="product.tax_amount"/>
+                                </t>
+                            </td>
+                            <td>
+                                <t t-as="product" t-foreach="waybill.waybill_line_ids">
+                                    <span t-field="product.price_subtotal"/>
+                                </t>
+                            </td>
+                            <td><span t-field="waybill.operating_unit_id"/></td>
+                        </t>
+                    </tr>
+                </table>
+                <div class="row">
+                    <div class="col-xs-6 text-center">
+                        <h5>Expense Summary</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <strong>Salary</strong>
+                        <br/>
+                        <strong>Salary Discounts</strong>
+                        <br/>
+                        <strong>Salary Retentions</strong>
+                        <br/>
+                        <strong>Expenses</strong>
+                        <br/>
+                    </div>
+                    <div class="col-xs-3">
+                        <span t-esc-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;res_company.currency_id&quot;}" t-field="doc.amount_salary"/>
+                        <br/>
+                        <span t-esc-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;res_company.currency_id&quot;}" t-field="doc.amount_salary_discount"/>
+                        <br/>
+                        <span t-esc-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;res_company.currency_id&quot;}" t-field="doc.amount_salary_retention"/>
+                        <br/>
+                        <span t-esc-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;res_company.currency_id&quot;}" t-field="doc.amount_real_expense"/>
+                    </div>
+                    <div class="col-xs-3">
+                        <span class="text-center">STATISTICAL DATA</span><br/>
+                        <span>KMS/LT. Unity:</span><span t-field='doc.fuel_qty'/>
+                        <span>Income by km:</span><span t-esc='doc.current_odometer'/>
+                        <span>Cost by km:</span>
+                    </div>
+                    <div class="col-xs-3">
+                        <span class="text-center">UNIT PERFORMANCE</span><br/>
+                        <span t-field="doc.fuel_efficiency"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6"/>
+                    <div class="col-xs-6 text-center">
+                        <h5>Notes</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6"/>
+                    <div class="col-xs-6">
+                        <span t-field="doc.notes"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 text-center">
+                        <h5>Advance</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <t t-as="retention" t-foreach="doc.expense_line_ids">
+                            <t t-set="type" t-value="retention.line_type"/>
+                            <t t-if="type == 'fuel'">
+                                <strong>
+                                    <span t-field="retention.name"/>
+                                    <br/>
+                                </strong>
+                            </t>
+                        </t>
+                        <t t-as="advance" t-foreach="doc.advance_ids">
+                            <strong>
+                                <span t-field="advance.name"/>
+                                <br/>
+                            </strong>
+                        </t>
+                    </div>
+                    <div class="col-xs-3">
+                        <t t-as="retention" t-foreach="doc.expense_line_ids">
+                            <t t-set="type" t-value="retention.line_type"/>
+                            <t t-if="type == 'fuel'">
+                                <span t-field="retention.price_total"/>
+                                <br/>
+                            </t>
+                        </t>
+                        <t t-as="advance" t-foreach="doc.advance_ids">
+                            <span t-field="advance.amount"/>
+                            <br/>
+                        </t>
+                    </div>
+                    <div class="col-xs-3 text-center">
+                        <hr/>
+                        <br/>
+                        <span>Driver</span>
+                    </div>
+                    <div class="col-xs-3 text-center">
+                        <hr/>
+                        <br/>
+                        <span>Reviewed by</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 text-center">
+                            <span>SALARY</span>
+                            <span t-field="doc.amount_balance"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+        <t t-set="Panel_Header" t-value="'color:#000000; text-align:left;font-size:10px;background-color:#f0f0f0;border-color: #333; padding-left:5; padding-right:0; padding-top:5; padding-bottom:0;'"/>
+    </template>
+    <template id="expense_report_translate">
+        <t t-call="report.html_container">
+            <t t-as="doc_id" t-foreach="doc_ids">
+                <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'tms.expense_report')"/>
+            </t>
+        </t>
+    </template>
+    <record id="print_expense_report" model="ir.actions.report">
+        <field name="name">Expense Report</field>
+        <field name="model">tms.expense</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tms.expense_report</field>
+        <field name="report_file">tms.expense_report</field>
+        <field name="print_report_name">Expense Report</field>
+        <field name="binding_model_id" ref="model_tms_expense"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

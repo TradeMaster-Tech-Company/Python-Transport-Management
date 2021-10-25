@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_tms_expense_line_tree" model="ir.ui.view">
+        <field name="name">tms.expense.line.tree</field>
+        <field name="model">tms.expense.line</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="line_type=='salary'" decoration-success="line_type=='fuel'" decoration-muted="line_type=='madeup_expense'" decoration-danger="price_total&lt;0" string="Expense Lines">
+                <field name='travel_id' readonly='1'/>
+                    <field name='line_type'/>
+                    <field name='product_id'/>
+                    <field name='name'/>
+                    <field name='product_uom_id'/>
+                    <field name='product_qty'/>
+                    <field name='unit_price'/>
+                    <field name='tax_ids' widget='many2many_tags'/>
+                    <field name='price_subtotal'/>
+                    <field name='tax_amount'/>
+                    <field name='price_total'/>
+                    <field name='is_invoice'/>
+                    <field name='invoice_id'/>
+                    <!-- Field are invisible because are necessary to keep the information during edition of the record -->
+                    <field name="expense_id" invisible="1"/>
+                    <field name='route_id' invisible="1"/>
+                    <field name='special_tax_amount' invisible="1"/>
+                    <field name="partner_id" invisible="1"/>
+                    <field name="invoice_number" invisible="1"/>
+                    <field name="date" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_tms_expense_line_form" model="ir.ui.view">
+        <field name="name">tms.expense.line.form</field>
+        <field name="model">tms.expense.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h2>Travel Expense Line </h2>
+                    <group>
+                        <field name="product_uom_id" invisible="1"/>
+                        <field name="expense_id" invisible="1"/>
+                        <field name="travel_id" domain="[('expense_id', '=', expense_id),('expense_id', '!=', False)]" options="{'no_create': True}"/>
+                        <field name='route_id'/>
+                        <field name="line_type" required='1'/>
+                        <field name="product_id" domain="[('tms_product_category', 'in', ['real_expense','made_up_expense','salary','salary_retention','salary_discount','fuel','other_income','refund','fuel_cash', 'tollstations'])]" options="{'no_create': True}"/>
+                        <field name="name"/>
+                        <field name="product_qty" required="1" attrs="{'invisible':['|', ('line_type','in', ['real_expense', 'made_up_expense', 'salary', 'refund', 'salary_retention', 'salary_discount', 'other_income']),('line_type','=', False)]}"/>
+                        <field name='unit_price' required="1"/>
+                        <field name='tax_ids' widget='many2many_tags' attrs="{'invisible':[('line_type','in', ['salary_discount', 'salary', 'salary_retention', 'other_income', 'refund'])]}"/>
+                        <field name="price_subtotal"/>
+                        <field name="tax_amount" attrs="{'invisible':[('line_type','in', ['salary_discount', 'salary', 'salary_retention', 'other_income', 'refund'])]}"/>
+                        <field name='special_tax_amount'
+                            attrs="{'invisible':['|', ('line_type','in', ['real_expense','made_up_expense','salary','salary_retention','salary_discount','other_income','refund']),('product_id', '=', False)]}"/>
+                        <field name="price_total" required='1'/>
+                    </group>
+                    <group string="Supplier Details" attrs="{'invisible':['|', ('line_type','=',False), ('line_type','in', ['salary','salary_retention','salary_discount','other_income','refund'])]}">
+                        <field name="is_invoice" attrs="{'invisible':['|', ('line_type','=', False), ('line_type','in',['salary','salary_retention','salary_discount','other_income','refund', 'fuel',])]}"/>
+                        <field name="partner_id" attrs="{'invisible':[('is_invoice', '=', False), ('line_type', '!=', 'fuel')],'required':['|', ('is_invoice', '=', True),('line_type', 'in', ['fuel', 'fuel_cash'])]}" widget="res_partner_many2one" context="{'res_partner_search_mode': 'supplier', 'show_address': 1, 'default_is_company': True, 'show_vat': True}" domain="[('is_company', '=', True)]"/>
+                        <field name="invoice_number" attrs="{'invisible':[('is_invoice', '=', False), ('line_type', '!=', 'fuel')]}"/>
+                        <field name="date" attrs="{'invisible':[('is_invoice', '=', False), ('line_type', '!=', 'fuel')],'required':['|', ('is_invoice', '=', True),('line_type', 'in', ['fuel', 'fuel_cash'])]}"/>
+                        <field name="invoice_id" attrs="{'invisible':['|', ('is_invoice', '=', False), ('invoice_id', '=', False)]}" domain="[('partner_id', '=', partner_id),('state', 'not in', ['paid'])]" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_tms_expense_line_filter" model="ir.ui.view">
+        <field name="name">tms.expense.line.list.select</field>
+        <field name="model">tms.expense.line</field>
+        <field name="arch" type="xml">
+            <search string="Expense Lines">
+                <field name="name"/>
+                <filter name="line_type" context="{'group_by':'line_type'}" domain="[]" icon="terp-check" string="Line Type"/>
+            </search>
+        </field>
+    </record>
+    <record id="action_tms_expense_line_form" model="ir.actions.act_window">
+        <field name="name">Travel Expenses Line</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tms.expense.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_tms_expense_line_filter"/>
+        <field name="help">TMS Travel Expenses Line</field>
+    </record>
+</odoo>

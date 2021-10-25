@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_tms_expense_tree" model="ir.ui.view">
+        <field name="name">tms.expense.tree</field>
+        <field name="model">tms.expense</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <tree decoration-muted="state=='cancel'" decoration-info="state=='confirmed'" string="Waybills">
+                <button icon="fa-thumbs-up" name="action_approved" states="draft" string="Approve" type="object"/>
+                <button icon="fa-check-square-o" name="action_confirm" states="approved" string="Confirm" type="object"/>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="employee_id"/>
+                <field name="unit_id"/>
+                <field name="amount_advance" sum="Advances"/>
+                <field name="amount_net_salary" sum="Net Salary"/>
+                <field name="amount_subtotal_real" sum="SubTotal (Real)"/>
+                <field name="amount_tax_real" sum="Tax Real"/>
+                <field name="amount_total_real" sum="Total Real"/>
+                <field name="amount_balance" sum="Balance"/>
+                <field invisible="1" name="move_id"/>
+                <field name="paid"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_tms_expense_form" model="ir.ui.view">
+        <field name="name">tms.expense.form</field>
+        <field name="model">tms.expense</field>
+        <field name="arch" type="xml">
+            <form string="Travel Expenses">
+                <header>
+                    <button icon="fa-reply" name="action_draft" states="approved,cancel" string="Reset to draft" type="object"/>
+                    <button class="oe_highlight" icon="fa-thumbs-up" name="action_approved" states="draft" string="Approve" type="object"/>
+                    <button class="oe_highlight" confirm="Are you sure to confirm this expense? This action can't be changed." icon="fa-check-square-o" name="action_confirm" states="approved" string="Confirm" type="object"/>
+                    <button name="action_cancel" states="approved,confirmed" string="Cancel" type="object"/>
+                    <button name="get_travel_info" states="approved,draft" string="Update Expense" type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <h1>
+                        <label for="name" attrs="{'invisible':[('name','=', False)]}" class="oe_inline" string="Expense - " style="font-size:30px;"/>
+                        <field class="oe_inline" name="name" readonly="1"/>
+                    </h1>
+                    <group col="4">
+                        <field attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" name="operating_unit_id"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" name="date"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" domain="[('fleet_type', '=', 'tractor')]" name="unit_id"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" name="employee_id"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" name="currency_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Resume">
+                            <group col="2">
+                                <div>
+                                    <group>
+                                        <separator colspan="2" string="Expense Summary"/>
+                                        <field name="amount_salary"/>
+                                        <field name="amount_other_income"/>
+                                        <field name="amount_refund"/>
+                                        <field name="amount_salary_discount"/>
+                                        <field name="amount_salary_retention"/>
+                                        <field name="amount_loan"/>
+                                        <field name="amount_real_expense"/>
+                                        <field name="amount_fuel_cash"/>
+                                        <field name="amount_subtotal_real"/>
+                                        <field name="amount_tax_real"/>
+                                        <field name="amount_total_real"/>
+                                        <field name="amount_advance"/>
+                                        <field name="amount_balance"/>
+                                        <separator colspan="2" string="Including Fuel Vouchers"/>
+                                        <field name="amount_fuel"/>
+                                        <field name="amount_subtotal_total"/>
+                                        <field name="amount_tax_total"/>
+                                        <field name="amount_total_total"/>
+                                        <separator colspan="2" string="· · · · · · · · · ·" style="text-align: center;"/>
+                                        <field name="amount_made_up_expense"/>
+                                    </group>
+                                </div>
+                                <div/>
+                            </group>
+                        </page>
+                        <page string="Travels">
+                            <separator colspan="4" string="Travels for Driver"/>
+                            <group col="4" colspan="4">
+                                <group col="2" colspan="2">
+                                    <field name='start_date'/>
+                                </group>
+                                <group col="2" colspan="2">
+                                    <field name='end_date'/>
+                                </group>
+                                <group col="2" colspan="2">
+                                    <field name='travel_days'/>
+                                </group>
+                            </group>
+                            <field attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" colspan="4" domain="[('employee_id','=', employee_id), ('state','=', 'done'), ('state','!=','cancel'), ('unit_id', '=', unit_id)]" context="{'tree_view_ref' : 'tms.view_tms_travel_tree_customer', 'form_view_ref': 'tms.view_tms_travel_form_expense'}" name="travel_ids" nolabel="1">
+                                <tree default_order="name" string="">
+                                    <field invisible="1" name="state"/>
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                    <field name='unit_id'/>
+                                    <field name='trailer1_id'/>
+                                    <field name="trailer2_id"/>
+                                    <field name="dolly_id"/>
+                                    <field name="route_id"/>
+                                    <field name="partner_ids" widget="many2many_tags"/>
+                                    <field name="waybill_ids" widget="many2many_tags"/>
+                                    <field avg="Rend" name="fuel_efficiency_travel"/>
+                                    <field avg="Rendx" name="fuel_efficiency_extraction"/>
+                                    <field name="odometer" sum="Distancia Real"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Expense Lines">
+                            <field attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" context="{'default_expense_id': active_id, 'group_by_line_type': 1, 'default_travel_ids': travel_ids}" name="expense_line_ids" nolabel="1"/>
+                        </page>
+                        <page string="Advances">
+                            <field colspan="4" name="advance_ids" nolabel="1" readonly="1">
+                                <tree string="">
+                                    <field invisible="1" name="state"/>
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                    <field name="travel_id"/>
+                                    <field name="employee_id"/>
+                                    <field name="amount"/>
+                                    <field name="auto_expense"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Fuel log Vouchers">
+                            <field colspan="4" name="fuel_log_ids" nolabel="1" readonly="1"/>
+                        </page>
+                        <page string="Loans">
+                            <field colspan="4" name="loan_ids" nolabel="1" attrs="{'readonly':[('state','in',('confirmed'))]}">
+                                <tree string="aa">
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                    <field name="employee_id"/>
+                                    <field name="product_id"/>
+                                    <field name="amount"/>
+                                    <field name="balance"/>                    
+                                    <field name="paid" />
+                                    <field name="state"/>
+                                    <field name="lock"/>
+                                    <field name="amount_discount"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Notes">
+                            <group>
+                                <field colspan="4" name="notes" nolabel="1"/>
+                                <group>
+                                    <field name='move_id'/>
+                                </group>
+                                <group>
+                                    <field name='paid'/>
+                                    <field name='payment_move_id'/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Statistics">
+                            <group col="4" colspan="4" string="Distances">
+                                <group col="2" colspan="2" string="Planned">
+                                    <field name='distance_loaded'/>
+                                    <field name='distance_empty'/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" name="distance_routes"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" name="current_odometer"/>
+                                    <field attrs="{'invisible':[('odometer_log_id','=',False)], 'readonly':[('state','in',('confirmed','cancel','closed'))]}" name="vehicle_id"/>
+                                    <field attrs="{'invisible':[('odometer_log_id','=',False)], 'readonly':[('state','in',('confirmed','cancel','closed'))]}" name="odometer_log_id"/>
+                                </group>
+                                <group col="2" colspan="2" string="Real">
+                                    <field name='distance_loaded_real'/>
+                                    <field name='distance_empty_real'/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" name="distance_real"/>
+                                </group>
+                            </group>
+                            <group col="4" colspan="4" string="Fuel">
+                                <group col="2" colspan="2">
+                                    <field name="fuel_qty"/>
+                                    <field name="fuel_efficiency"/>
+                                    <field name="fuel_efficiency_real"></field>
+                                </group>
+                                <group col="2" colspan="2" >
+                                   <field name="income_km" widget="monetary" options="{'currency_id': 'currency_id'}"></field>
+                                   <field name="expense_km" widget="monetary" options="{'currency_id': 'currency_id'}"></field>
+                                   <field name="percentage_km" widget="progressbar"></field>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" placeholder="Share a message..." widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_tms_expense_filter" model="ir.ui.view">
+        <field name="name">tms.expense.list.select</field>
+        <field name="model">tms.expense</field>
+        <field name="arch" type="xml">
+            <search string="Search Expenses">
+                <filter name="draft" domain="[('state','=','draft')]" string="Draft"/>
+                <filter name="approved" domain="[('state','=','approved')]" string="Approved"/>
+                <filter name="confirmed" domain="[('state','=','confirmed')]" string="Confirmed"/>
+                <filter name="not_paid" domain="[('paid','=',0)]" string="Not Paid"/>
+                <filter name="paid" domain="[('paid','=',1)]" string="Paid"/>
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="unit_id"/>
+                <field name="date" string="Expense date"/>
+                <filter name="driver" context="{'group_by':'employee_id'}" string="Driver"/>
+                <filter name="unit" context="{'group_by':'unit_id'}" string="Unit"/>
+                <filter name="state" context="{'group_by':'state'}" string="State"/>
+                <filter name="period" context="{'group_by':'date'}" string="Period"/>
+                <filter name="paid" context="{'group_by':'paid'}" string="Paid"/>
+                <filter name="operating_unit_group_by" context="{'group_by':'operating_unit_id'}" string="Operating Unit"/>
+            </search>
+        </field>
+    </record>
+    <record id="view_tms_expense_calendar" model="ir.ui.view">
+        <field name="name">tms.expense.calendar</field>
+        <field name="model">tms.expense</field>
+        <field name="arch" type="xml">
+            <calendar color="state" date_start="date" string="Expense">
+                <field name="employee_id"/>
+                <field name="amount_balance"/>
+            </calendar>
+        </field>
+    </record>
+    <record id="view_tms_expense_graph" model="ir.ui.view">
+        <field name="name">tms.expense.graph</field>
+        <field name="model">tms.expense</field>
+        <field name="arch" type="xml">
+            <graph string="Expense" type="bar">
+                <field name="employee_id"/>
+                <field name="amount_balance" operator="+"/>
+            </graph>
+        </field>
+    </record>
+    <record id="action_tms_expense_form" model="ir.actions.act_window">
+        <field name="name">Travel Expenses</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tms.expense</field>
+        <field name="view_mode">tree,form,calendar,graph</field>
+        <field name="context">{}</field>
+        <field name="search_view_id" ref="view_tms_expense_filter"/>
+        <field name="help">TMS Travel Expenses</field>
+    </record>
+    <menuitem action="action_tms_expense_form" id="menu_tms_expense" parent="menu_tms_travels" sequence="40"/>
+</odoo>

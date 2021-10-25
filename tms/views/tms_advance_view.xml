@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_tms_advance_search" model="ir.ui.view">
+        <field name="name">tms.advance.search</field>
+        <field name="model">tms.advance</field>
+        <field name="arch" type="xml">
+            <search string="Advances">
+                <filter name="draft" domain="[('state','=','draft')]" string="Draft"/>
+                <filter name="approved" domain="[('state','=','approved')]" string="Approved"/>
+                <filter name="confirmed" domain="[('state','=','confirmed')]" string="Confirmed"/>
+                <filter name="closed" domain="[('state','=','closed')]" string="Closed"/>
+                <filter name="cancelled" domain="[('state','=','cancel')]" string="Cancelled"/>
+                <filter name="paid" domain="[('paid','=', True)]" string="Paid"/>
+                <filter name="not_paid" domain="[('paid','=', False)]" string="Not Paid"/>
+                <filter domain="[('date','&gt;=', time.strftime('%Y-%m-01'))]" string="From this month" name="this_month"/>
+                <field name="date"/>
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="state"/>
+                <filter name="travel" context="{'group_by': 'travel_id'}" string="Travel"/>
+                <filter name="unit" context="{'group_by': 'unit_id'}" string="Unit"/>
+                <filter name="driver" context="{'group_by': 'employee_id'}" string="Driver"/>
+                <filter name="state" context="{'group_by': 'state'}" string="State"/>
+                <filter name="period" context="{'group_by': 'date'}" string="Period"/>
+                <filter name="day" context="{'group_by': 'date:day'}" string="Day"/>
+                <filter name="operating_unit_group_by" context="{'group_by':'operating_unit_id'}" string="Operating Unit"/>
+            </search>
+        </field>
+    </record>
+    <record id="view_tms_advance_tree" model="ir.ui.view">
+        <field name="name">tms.advance.tree</field>
+        <field name="model">tms.advance</field>
+        <field name="arch" type="xml">
+            <tree decoration-muted="state=='cancel'" decoration-success="state=='approved'" decoration-info="state=='confirmed'" string="Advances">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="travel_id"/>
+                <field name="unit_id"/>
+                <field name="employee_id"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="amount" widget='monetary' sum="Amount Total"/>
+                <field name="product_id"/>
+                <field name="auto_expense"/>
+                <field name="paid"/>
+                <field name="state"/>
+                <button icon="fa-arrow-right" name="action_approve" states="draft" string="Approve" type="object"/>
+                <button icon="fa-check" name="action_confirm" states="approved" string="Confirm" type="object"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_tms_advance_form" model="ir.ui.view">
+        <field name="name">tms.advance.form</field>
+        <field name="model">tms.advance</field>
+        <field name="arch" type="xml">
+            <form string="Advances">
+                <header>
+                    <button name="action_cancel_draft" icon="fa-reply" states="cancel" string="Set to Draft" type="object"/>
+                    <button name="action_cancel" icon="fa-times" states="draft,approved,confirmed" string="Cancel" type="object"/>
+                    <button name="action_approve" icon="fa-thumbs-up" class="oe_highlight" states="draft" string="Approve" type="object"/>
+                    <button name="action_confirm" icon="fa-check-square-o" class="oe_highlight" states="approved" string="Confirm" type="object"/>
+                    <button name="action_authorized" icon="fa-key" string="To authorize advance" type="object" class="oe_highlight" states="authorized"/>
+                    <field name="state" statusbar_visible="draft,approved,authorized,confirmed,cancel,closed" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <h1>
+                        <label for="name" class="oe_inline" style="font-size:30px;" string="Advance - " attrs="{'invisible':[('name','=', False)]}"/>
+                        <field class="oe_inline" name="name" readonly="1"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="operating_unit_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                            <field name="travel_id" attrs="{'readonly':[('state','in',('cancel','closed','confirmed'))]}" domain="[('state','!=','cancel'),('state','!=','closed'),('operating_unit_id', '=', operating_unit_id)]"/>
+                            <field name="unit_id"/>
+                            <field name="employee_id"/>
+                        </group>
+                        <group>
+                            <field name="date" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                            <field name="currency_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" groups="base.group_multi_currency"/>
+                            <field name="auto_expense" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" />
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="product_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                            <field name="amount" options="{'currency_field': 'currency_id'}" widget="monetary" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <notebook colspan="4">
+                            <page string="Notes">
+                                <group>
+                                    <field name="notes" nolabel="1"/>
+                                </group>
+                            </page>
+                            <page string="Log Info">
+                                <group col="4" colspan="4">
+                                    <field name="move_id"/>
+                                    <field name="paid"/>
+                                    <field name="expense_id"/>
+                                    <field name="payment_move_id"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" placeholder="Share a message..." widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="open_view_tms_advance_form" model="ir.actions.act_window">
+        <field name="name">Advances</field>
+        <field name="res_model">tms.advance</field>
+        <field name="context">{}</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem action="open_view_tms_advance_form" id="menu_tms_advance_form" name="Advances" parent="menu_tms_travels" sequence="10"/>    
+</odoo>

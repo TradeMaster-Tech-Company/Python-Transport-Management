@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model='ir.ui.view' id='tms_route_tollstation_form'>
+        <field name='name'>tms_route_tollstation.form</field>
+        <field name='model'>tms.route.tollstation</field>
+        <field name='arch' type='xml'>
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="place_id"/>
+                        <field name="partner_id"/>
+                        <field name="credit"/>
+                        <field name="active"/>
+                    </group>
+                    <notebook>
+                        <page string="Cost per Axis">
+                            <field name="cost_per_axis_ids">
+                                <tree editable="bottom">
+                                    <field name="axis"/>
+                                    <field name="cost_cash"/>
+                                    <field name="cost_credit"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Routes with this Tollstation">
+                            <field name="route_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model='ir.ui.view' id='tms_route_tollstation_tree'>
+        <field name='name'>tms_route_tollstation.tree</field>
+        <field name='model'>tms.route.tollstation</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name="name"/>
+                <field name="place_id"/>
+                <field name="partner_id"/>
+                <field name="credit"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    <record id='action_tms_route_tollstation' model='ir.actions.act_window'>
+        <field name='name'>Tollstations</field>
+        <field name='res_model'>tms.route.tollstation</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+    <menuitem id="tms_route_tollstation_menu" name="Toll Stations" parent="menu_tms_settings_routes" action="action_tms_route_tollstation"/>
+</odoo>

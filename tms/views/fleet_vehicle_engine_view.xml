@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model='ir.ui.view' id='fleet_vehicle_engine_tree'>
+        <field name='name'>fleet_vehicle_engine.tree</field>
+        <field name='model'>fleet.vehicle.engine</field>
+        <field name='arch' type='xml'>
+            <tree string='Engines' editable='top'>
+                <field name='name'/>
+            </tree>
+        </field>
+    </record>
+    <record id='action_fleet_vehicle_engine' model='ir.actions.act_window'>
+        <field name='name'>Engines</field>
+        <field name='res_model'>fleet.vehicle.engine</field>
+        <field name='view_mode'>tree</field>
+    </record>
+    <menuitem id="fleet_vehicle_engine_menu" name="Engines" parent="menu_tms_settings_unit" action="action_fleet_vehicle_engine"/>
+</odoo>

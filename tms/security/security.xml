@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_group_category" model="ir.module.category">
+        <field name="name">TMS</field>
+        <field name="sequence">50</field>
+    </record>
+    <record id="group_monitoring" model="res.groups">
+        <field name="name">Group Monitoring</field>
+        <field name="implied_ids" eval="[(4, ref('account.group_account_readonly'))]"/>
+        <field name="category_id" ref="tms_group_category"/>
+    </record>
+    <record id="group_traffic" model="res.groups">
+        <field name="name">Group Traffic</field>
+        <field name="implied_ids" eval="[(4, ref('account.group_account_invoice'))]"/>
+        <field name="category_id" ref="tms_group_category"/>
+    </record>
+    <record id="group_supervisor_traffic" model="res.groups">
+        <field name="name">Group Supervisor Traffic</field>
+        <field name="implied_ids" eval="[(4, ref('account.group_account_invoice')), (4, ref('group_traffic'))]"/>
+        <field name="category_id" ref="tms_group_category"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+    <record id="group_expenses" model="res.groups">
+        <field name="name">Group Expenses</field>
+         <field name="implied_ids" eval="[(4, ref('group_monitoring')), (4, ref('account.group_account_invoice'))]"/>
+         <field name="category_id" ref="tms_group_category"/>
+         <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+    <record id="tms_waybill_comp_rule" model="ir.rule">
+        <field name="name">Waybill</field>
+        <field name="model_id" ref="model_tms_waybill"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+    <record id="tms_travel_comp_rule" model="ir.rule">
+        <field name="name">Travel</field>
+        <field name="model_id" ref="model_tms_travel"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+    <record id="tms_advance_comp_rule" model="ir.rule">
+        <field name="name">Advance</field>
+        <field name="model_id" ref="model_tms_advance"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+    <record id="fleet_vehicle_log_fuel_comp_rule" model="ir.rule">
+        <field name="name">Fuel Log</field>
+        <field name="model_id" ref="model_fleet_vehicle_log_fuel"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+    <record id="tms_expense_loan_comp_rule" model="ir.rule">
+        <field name="name">Loan</field>
+        <field name="model_id" ref="model_tms_expense_loan"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+    <record id="tms_expense_comp_rule" model="ir.rule">
+        <field name="name">Expense</field>
+        <field name="model_id" ref="model_tms_expense"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+</odoo>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_view_wizard_payment" model="ir.ui.view">
+        <field name="name">Make Payment</field>
+        <field name="model">tms.wizard.payment</field>
+        <field name="arch" type="xml">
+            <form string="Make Payment">
+                <group>
+                    <group>
+                        <field name="journal_id"/>
+                        <field name="amount_total"/>
+                    </group>
+                    <group>
+                        <field name="date"/>
+                        <field name="notes"/>
+                    </group>
+                </group>
+                <footer>
+                    <button class="oe_highlight" name="make_payment" string="Confirm" type="object"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_view_advance_payment" model="ir.actions.act_window">
+        <field name="name">Make Advance Payment.</field>
+        <field name="res_model">tms.wizard.payment</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_tms_advance"/>
+        <field name="binding_view_types">form</field>
+    </record>
+    <record id="action_view_expense_payment" model="ir.actions.act_window">
+        <field name="name">Make Driver Expense Payment.</field>
+        <field name="res_model">tms.wizard.payment</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_tms_expense"/>
+        <field name="binding_view_types">form</field>
+    </record>
+    <record id="action_view_expense_loan_payment" model="ir.actions.act_window">
+        <field name="name">Make Loan Expense Payment.</field>
+        <field name="res_model">tms.wizard.payment</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_tms_expense_loan"/>
+        <field name="binding_view_types">form</field>
+    </record>
+</odoo>

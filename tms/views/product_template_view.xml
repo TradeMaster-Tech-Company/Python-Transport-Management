@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tms_product_template_view" model="ir.ui.view">
+        <field name="name">tms.product.template.view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='group_standard_price']" position="after">
+                <group>
+                    <field name="tms_product_category" groups="base.group_no_one"/>
+                    <field name="apply_for_salary" groups="base.group_no_one" attrs="{'invisible': ['|', ('tms_product_category', 'in', ('real_expense', 'made_up_expense', 'salary', 'salary_retention', 'salary_discount', 'fuel', 'indirect_expense', 'other_income', 'refund', 'negative_balance', 'fuel_cash')), ('tms_product_category', '=', False)]}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <record id="tms_open_view_product_list" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('tms_product_category', '!=', False)]</field>
+        <field name="context">{}</field>
+        <field eval="False" name="view_id"/>
+    </record>
+    <menuitem action="tms_open_view_product_list" id="menu_tms_open_view_product_list" name="Products" parent="tms.menu_tms_settings" sequence="50"/>
+</odoo>

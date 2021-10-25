@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_tms_extradata_tree" model="ir.ui.view">
+        <field name="name">tms.extradata.tree</field>
+        <field name="model">tms.extradata</field>
+        <field name="arch" type="xml">
+            <tree string="TMS Waybill Extra Fields">
+                <field name="type_id" />
+                <field name="value_extra"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_tms_extradata_form" model="ir.ui.view">
+        <field name="name">tms.extradata.form</field>
+        <field name="model">tms.extradata</field>
+        <field name="arch" type="xml">
+            <form string="TMS Extra Fields">
+                <group>
+                    <field name="type_id" context="{'active_model_base': context.get('active_model_base')}"/>
+                    <field name="value_extra" invisible="1"/>
+                    <field name="type" invisible="1"/>
+                    <field attrs="{'invisible':[('type','!=','char')],'required':[('type','=','char')]}" name="value_char"/>
+                    <field attrs="{'invisible':[('type','!=','integer')],'required':[('type','=','integer')]}" name="value_integer"/>
+                    <field attrs="{'invisible':[('type','!=','float')],'required':[('type','=','float')]}" name="value_float"/>
+                    <field attrs="{'invisible':[('type','!=','date')],'required':[('type','=','date')]}" name="value_date"/>
+                    <field attrs="{'invisible':[('type','!=','datetime')],'required':[('type','=','datetime')]}" name="value_datetime"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="tms_extradata_type_form">
+        <field name="name">tms_extradata_type.form</field>
+        <field name="model">tms.extradata.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="type" required="1" />
+                    <field name="apply_on"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="open_view_tms_extradata_form" model="ir.actions.act_window">
+        <field name="name">TMS Extra Fields</field>
+        <field name="res_model">tms.extradata</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_fleet_vehicle_log_fuel_prepaid_tree" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.fuel.prepaid.tree</field>
+        <field name="model">fleet.vehicle.log.fuel.prepaid</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <tree string="Prepaid">
+                <field name="name"/>
+                <field name="operating_unit_id"/>
+                <field name="vendor_id"/>
+                <field name="product_id"/>
+                <field name="price_total"/>
+                <field name="balance"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_fleet_vehicle_log_fuel_prepaid_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.fuel.prepaid.form</field>
+        <field name="model">fleet.vehicle.log.fuel.prepaid</field>
+        <field name="arch" type="xml">
+            <form string="Fuel Logs">
+                <header>
+                    <button class="oe_highlight" icon="fa-check-square-o" name="action_confirm" states="draft" string="Confirm" type="object"/>
+                    <button name="create_invoice" states="confirmed" string="Create Invoice" type="object"/>
+                    <field name="state" statusbar_visible="draft,confirmed" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <label for="name" attrs="{'invisible':[('name','=', False)]}" class="oe_inline" string="Prepaid - " style="font-size:30px;"/>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="operating_unit_id" required="1"/>
+                            <field domain="[('is_company', '=', True)]" name="vendor_id" required="1" widget="res_partner_many2one" context="{'res_partner_search_mode': 'supplier', 'show_address': 1, 'default_is_company': True, 'show_vat': True}"/>
+                        </group>
+                        <group>
+                            <field attrs="{'readonly':[('state','in',('confirmed'))]}" name="date"/>
+                            <field attrs="{'readonly':[('state','in',('confirmed'))]}" name="currency_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field attrs="{'readonly':[('state','in',('confirmed'))], 'required': True}" name="product_id"/>
+                            <field attrs="{'readonly':[('state','in',('confirmed'))]}" name="price_total"/>
+                        </group>
+                        <group>
+                            <field name="balance"/>
+                        </group>
+                    </group>
+                    <group>
+                        <notebook colspan="4" states="confirmed">
+                            <page string="Fuel Vauchers">
+                                <field colspan="4" context="{'active_id': active_id, 'active_model': active_model}" domain="[('operating_unit_id', '=', operating_unit_id),('vendor_id', '=', vendor_id)]" name="log_fuel_ids" nolabel="1">
+                                    <tree>
+                                        <field name="date"/>
+                                        <field name="name"/>
+                                        <field name="vendor_id"/>
+                                        <field name="operating_unit_id"/>
+                                        <field name="travel_id"/>
+                                        <field name="product_qty"/>
+                                        <field name="price_total"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Other Info">
+                                <group>
+                                    <field name="invoice_id" readonly="1"/>
+                                    <field name="invoice_paid" readonly="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </group>
+                    <group>
+                        <field name="notes" nolabel="1" placeholder="Write here any other information"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="open_view_fleet_vehicle_log_fuel_prepaid_form" model="ir.actions.act_window">
+        <field name="name">Prepaid</field>
+        <field name="res_model">fleet.vehicle.log.fuel.prepaid</field>
+        <field name="context">{}</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem action="open_view_fleet_vehicle_log_fuel_prepaid_form" id="menu_fleet_vehicle_log_fuel_prepaid_form" name="Fuel Prepaid" parent="menu_tms_travels" sequence="10"/>
+</odoo>

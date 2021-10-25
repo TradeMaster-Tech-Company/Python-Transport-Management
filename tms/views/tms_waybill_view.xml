@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_tms_waybill_tree" model="ir.ui.view">
+        <field name="name">tms.waybill.tree</field>
+        <field name="model">tms.waybill</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <tree decoration-muted="state=='cancel'" decoration-danger="state=='draft'" decoration-success="state=='approved'" string="Waybills">
+                <field name="name"/>
+                <field name="date_order"/>
+                <field name="partner_id"/>
+                <field name="amount_untaxed" sum="Amount Untaxed"/>
+                <field name="amount_tax"/>
+                <field name="amount_total"/>
+                <field invisible="1" name="invoice_id"/>
+                <field invisible="1" name="user_id"/>
+                <field name="state"/>
+                <button icon="fa-thumbs-up" name="action_approve" states="draft" string="Approve" type="object"/>
+                <button icon="fa-check-square-o" name="action_confirm" states="approved" string="Confirm" type="object"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_tms_waybill_form" model="ir.ui.view">
+        <field name="name">tms.waybill.form</field>
+        <field name="model">tms.waybill</field>
+        <field name="arch" type="xml">
+            <form string="Waybill">
+                <header>
+                    <button icon="fa-times" name="action_cancel" states="draft,approved,confirmed" string="Cancel" type="object"/>
+                    <button icon="fa-reply" name="action_cancel_draft" states="cancel" string="Set to Draft" type="object"/>
+                    <button class="oe_highlight" icon="fa-thumbs-up" name="action_approve" states="draft" string="Approve" type="object"/>
+                    <button class="oe_highlight" icon="fa-check-square-o" name="action_confirm" states="approved" string="Confirm" type="object"/>
+                    <field name="state" statusbar_visible="draft,approved,confirmed" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <h1>
+                        <label for="name" attrs="{'invisible':[('name','=', False)]}" class="oe_inline" string="Waybill - " style="font-size:30px;"/>
+                        <field class="oe_inline" name="name" readonly="1"/>
+                    </h1>
+                    <group col="4">
+                        <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="operating_unit_id"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_order"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" groups="base.group_multi_currency" name="currency_id"/>
+                        <separator colspan="4" string="·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·" style="text-align: center;"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" colspan="4" domain="[('is_company', '=', True)]" name="partner_id" widget="res_partner_many2one" context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'default_is_company': True, 'show_vat': True}"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" context="{'search_default_customer':1, 'show_address': 1}" domain="[('parent_id','=',partner_id)]" name="partner_order_id" options="{&quot;always_reload&quot;: True}"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" context="{'search_default_customer':1, 'show_address': 1}" domain="[('parent_id','=',partner_id)]" name="partner_invoice_id" options="{&quot;always_reload&quot;: True}"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" context="{'search_default_customer':1, 'show_address': 1}" name="departure_address_id" options="{&quot;always_reload&quot;: True}"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" context="{'search_default_customer':1, 'show_address': 1}" name="arrival_address_id" options="{&quot;always_reload&quot;: True}"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="upload_point"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="download_point"/>
+                        <field name="coordinates"/>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Lines">
+                            <group>
+                                <separator coslpan="4" string="Travels"/>
+                                <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" colspan="4" domain="[('state','not in',('cancel','closed')),('operating_unit_id', '=', operating_unit_id)]" name="travel_ids" nolabel="1"/>
+                                <separator coslpan="4" string="Waybill Factor Client"/>
+                                <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" colspan="4" context="{'default_category': 'customer'}" name="customer_factor_ids" nolabel="1"/>
+                                <separator coslpan="4" string="Transportable"/>
+                                <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" colspan="4" name="transportable_line_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="transportable_id"/>
+                                        <field name="name"/>
+                                        <field name="transportable_uom_id"/>
+                                        <field name="quantity"/>
+                                        <field name="notes"/>
+                                    </tree>
+                                </field>
+                                <separator colspan="4" string="Waybill Lines"/>
+                                <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" colspan="4" name="waybill_line_ids" nolabel="1">
+                                    <tree editable="bottom" string="Waybill Lines">
+                                        <field name="product_id" domain="[('tms_product_category', 'in', ('freight', 'move', 'insurance', 'tolls', 'other'))]"/>
+                                        <field name="name"/>
+                                        <field name="product_qty"/>
+                                        <field name="unit_price"/>
+                                        <field name="discount"/>
+                                        <field name="tax_ids" widget="many2many_tags"/>
+                                        <field name="price_subtotal"/>
+                                        <field invisible="1" name="tax_amount"/>
+                                    </tree>
+                                </field>
+                                <group col="4" colspan="4">
+                                    <group colspan="2">
+                                        <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="tax_line_ids" nolabel="1">
+                                            <tree create="false" delete="false">
+                                                <field name="tax_id"/>
+                                                <field name="tax_amount" sum="Impuestos"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                    <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                        <field name="amount_freight" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                        <field name="amount_move" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                        <field name="amount_highway_tolls" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                        <field name="amount_insurance" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                        <field name="amount_other" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                        <div class="oe_subtotal_footer_separator oe_inline">
+                                            <label for="amount_untaxed"/>
+                                        </div>
+                                        <field class="oe_subtotal_footer_separator" name="amount_untaxed" nolabel="1" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                        <field name="amount_tax" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                        <div class="oe_subtotal_footer_separator oe_inline">
+                                            <label for="amount_total"/>
+                                        </div>
+                                        <field class="oe_subtotal_footer_separator" name="amount_total" nolabel="1" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                    </group>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Extra Fields">
+                            <group col="4" colspan="4">
+                                <newline/>
+                                <field colspan="4" context="{'default_waybill_id': active_id, 'active_model_base': active_model}" name="waybill_extradata_ids" nolabel="1">
+                                    <tree string="Extra Fields">
+                                        <field name="type_id" string="Name" context="{'default_apply_on': 'waybill'}"/>
+                                        <field name="value_extra" string="Value"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Factor Supplier">
+                            <separator colspan="4" string="Waybill Supplier Factors"/>
+                            <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" colspan="4" context="{'default_category': 'supplier'}" name="supplier_factor_ids" nolabel="1"/>
+                        </page>
+                        <page string="Factor Driver">
+                            <separator colspan="4" string="Driver Salary Factors"/>
+                            <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" colspan="4" context="{'default_category': 'driver'}" name="driver_factor_ids" nolabel="1"/>
+                        </page>
+                        <page string="Times">
+                            <group col="4" colspan="4">
+                                <group colspan="2">
+                                    <separator string="Scheduled"/>
+                                    <newline/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_start"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_up_start_sched"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_up_end_sched"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_up_docs_sched"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_appoint_down_sched"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_down_start_sched"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_down_end_sched"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_down_docs_sched"/>
+                                    <field name="date_end"/>
+                                </group>
+                                <group colspan="2">
+                                    <separator string="Real"/>
+                                    <newline/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_start_real"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_up_start_real"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_up_end_real"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_up_docs_real"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_appoint_down_real"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_down_start_real"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_down_end_real"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_down_docs_real"/>
+                                    <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" name="date_end_real"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Notes">
+                            <field attrs="{'readonly':[('state','in',('confirmed', 'cancel'))]}" colspan="4" name="notes" nolabel="1" placeholder="Notes..."/>
+                        </page>
+                        <page string="Log">
+                            <group col="4" colspan="4">
+                                <group colspan="2">
+                                    <separator colspan="2" string="Client Invoice Data"/>
+                                    <field name="invoice_id"/>
+                                    <field name="invoice_paid"/>
+                                    <newline/>
+                                </group>
+                                <group colspan="2">
+                                    <separator colspan="2" string="Supplier Invoice Data"/>
+                                    <field name="supplier_invoice_id"/>
+                                    <field name="supplier_invoice_paid" readonly="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Expenses">
+                            <field name="expense_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" placeholder="Share a message..." widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_tms_waybill_form_expense" model="ir.ui.view">
+        <field name="name">tms.waybill.form</field>
+        <field name="model">tms.waybill</field>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <form string="Waybill">
+                <sheet>
+                    <header>
+                        <field name="state" statusbar_visible="draft,approved,confirmed" widget="statusbar"/>
+                    </header>
+                    <h1>
+                        <label for="name" attrs="{'invisible':[('name','=', False)]}" class="oe_inline" string="Waybill - " style="font-size:30px;"/>
+                        <field class="oe_inline" name="name" readonly="1"/>
+                    </h1>
+                    <group col="4">
+                        <field attrs="{'readonly':[('state','in',('confirmed'))]}" name="operating_unit_id"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed'))]}" name="company_id"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed'))]}" name="date_order"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed'))]}" groups="base.group_multi_currency" name="currency_id"/>
+                        <separator colspan="4" string="·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·" style="text-align: center;"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed'))]}" colspan="4" domain="['|',('company_id','=',False),('company_id', '=', company_id),('is_company', '=', True)]" name="partner_id" widget="res_partner_many2one" context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}" options='{"always_reload": True}'/>
+                        <field attrs="{'readonly':[('state','in',('confirmed'))]}" context="{'search_default_customer':1, 'show_address': 1}" domain="[('parent_id','=',partner_id)]" name="partner_order_id" options="{&quot;always_reload&quot;: True}"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed'))]}" context="{'search_default_customer':1, 'show_address': 1}" domain="[('parent_id','=',partner_id)]" name="partner_invoice_id" options="{&quot;always_reload&quot;: True}"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed'))]}" context="{'search_default_customer':1, 'show_address': 1}" name="departure_address_id" options="{&quot;always_reload&quot;: True}"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed'))]}" context="{'search_default_customer':1, 'show_address': 1}" name="arrival_address_id" options="{&quot;always_reload&quot;: True}"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed'))]}" name="upload_point"/>
+                        <field attrs="{'readonly':[('state','in',('confirmed'))]}" name="download_point"/>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Factor Driver">
+                            <separator colspan="4" string="Driver Salary Factors"/>
+                            <field colspan="4" context="{'default_category': 'driver'}" name="driver_factor_ids" nolabel="1"/>
+                        </page>
+                        <page string="Details">
+                           <separator coslpan="4" string="Transportable"/>
+                            <field attrs="{'readonly':[('state','in',('confirmed'))]}" colspan="4" name="transportable_line_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="transportable_id"/>
+                                    <field name="name"/>
+                                    <field name="transportable_uom_id"/>
+                                    <field name="quantity"/>
+                                    <field name="notes"/>
+                                </tree>
+                            </field>
+                            <separator colspan="4" string="Waybill Lines"/>
+                            <field attrs="{'readonly':[('state','in',('confirmed'))]}" colspan="4" name="waybill_line_ids" nolabel="1">
+                                <tree editable="bottom" string="Waybill Lines">
+                                    <field name="product_id" domain="[('tms_product_category', 'in', ('freight', 'move', 'insurance', 'tolls', 'other'))]"/>
+                                    <field name="name"/>
+                                    <field name="product_qty"/>
+                                    <field name="unit_price"/>
+                                    <field name="discount"/>
+                                    <field name="tax_ids" widget="many2many_tags"/>
+                                    <field name="price_subtotal"/>
+                                    <field invisible="1" name="tax_amount"/>
+                                </tree>
+                            </field>
+                            <group col="4" colspan="4">
+                                <group colspan="2">
+                                    <field attrs="{'readonly':[('state','in',('confirmed'))]}" name="tax_line_ids" nolabel="1">
+                                        <tree create="false" delete="false">
+                                            <field name="tax_id"/>
+                                            <field name="tax_amount" sum="Impuestos"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                    <field name="amount_freight" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                    <field name="amount_move" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                    <field name="amount_highway_tolls" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                    <field name="amount_insurance" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                    <field name="amount_other" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                    <div class="oe_subtotal_footer_separator oe_inline">
+                                        <label for="amount_untaxed"/>
+                                    </div>
+                                    <field class="oe_subtotal_footer_separator" name="amount_untaxed" nolabel="1" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                    <field name="amount_tax" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                    <div class="oe_subtotal_footer_separator oe_inline">
+                                        <label for="amount_total"/>
+                                    </div>
+                                    <field class="oe_subtotal_footer_separator" name="amount_total" nolabel="1" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_tms_waybill_filter" model="ir.ui.view">
+        <field name="name">tms.waybill.list.select</field>
+        <field name="model">tms.waybill</field>
+        <field name="arch" type="xml">
+            <search string="Search Waybills">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="operating_unit_id"/>
+                <field name="date_order" string="Waybill date"/>
+                <field name="user_id"/>
+                <filter name="pending" domain="[('state','=','draft')]" string="Pending"/>
+                <filter name="approved" domain="[('state','=','approved')]" string="Approved"/>
+                <filter name="confirmed" domain="[('state','=','confirmed')]" string="Confirmed"/>
+                <filter name="invoiced" domain="[('invoice_id','!=', False)]" string="Invoiced"/>
+                <filter name="not_invoiced" domain="[('invoice_id','=', False)]" string="Not Invoiced"/>
+                <filter domain="[('state','!=','cancel')]" name="not_cancelled" string="Not Cancelled"/>
+                <filter domain="[('date_order','&gt;=', time.strftime('%Y-%m-01'))]" name="this_month" string="From this month"/>
+                <filter name="my_waybills" domain="[('user_id','=',uid)]" string="My Waybills"/>
+                <filter name="customer" context="{'group_by':'partner_id'}" string="Customer"/>
+                <filter name="state" context="{'group_by':'state'}" string="State"/>
+                <filter name="order_date" context="{'group_by':'date_order'}" string="Order Date"/>
+                <filter name="salesman" context="{'group_by':'user_id'}" string="Salesman"/>
+                <filter name="period" context="{'group_by' : 'date_order'}" string="Period"/>
+                <filter name="operating_unit_group_by" context="{'group_by':'operating_unit_id'}" string="Operating Unit"/>
+            </search>
+        </field>
+    </record>
+    <record id="view_tms_waybill_calendar" model="ir.ui.view">
+        <field name="name">tms.waybill.calendar</field>
+        <field name="model">tms.waybill</field>
+        <field name="arch" type="xml">
+            <calendar color="state" date_start="date_order" string="Waybills">
+                <field name="partner_id"/>
+                <field name="amount_untaxed"/>
+            </calendar>
+        </field>
+    </record>
+    <record id="view_tms_waybill_graph" model="ir.ui.view">
+        <field name="name">tms.waybill.graph</field>
+        <field name="model">tms.waybill</field>
+        <field name="arch" type="xml">
+            <graph string="Waybill" type="bar">
+                <field name="partner_id"/>
+                <field name="amount_untaxed" operator="+"/>
+            </graph>
+        </field>
+    </record>
+        <record id="view_tms_waybill_pivot" model="ir.ui.view">
+         <field name="name">tms.waybill.pivot</field>
+         <field name="model">tms.waybill</field>
+         <field name="arch" type="xml">
+             <pivot string="Pivot">
+                <field name="name" type="row"/>
+                <field name="date_order" type="row"/>
+                <field name="partner_id" type="row"/>
+                <field name="amount_untaxed" type="measure"/>
+                <field name="amount_total" type="measure"/>
+             </pivot>
+         </field>
+    </record>
+    <record id="view_tms_waybill_form_cust" model="ir.ui.view">
+        <field name="name">tms.waybill.form.readonly.cust</field>
+        <field name="model">tms.waybill</field>
+        <field name="inherit_id" ref="view_tms_waybill_form"/>
+        <field name="groups_id" eval="[(6, 0, [ref('tms.group_expenses') ])]"/>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <field name='driver_factor_ids' position="replace">
+                <field name='driver_factor_ids' context="{'default_category': 'driver'}" />
+            </field>
+        </field>
+    </record>
+    <record id="action_tms_waybill_form" model="ir.actions.act_window">
+        <field name="name">Waybills</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tms.waybill</field>
+        <field name="view_mode">tree,form,pivot,calendar,graph</field>
+        <field name="search_view_id" ref="view_tms_waybill_filter"/>
+        <field name="context">{&quot;search_default_user_id&quot;:uid, 'search_default_this_month': 1}</field>
+        <field name="help">Waybills</field>
+    </record>
+    <menuitem action="action_tms_waybill_form" id="menu_tms_waybill" parent="menu_tms_travels" sequence="2" groups="tms.group_traffic,tms.group_expenses,tms.group_supervisor_traffic,tms.group_monitoring"/>
+</odoo>

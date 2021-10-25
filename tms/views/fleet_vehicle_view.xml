@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="fleet_vehicle_search_inherit_tms" model="ir.ui.view">
+        <field name="name">fleet.vehicle.tms.search</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='activities_overdue']" position="before">
+                <field filter_domain="['|', ('name','ilike',self), ('license_plate','ilike',self)]" name="name" string="Vehicle"/>
+                <field name="registration"/>
+            </xpath>
+            <xpath expr="//group" position="inside">
+                <filter context="{'group_by' : 'registration'}" name="groupby_registration" string="Registration"/>
+                <filter context="{'group_by' : 'fleet_type'}" name="groupby_fleet_type" string="Fleet Type"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="fleet_vehicle_form_inherit_tms" model="ir.ui.view">
+        <field name="name">fleet.vehicle.tms.form</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="priority">110</field>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group/group/field[@name='driver_id']" position="after">
+                <field name="vehicle_type" invisible="1"/>
+                <field name="fleet_type" required="1"/>
+            </xpath>
+        </field>
+    </record>
+        <!--
+            <xpath expr="//form/sheet" position="before">
+                <div class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('insurance_days_to_expire','!=', 0)]}">
+                    <h4><center>The date of the insurance policy is expired</center></h4>
+                </div>
+            </xpath>
+            <xpath expr="//sheet/group" position="replace">
+                <group string="Driver">
+                    <field name="active" invisible="1"/>
+                    <field name="company_id" invisible="1"/>
+                    <field name="driver_id" invisible="1" domain="['|', ('company_id', '=', False ), ('company_id', '=', company_id)]"/>
+                    <field name="operating_unit_id" required="1"/>
+                    <field name="fleet_type" required="1"/>
+                    <field domain="[('driver', '=', True)]" name="employee_id"/>
+                    <field name="location"/>
+                </group>
+                <notebook>
+                    <page string="General Information">
+                        <group>
+                            <field name="registration"/>
+                            <field name="supplier_unit"/>
+                            <field name="insurance_policy"/>
+                            <field name="insurance_policy_data"/>
+                            <field name="insurance_expiration"/>
+                            <field name="insurance_supplier_id"/>
+                            <field name="insurance_days_to_expire"/>
+                        </group>
+                        <group string="Additional Properties">
+                            <field name="seats"/>
+                            <field name="doors"/>
+                            <field name="color"/>
+                        </group>
+                    </page>
+                    <page string="Engine Options">
+                        <group string="Engine Options">
+                            <field name="transmission"/>
+                            <field name="engine_id"/>
+                            <field name="fuel_type"/>
+                            <label for="co2"/>
+                            <div class="o_row">
+                                <field name="co2"/>
+                                <span>g/km</span>
+                            </div>
+                            <field name="horsepower"/>
+                            <field name="horsepower_tax"/>
+                            <label for="power"/>
+                            <div class="o_row">
+                                <field name="power"/>
+                                <span>kW</span>
+                            </div>
+                        </group>
+                    </page>
+                    <page string="Extra Data">
+                        <group>
+                            <field colspan="4" context="{'default_vehicle_id': active_id, 'active_model_base': active_model}" name="unit_extradata" nolabel="1">
+                                <tree string="Extra Fields">
+                                    <field name="type_id" string="Name"/>
+                                    <field name="value_extra" string="Value"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </notebook>
+                <group>
+                    <group string="Notes">
+                        <field name="notes" nolabel="1"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>-->
+    <record model='ir.ui.view' id='fleet_vehicle_tms_kanban'>
+        <field name='name'>fleet_vehicle_tms_kanban</field>
+        <field name='model'>fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_kanban"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//strong" position="before">
+                <strong><field name="name"/></strong><br/>
+            </xpath>
+        </field>
+    </record>
+    <record id="fleet_vehicle_tree_tms" model="ir.ui.view">
+        <field name="name">fleet.vehicle.tms.tree</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_tree"/>
+        <field name="model">fleet.vehicle</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <tree position="replace">
+                <tree string="Vehicle">
+                    <field name="name"/>
+                    <field name="model_id"/>
+                    <field name="license_plate"/>
+                    <field invisible="1" name="driver_id"/>
+                    <field name="employee_id"/>
+                    <field name="state_id"/>
+                    <field name="odometer"/>
+                    <field name="odometer_unit"/>
+                </tree>
+            </tree>
+        </field>
+    </record>
+    <record id="action_fleet_vehicle_tms" model="ir.actions.act_window">
+        <field name="name">Fleet Vehicle</field>
+        <field name="res_model">fleet.vehicle</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem action="action_fleet_vehicle_tms" id="tms_fleet_vehicle_menu" name="Units" parent="menu_tms_settings_unit" sequence="10"/>
+</odoo>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="travel_instructions_letter_header">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel">
+                    <div class="panel-heading" t-att-style="Panel_Header">
+                        <p style="margin-top: 4%; text-align:center; font-size:30px; font-family: monospace; font-weight:bold; color:#333 !important; ">LETTER OF INSTRUCTIONS: 
+                            
+                            <span t-field="partner_waybills.partner_id.name"/></p>
+                    </div>
+                </div>
+                <table class="table table-striped" style="text-align: center;">
+                    <tr>
+                        <td>
+                            <strong>Unit:</strong>
+                        </td>
+                        <td>
+                            <span t-field="doc.unit_id"/>
+                        </td>
+                        <td>
+                            <strong>Trailer:</strong>
+                        </td>
+                        <td>
+                            <span t-field="doc.trailer1_id"/>
+                        </td>
+                        <td>
+                            <strong>Driver:</strong>
+                        </td>
+                        <td>
+                            <span t-field="doc.employee_id"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Waybill:</strong>
+                        </td>
+                        <td>
+                            <span t-field="doc.waybill_ids.name"/>
+                        </td>
+                        <td>
+                            <strong>Departure Date:</strong>
+                        </td>
+                        <td>
+                            <span t-field="doc.date_start"/>
+                        </td>
+                        <td>
+                            <strong>Deliver Date:</strong>
+                        </td>
+                        <td>
+                            <span t-field="doc.date_end"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Travel</strong>
+                        </td>
+                        <td>
+                            <span t-field="doc.name"/>
+                        </td>
+                        <td>
+                            <strong>Origin</strong>
+                        </td>
+                        <td>
+                            <span t-field="doc.departure_id.name"/>
+                        </td>
+                        <td>
+                            <strong>Destination</strong>
+                        </td>
+                        <td>
+                            <span t-field="doc.arrival_id.name"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </template>
+    <template id="travel_instructions_letter">
+        <t t-as="doc" t-foreach="docs">
+            <t t-as="partner_waybills" t-foreach="doc.waybill_ids">
+                <div class="page">
+                    <t t-as="partner_notes" t-foreach="doc.route_id.note_ids">
+                        <t t-set="partner_way" t-value="partner_waybills.partner_id"/>
+                        <t t-set="partner_not" t-value="partner_notes.partner_id"/>
+                        <t t-if="partner_not == partner_way">
+                            <t t-call="tms.travel_instructions_letter_header"/>
+                            <div class="list-group">
+                                <h5 class="list-group-item-heading">
+                                    <strong>Notes: </strong>
+                                </h5>
+                                <div class="list-group-item-text">
+                                    <span t-field="partner_notes.notes"/>
+                                </div>
+                            </div>
+                            <div class="list-group">
+                                <h5 class="list-group-item-heading">
+                                    <strong>Rules: </strong>
+                                </h5>
+                                <div class="list-group-item-text">
+                                    <span t-field="partner_notes.rules"/>
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                    <div class="row">
+                        <div class="col-xs-12" style="text-align: center;">
+                            <span>Atentamente:</span>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <span>_________________________________</span>
+                            <br/>
+                            <span>TRAFICO NACIONAL</span>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-xs-6" style="text-align: center;">
+                            <span>_____________________________</span>
+                            <br/>
+                            <span>Driver Name/Signature</span>
+                        </div>
+                        <div class="col-xs-6" style="text-align: center;">
+                            <span>______________________________</span>
+                            <br/>
+                            <span>Unit</span>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+    <template id="travel_instructions_letter_translate">
+        <t t-call="report.html_container">
+            <t t-as="doc_id" t-foreach="doc_ids">
+                <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'tms.travel_instructions_letter')"/>
+            </t>
+        </t>
+    </template>
+    <record id="print_travel_intructions_letter" model="ir.actions.report">
+        <field name="name">Letter of Instructions</field>
+        <field name="model">tms.travel</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tms.travel_instructions_letter</field>
+        <field name="report_file">tms.travel_instructions_letter</field>
+        <field name="print_report_name">Letter of Instructions</field>
+        <field name="binding_model_id" ref="model_tms_expense"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

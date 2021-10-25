@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_tms" name="Freights" sequence="10" web_icon="tms,static/description/icon.png"/>
+    <menuitem id="menu_tms_travels" name="Freights" parent="menu_tms" sequence="10"/>
+    <menuitem id="menu_tms_reports" name="Reports" parent="menu_tms" sequence="50"/>
+    <menuitem id="menu_tms_tollstation" name="Tollstation import" parent="menu_tms" sequence="20"/>
+    <menuitem id="menu_tms_settings" name="Configuration" parent="menu_tms" sequence="99"/>
+    <menuitem id="menu_tms_settings_unit" name="Units" parent="menu_tms_settings" sequence="30"/>
+    <menuitem id="menu_tms_settings_routes" name="Routes" parent="menu_tms_settings" sequence="40"/>
+    <menuitem action="fleet.fleet_vehicle_state_action" groups="fleet.fleet_group_manager" id="tms_fleet_vehicle_state_menu" parent="menu_tms_settings_unit" sequence="13"/>
+    <menuitem action="fleet.fleet_vehicle_model_action" id="tms_fleet_vehicle_model" parent="menu_tms_settings_unit" sequence="14"/>
+    <menuitem action="fleet.fleet_vehicle_model_brand_action" id="tms_fleet_vehicle_make" parent="menu_tms_settings_unit" sequence="15"/>
+</odoo>

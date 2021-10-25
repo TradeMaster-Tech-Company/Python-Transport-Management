@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_tms_expense_loan_tree" model="ir.ui.view">
+        <field name="name">tms.expense.loan.tree</field>
+        <field name="model">tms.expense.loan</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <tree string="Drivers Loans" decoration-danger="state=='draft'" decoration-muted="state=='cancel'" decoration-success="state=='approve'" decoration-info="state=='confirm'">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="employee_id"/>
+                <field name="product_id"/>
+                <field name="amount" widget="monetary" sum="Amount"/>
+                <field name="balance" sum="Balance"/>                    
+                <field name="paid" />
+                <field name="state"/>
+            </tree> 
+        </field>
+    </record>
+
+    <record id="view_tms_expense_loan_form" model="ir.ui.view">
+        <field name="name">tms.expense.loan.form</field>
+        <field name="model">tms.expense.loan</field>
+        <field name="arch" type="xml">
+            <form string="Drivers Loans">
+            <header>
+                <button name="action_cancel_draft" icon="fa-reply" states="cancel" string="Set to Draft" type="object"/>
+                <button name="action_cancel" icon="fa-times" states="draft,approved,confirmed" string="Cancel" type="object"/>
+                <button name="action_approve" icon="fa-thumbs-up" class="oe_highlight" states="draft" string="Approve" type="object"/>
+                <button name="action_confirm" icon="fa-check-square-o" class="oe_highlight" states="approved" string="Confirm" type="object"/>
+                <button name="action_authorized" icon="fa-key" string="To authorize advance" type="object" class="oe_highlight" states="authorized"/>
+                <field name="state" statusbar_visible="draft,approved,authorized,confirmed,cancel" widget="statusbar"/>
+            </header>
+            <sheet>
+            <h1>
+                <label for="name" class="oe_inline" style="font-size:30px;" string="Loan - " attrs="{'invisible':[('name','=', False)]}"/>
+                <field name="name" class="oe_inline" readonly="1"/>
+            </h1>
+            <group col="2">
+                <group>
+                    <field name="operating_unit_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" required="1"/>
+                    <field name="employee_id"
+                        context="{'default_category': 'driver'}" 
+                        domain="[('driver','=', True)]"
+                        attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" />
+                </group>
+                <group>
+                    <field name="date" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                    <field name="currency_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}" groups="base.group_multi_currency"/>
+                    <field name="date_confirmed"/>
+                </group>
+                <group>
+                    <field name="product_id" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>     
+                    <field name="amount" options="{'currency_field': 'currency_id'}" widget="monetary" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                    <field name="active_loan"/>
+                    <field name="lock" readonly="0"/>
+                    <field name="amount_discount" 
+                               attrs="{'invisible':[('lock','!=',True)]}"/>
+                </group>
+            </group>
+            <notebook>
+                <page string="Loan Details">
+                    <group col="4">
+                        <group colspan="2">          
+                            <field name="discount_type" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                            <field name="fixed_discount" 
+                               attrs="{'required':[('discount_type','=','fixed')],'invisible':[('discount_type','!=','fixed')],'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                            <field name="percent_discount" 
+                               attrs="{'required':[('discount_type','=','percent')],'invisible':[('discount_type','!=','percent')],'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                            <field name="discount_method" attrs="{'readonly':[('state','in',('confirmed','cancel','closed'))]}"/>
+                        </group>
+                    </group>
+                    <separator string="Balance"/>
+                    <group col="2">
+                        <field name="balance" />
+                    </group>
+                </page>
+                <page string="Travel Expense Lines">
+                    <group col="4">
+                        <field name="expense_ids"  colspan="4" nolabel="1">
+                            <tree>
+                                <field name="date"/>
+                                <field name="name"/>
+                                <field name="expense_id"/>
+                                <field name="price_total"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+                <page string="Log Info">
+                    <group col="4" colspan="4">
+                        <field name="move_id"/>
+                        <field name="paid"/>
+                        <field name="expense_id"/>
+                        <field name="payment_move_id"/>
+                    </group>      
+                </page>
+             
+                <page string="Notes">                        
+                    <field colspan="4" name="notes" nolabel="1"/>
+                </page>
+            </notebook>
+            </sheet>
+           <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" placeholder="Share a message..." widget="mail_thread"/>
+            </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tms_expense_loan_filter" model="ir.ui.view">
+        <field name="name">tms.expense.loan.filter</field>
+        <field name="model">tms.expense.loan</field>
+        <field name="arch" type="xml">
+            <search string="Search Loans">
+                <filter name="draft" icon="terp-gtk-media-pause" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="approved" icon="terp-gtk-jump-to-ltr" string="Approved" domain="[('state','=','approved')]"/>
+                <filter name="confirmed" icon="terp-check" string="Confirmed" domain="[('state','=','confirmed')]"/>
+                <filter name="not_paid" icon="terp-check" string="Not Paid" domain="[('paid','=',0)]"/>
+                <filter name="paid" icon="terp-check" string="Paid" domain="[('paid','=',1)]"/>
+                <newline/>
+                <field name="name" select="1"/>
+                <field name="employee_id" />
+                <field name="product_id" />
+                <field name="date" string="Expense date" />
+                <newline/>
+                <group expand="0" string="Group By..." >
+                    <filter name="driver" string="Driver" icon="terp-personal" domain="[]" context="{'group_by':'employee_id'}"/>
+                    <filter name="product" string="Product" icon="terp-personal" domain="[]" context="{'group_by':'product_id'}"/>
+                    <filter name="paid" string="Paid" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'paid'}"/>
+                    <separator orientation="vertical"/>
+                    <filter name="state" string="State" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'state'}"/>
+                    <filter name="expense_date" string="Expense Date" icon="terp-go-month" domain="[]" context="{'group_by':'date'}"/>                        
+                </group>
+           </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_tms_expense_loan_graph">
+        <field name="name">tms.expense.loan.graph</field>
+        <field name="model">tms.expense.loan</field>
+        <field name="arch" type="xml">
+            <graph string="Expense" type="bar">
+                <field name="product_id"/>
+                <field name="amount" operator="+"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_tms_expense_loan_form" model="ir.actions.act_window">
+        <field name="name">Drivers Loans</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tms.expense.loan</field>
+        <field name="view_mode">tree,form,graph</field>
+        <field name="search_view_id" ref="view_tms_expense_loan_filter"/>
+        <field name="help">Driver Loans</field>
+    </record>
+    <menuitem action="action_tms_expense_loan_form" id="hr_menu_tms_expense_loan" 
+              parent="menu_tms_settings" sequence="90" />
+</odoo>

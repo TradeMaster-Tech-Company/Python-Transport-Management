@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="fleet_vehicle_odometer_inherit_tms" model="ir.ui.view">
+        <field name="name">fleet.vehicle.odometer.tree.tms</field>
+        <field name="model">fleet.vehicle.odometer</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_odometer_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="vehicle_id" position="after">
+                <field invisible="1" name="last_odometer" required="1"/>
+                <field name="current_odometer" required="1"/>
+                <field name="distance" required="1"/>
+                <field name="travel_id"/>
+            </field>
+        </field>
+    </record>
+    <menuitem action="fleet.fleet_vehicle_odometer_action" id="tms_fleet_vehicle_odometer_menu" parent="menu_tms_settings_unit" name="Units Odometers" sequence="12"/>
+</odoo>

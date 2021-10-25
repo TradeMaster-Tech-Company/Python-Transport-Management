@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_employee_form_tms" model="ir.ui.view">
+        <field name="model">hr.employee</field>
+        <field name="priority">50</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='generate_random_barcode']" position="attributes">
+              <attribute name="groups">hr.group_hr_user</attribute>
+            </xpath>
+            <xpath expr="//button[@name='%(hr.hr_employee_print_badge)d']" position="attributes">
+              <attribute name="groups">hr.group_hr_user</attribute>
+            </xpath>
+            <notebook position="inside">
+                <page string="TMS">
+                    <group>
+                        <field name="operating_unit_id"/>
+                        <field name="driver"/>
+                        <field name="outsourcing" attrs="{'invisible':[('driver','=',False)]}"/>
+                    </group>
+                    <group col="4">
+                        <field name="tms_advance_account_id" attrs="{'required':[('driver','=',True)], 'invisible':[('driver','=',False)] }"/>
+                        <field name="tms_loan_account_id" attrs="{'invisible':[('driver','=',False)] }"/>
+                        <field name="tms_expense_negative_account_id" attrs="{'required':[('driver','=',True)], 'invisible':[('driver','=',False)] }"/>
+                        <field name="income_percentage" attrs="{'required':[('driver','=',True)], 'invisible':[('driver','=',False)] }"/>
+                        <label for="driver_license" attrs="{'invisible': [('driver','=',False)]}"/>
+                        <div>
+                            <field name="driver_license" attrs="{'invisible': [('driver','=',False)]}"/>
+                            <button name="get_driver_license_info" type="object" string="Get Licence Info" attrs="{'invisible': [('driver','=',False)]}" class="oe_link"/>
+                        </div>
+                        <field name="license_type" attrs="{'invisible': [('driver','=',False)]}"/>
+                        <field name="license_valid_from" attrs="{'invisible': [('driver','=',False)]}"/>
+                        <field name="license_expiration" attrs="{'invisible': [('driver','=',False)]}"/>
+                        <field name="days_to_expire" attrs="{'invisible': [('driver','=',False)]}"/>
+                    </group>
+                </page>
+            </notebook>
+        </field> 
+    </record>
+    <record id="tms_open_view_employee_list" model="ir.actions.act_window">
+        <field name="name">Drivers</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('driver','=',True)]</field>
+        <field name="context">{}</field>
+        <field eval="False" name="view_id"/>
+        <field name="search_view_id" ref="hr.view_employee_filter"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click to add a new driver.
+          </p>
+            <p>With just a quick glance on Odoo driver screen, you
+            can easily find all the information you need for each person;
+            contact data, job position, availability, etc.
+          </p>
+        </field>
+    </record>
+    <menuitem action="tms_open_view_employee_list" id="menu_tms_open_view_employee_list" name="Drivers" parent="tms.menu_tms_settings" sequence="3"/>
+
+
+    <record id="view_employee_tms_inherit_form" model="ir.ui.view">
+        <field name="name">hr.employee.tms.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='emergency_contact']" position="after">
+                <field name="NSS"/>
+            </xpath>
+            <xpath expr="//page[@name='personal_information']/group/group[7]" position="after">
+            <group string="certificates">
+                <field name="validity"/>
+                <field name="trustworthy"/>
+                <field name="eye_exam"/>
+                <field name="no_criminal_record"/>
+                <field name="fumigation_certificate"/>
+            </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
